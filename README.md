@@ -52,7 +52,7 @@ If you want to build from a wheel:
 ```sh
 pip install -U build
 python -m build
-pip install dist/apc-1.4.0-py3-none-any.whl
+pip install dist/apc-1.4.1-py3-none-any.whl
 ```
 
 If you want to build directly from GitHub:
