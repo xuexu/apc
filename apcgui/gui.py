@@ -55,7 +55,7 @@ def _progress(window: sg.Window, value: int) -> None:
 def _show_error_window(error):
   layout = [
     [sg.T(f"{config.NEW_BUG}:")],
-    [sg.Multiline("https://www.nexusmods.com/thehuntercallofthewild/mods/225?tab=bugs", expand_x=True, no_scrollbar=True, disabled=True)],
+    [sg.Multiline("https://www.nexusmods.com/thehuntercallofthewild/mods/440?tab=bugs", expand_x=True, no_scrollbar=True, disabled=True)],
     [sg.T(f"{config.ERROR}:")],
     [sg.Multiline(error, expand_x=True, expand_y=True, disabled=True)]
   ]
