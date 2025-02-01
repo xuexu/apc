@@ -25,7 +25,7 @@ The modded population files can be found in a `mods` folder in the same director
 
 ## How To Build
 
-> Note: This code was built and tested with Python 3.10.10.
+> Note: This code was built and tested with Python 3.12.8.
 
 Setup virtual environment:
 ```sh
@@ -52,7 +52,7 @@ If you want to build from a wheel:
 ```sh
 pip install -U build
 python -m build
-pip install dist/apc-1.4.1-py3-none-any.whl
+pip install dist/apc-1.4.2-py3-none-any.whl
 ```
 
 If you want to build directly from GitHub:
@@ -65,4 +65,15 @@ If you want to build an executable (for Windows):
 pip install -U pyinstaller
 pyinstaller --noconsole --add-data "apc/config;config" --add-data "apc/locale;locale" --add-data "apcgui/locale;locale" apcgui.py
 ./dist/apcgui/apcgui.exe
+```
+
+## Updating translation data
+
+I am not fluent in multiple languages and have outsourced the translation work to the robots. The translation framework is handled with [Babel](https://github.com/python-babel/babel) and the actual translation text is generated with Google Translate using [deep-translator](https://github.com/nidhaloff/deep-translator).
+
+To update the translation data:
+```sh
+pip install -r translate_requirements.txt
+.scripts\update.bat
+.scripts\compile.bat
 ```

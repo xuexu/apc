@@ -34,7 +34,7 @@ t = gettext.translation("apc", localedir=LOCALE_PATH, languages=use_languages)
 translate = t.gettext
 
 def setup_translations() -> None:
-  global APC 
+  global APC
   APC = translate("Animal Population Changer")
   global SPECIES
   SPECIES = translate("Species")
@@ -338,6 +338,7 @@ class Reserve(str, Enum):
    newengland = "newengland"
    emerald = "emerald"
    sundarpatan = "sundarpatan"
+   salzwiesen = "salzwiesen"
 
 class Strategy(str, Enum):
    go_all = "go-all"
@@ -359,6 +360,8 @@ class GreatOnes(str, Enum):
    red_deer = "red_deer"
    fallow_deer = "fallow_deer"
    tahr = "tahr"
+   red_fox = "red_fox"
+   pheasant = "pheasant"
 
 class Levels(int, Enum):
   TRIVIAL = 1

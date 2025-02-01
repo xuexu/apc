@@ -1,10 +1,10 @@
 {
   "reserve_names": {
     "hirsch": {
-      "reserve_name": "Hirschfelden"
+      "reserve_name": "Hirschfelden Hunting Reserve"
     },
     "layton": {
-      "reserve_name": "Layton Lake"
+      "reserve_name": "Layton Lake District"
     },
     "medved": {
       "reserve_name": "Medved-Taiga National Park"
@@ -16,7 +16,7 @@
       "reserve_name": "Parque Fernando"
     },
     "yukon": {
-      "reserve_name": "Yukon Valley"
+      "reserve_name": "Yukon Valley Nature Reserve"
     },
     "cuatro": {
       "reserve_name": "Cuatro Colinas Game Reserve"
@@ -43,7 +43,10 @@
       "reserve_name": "Emerald Coast"
     },
     "sundarpatan": {
-      "reserve_name": "Sundarpatan"
+      "reserve_name": "Sundarpatan Nepal Hunting Reserve"
+    },
+    "salzwiesen": {
+      "reserve_name": "Salzwiesen Park"
     }
   }
 }

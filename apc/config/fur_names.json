@@ -62,7 +62,7 @@
     },
     "fabled_glacier": {
       "fur_name": "Fabled Glacier"
-    },    
+    },
     "fabled_glacier2": {
       "fur_name": "Fabled Glacier 2"
     },
@@ -99,11 +99,11 @@
     "red": {
       "fur_name": "Red"
     },
-    "lg leucist.": {
-      "fur_name": "Lg leucist."
+    "lg_leucist.": {
+      "fur_name": "Light Grey Leucistic"
     },
-    "bald leuc.": {
-      "fur_name": "Bald leuc."
+    "bald_leuc.": {
+      "fur_name": "Bald Leucistic"
     },
     "honeytones": {
       "fur_name": "Honeytones"
@@ -276,15 +276,6 @@
     "fabled_painted": {
       "fur_name": "Fabled Painted"
     },
-    "redbrown": {
-      "fur_name": "Redbrown"
-    },
-    "lg_leucist.": {
-      "fur_name": "Lg Leucist"
-    },
-    "bald_leuc.": {
-      "fur_name": "Bald Leucist"
-    },
     "blue_grey": {
       "fur_name": "Blue Grey"
     },
@@ -325,13 +316,49 @@
       "fur_name": "White Stripeless"
     },
     "pseudo_melanistic_white": {
-      "fur_name": "Pseudo Melanistic White"
+      "fur_name": "Pseudo Melanistic White 1"
     },
     "pseudo_melanistic": {
-      "fur_name": "Pseudo Melanistic"
+      "fur_name": "Pseudo Melanistic 1"
     },
     "straw": {
       "fur_name": "Straw"
+    },
+    "pseudo_melanistic2": {
+      "fur_name": "Pseudo Melanistic 2"
+    },
+    "pseudo_melanistic_white2": {
+      "fur_name": "Pseudo Melanistic White 2"
+    },
+    "red2": {
+      "fur_name": "Red 2"
+    },
+    "leucistic2": {
+      "fur_name": "Leucistic 2"
+    },
+    "piebald2": {
+      "fur_name": "Piebald 2"
+    },
+    "albino2": {
+      "fur_name": "Albino 2"
+    },
+    "fabled_skull": {
+      "fur_name": "Fabled Skull"
+    },
+    "fabled_latte": {
+      "fur_name": "Fabled Latte"
+    },
+    "fabled_gray": {
+      "fur_name": "Fabled Gray"
+    },
+    "fabled_scar": {
+      "fur_name": "Fabled Scar"
+    },
+    "fabled_half": {
+      "fur_name": "Fabled Half"
+    },
+    "fabled_snow": {
+      "fur_name": "Fabled Snow"
     }
   }
 }

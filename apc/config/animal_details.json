@@ -1147,7 +1147,7 @@
           "albino": 4012,
           "gold": 4023,
           "blonde": 4524,
-          "redbrown": 5026,
+          "red_brown": 5026,
           "light_brown": 7525
         },
         "female": {
@@ -1159,7 +1159,7 @@
           "albino": 4012,
           "gold": 4023,
           "blonde": 4524,
-          "redbrown": 5026,
+          "red_brown": 5026,
           "light_brown": 7525
         }
       },
@@ -1654,7 +1654,7 @@
       "furs": {
         "male": {
           "gray": 196,
-          "redbrown": 9993,
+          "red_brown": 9993,
           "melanistic": 10000,
           "albino": 10005,
           "eggwhite": 10010,
@@ -1662,7 +1662,7 @@
         },
         "female": {
           "gray": 196,
-          "redbrown": 9993,
+          "red_brown": 9993,
           "melanistic": 10000,
           "albino": 10005,
           "eggwhite": 10010,
@@ -2130,7 +2130,7 @@
           "albino": 10023
         },
         "female": {
-          "redbrown": 6,
+          "red_brown": 6,
           "dark_brown": 16,
           "gray": 5020,
           "albino": 10023,
@@ -2329,8 +2329,8 @@
   },
   "moose": {
     "go": {
-      "score_low": 181,
-      "score_high": 295,
+      "score_low": 290,
+      "score_high": 300,
       "weight_low": 621,
       "weight_high": 700,
       "furs": {
@@ -2344,7 +2344,7 @@
     },
     "diamonds": {
       "score_low": 274.99,
-      "score_high": 301.959,
+      "score_high": 290.959,
       "weight_low": 595.991,
       "weight_high": 620.0,
       "furs": {
@@ -2540,7 +2540,7 @@
       "furs": {
         "male": {
           "gray": 246,
-          "redbrown": 3334,
+          "red_brown": 3334,
           "brown": 6678
         },
         "female": {
@@ -2565,6 +2565,15 @@
     }
   },
   "pheasant": {
+    "go": {
+      "score_low": 23,
+      "score_high": 26,
+      "weight_low": 3.1,
+      "weight_high": 4.2,
+      "furs": {
+        "fabled_spotted": 0
+      }
+    },
     "diamonds": {
       "score_low": 20.29,
       "score_high": 21.9,
@@ -2953,6 +2962,15 @@
     }
   },
   "red_fox": {
+    "go": {
+      "score_low": 15.5,
+      "score_high": 19,
+      "weight_low": 15.5,
+      "weight_high": 19,
+      "furs": {
+        "fabled_spotted": 0
+      }
+    },
     "diamonds": {
       "score_low": 14.05,
       "score_high": 15.4,
@@ -3684,14 +3702,14 @@
       "furs": {
         "male": {
           "dark": 898,
-          "redbrown": 3755,
+          "red_brown": 3755,
           "gray": 6264,
           "albino": 10023
         },
         "female": {
           "dark": 898,
           "red": 3753,
-          "redbrown": 3758,
+          "red_brown": 3758,
           "gray": 6266,
           "albino": 10023
         }
@@ -3847,7 +3865,7 @@
           "melanistic": 3344,
           "dark_brown": 3349,
           "albino": 6683,
-          "redbrown": 6689,
+          "red_brown": 6689,
           "piebald": 10023
         }
       },
@@ -4511,12 +4529,14 @@
         "male": {
           "blue": 9,
           "dark_brown": 7514,
-          "piebald": 10023
+          "piebald": 10023,
+          "piebald2": 99999
         },
         "female": {
-          "brown": 2483,
+          "brown": 7514,
           "light_brown": 7495,
-          "piebald": 10003
+          "piebald": 10023,
+          "piebald2": 99999
         }
       },
       "levels": [
@@ -4628,7 +4648,8 @@
           "dark_red_brown": 6265,
           "jet_brown": 8769,
           "gold": 10023,
-          "jet_black": 10031
+          "jet_black": 10031,
+          "albino2": 3506112249
         },
         "female": {
           "dark_brown": 1251,
@@ -4638,7 +4659,8 @@
           "dark_red_brown": 6265,
           "jet_brown": 8769,
           "gold": 10023,
-          "jet_black": 10031
+          "jet_black": 10031,
+          "albino2": 3506112249
         }
       },
       "levels": [
@@ -4681,7 +4703,7 @@
       ]
     }
   },
-  "muntjac": {
+  "northern_red_muntjac": {
     "diamonds": {
       "score_low": 35.24,
       "score_high": 36.672,
@@ -4692,13 +4714,17 @@
           "red": 1,
           "leucistic": 5005,
           "melanistic": 10023,
-          "albino": 10030
+          "albino": 10030,
+          "red2": 99999,
+          "leucistic2": 99999
         },
         "female": {
           "red": 1,
           "leucistic": 5005,
           "melanistic": 10023,
-          "albino": 10030
+          "albino": 10030,
+          "red2": 99999,
+          "leucistic2": 99999
         }
       },
       "levels": [
@@ -4834,7 +4860,9 @@
           "pseudo_melanistic_white": 9941,
           "white": 9956,
           "melanistic": 9970,
-          "pseudo_melanistic": 9980
+          "pseudo_melanistic": 9980,
+          "pseudo_melanistic2": 3200248609,
+          "pseudo_melanistic_white2": 2784956528
         },
         "female": {
           "orange": 160,
@@ -4844,7 +4872,9 @@
           "pseudo_melanistic_white": 9941,
           "white": 9956,
           "melanistic": 9970,
-          "pseudo_melanistic": 9980
+          "pseudo_melanistic": 9980,
+          "pseudo_melanistic2": 3200248609,
+          "pseudo_melanistic_white2": 2784956528
         }
       },
       "levels": [
@@ -4888,6 +4918,21 @@
     }
   },
   "tahr": {
+    "go": {
+      "score_low": 116,
+      "score_high": 143,
+      "weight_low": 150,
+      "weight_high": 180,
+      "furs": {
+        "fabled_golden": 65490621,
+        "fabled_half":   719147336,
+        "fabled_gray":   2412192318,
+        "fabled_snow":   2547945381,
+        "fabled_latte":  3165493258,
+        "fabled_skull":  3336030902,
+        "fabled_scar":   3789054355
+      }
+    },
     "diamonds": {
       "score_low": 101.87,
       "score_high": 107.685,
@@ -4898,7 +4943,7 @@
           "black": 4,
           "dark_brown": 14,
           "white": 24,
-          "redbrown": 34,
+          "red_brown": 34,
           "light_brown": 7505,
           "straw": 8759,
           "red": 10013,
@@ -4906,7 +4951,7 @@
           "albino": 10033
         },
         "female": {
-          "redbrown": 4,
+          "red_brown": 4,
           "light_brown": 7497,
           "straw": 8755,
           "red": 10013,
@@ -4938,6 +4983,82 @@
         [
           141.0,
           180.0
+        ]
+      ]
+    }
+  },
+  "gadwall": {
+    "diamonds": {
+      "score_low": 1080,
+      "score_high": 1150,
+      "weight_low": 1.1,
+      "weight_high": 2.1,
+      "furs": {
+        "male": {
+          "brown_hybrid": 9,
+          "black_brown": 1264,
+          "piebald": 8768,
+          "leucistic": 10023,
+          "melanistic": 10033
+        },
+        "female": {
+          "brown_hybrid": 796,
+          "blonde": 1254,
+          "black_brown": 1264,
+          "piebald": 8768,
+          "melanistic": 10023
+        }
+      },
+      "levels": [
+        [
+          0.4,
+          0.69
+        ],
+        [
+          0.7,
+          0.89
+        ],
+        [
+          0.9,
+          1.09
+        ]
+      ]
+    }
+  },
+  "ferruginous_duck": {
+    "diamonds": {
+      "score_low": 1080,
+      "score_high": 1150,
+      "weight_low": 1.1,
+      "weight_high": 2.1,
+      "furs": {
+        "male": {
+          "brown_hybrid": 9,
+          "black_brown": 1264,
+          "piebald": 8768,
+          "leucistic": 10023,
+          "melanistic": 10033
+        },
+        "female": {
+          "brown_hybrid": 796,
+          "blonde": 1254,
+          "black_brown": 1264,
+          "piebald": 8768,
+          "melanistic": 10023
+        }
+      },
+      "levels": [
+        [
+          0.4,
+          0.69
+        ],
+        [
+          0.7,
+          0.89
+        ],
+        [
+          0.9,
+          1.09
         ]
       ]
     }

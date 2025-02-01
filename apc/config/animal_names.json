@@ -291,7 +291,7 @@
     "wild_yak": {
       "animal_name": "Wild Yak"
     },
-    "muntjac": {
+    "northern_red_muntjac": {
       "animal_name": "Northern Red Muntjac"
     },
     "barasingha": {
@@ -305,6 +305,12 @@
     },
     "tahr": {
       "animal_name": "Tahr"
+    },
+    "gadwall": {
+      "animal_name": "Gadwall"
+    },
+    "ferruginous_duck": {
+      "animal_name": "Ferruginous Duck"
     }
   }
 }

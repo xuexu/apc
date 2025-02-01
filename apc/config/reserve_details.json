@@ -1,6 +1,6 @@
 {
   "hirsch": {
-      "name": "Hirschfelden",
+      "name": "Hirschfelden Hunting Reserve",
       "index": 0,
       "species": [
         "wild_boar",
@@ -15,7 +15,7 @@
       ]
   },
   "layton": {
-      "name": "Layton Lake",
+      "name": "Layton Lake District",
       "index": 1,
       "species": [
         "moose",
@@ -74,7 +74,7 @@
       ]
   },
   "yukon": {
-      "name": "Yukon Valley",
+      "name": "Yukon Valley Nature Reserve",
       "index": 6,
       "species": [
         "harlequin_duck",
@@ -238,23 +238,44 @@
       "javan_rusa"
     ]
   },
-  "sundarpatan": {
-    "name": "Sundarpatan",
+    "sundarpatan": {
+    "name": "Sundarpatan Nepal Hunting Reserve",
     "index": 17,
     "species": [
-      "blue_sheep",
-      "water_buffalo",
-      "snow_leopard",
-      "blackbuck",
-      "nilgai",
-      "tibetan_fox",
-      "wild_yak",
-      "muntjac",
-      "barasingha",
-      "woolly_hare",
-      "bengal_tiger",
-      "greylag_goose",
-      "tahr"
+    "blue_sheep",
+    "water_buffalo",
+    "snow_leopard",
+    "blackbuck",
+    "nilgai",
+    "tibetan_fox",
+    "wild_yak",
+    "northern_red_muntjac",
+    "barasingha",
+    "woolly_hare",
+    "bengal_tiger",
+    "greylag_goose",
+    "tahr"
+    ]
+  },
+    "salzwiesen": {
+    "name": "Salzwiesen Park",
+    "index": 18,
+    "species": [
+    "mallard",
+    "eurasian_wigeon",
+    "goldeneye",
+    "eu_rabbit",
+    "raccoon",
+    "tufted_duck",
+    "black_grouse",
+    "tundra_bean_goose",
+    "red_fox",
+    "eurasian_teal",
+    "gadwall",
+    "pheasant",
+    "greylag_goose",
+    "ferruginous_duck",
+    "raccoon_dog"
     ]
   }
 }

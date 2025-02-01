@@ -1,0 +1,4 @@
+polib
+deep_translator
+deep_translator[ai]
+tqdm
