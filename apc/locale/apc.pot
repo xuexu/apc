@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-01 09:42-0500\n"
+"POT-Creation-Date: 2025-04-08 22:05-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Diamond"
 msgstr ""
 
-#: apc/config.py:70 apc/config.py:398
+#: apc/config.py:70 apc/config.py:400
 msgid "Great One"
 msgstr ""
 
@@ -457,55 +457,55 @@ msgstr ""
 msgid "Mod Imported"
 msgstr ""
 
-#: apc/config.py:380
+#: apc/config.py:382
 msgid "Trivial"
 msgstr ""
 
-#: apc/config.py:382
+#: apc/config.py:384
 msgid "Minor"
 msgstr ""
 
-#: apc/config.py:384
+#: apc/config.py:386
 msgid "Very Easy"
 msgstr ""
 
-#: apc/config.py:386
+#: apc/config.py:388
 msgid "Easy"
 msgstr ""
 
-#: apc/config.py:388
+#: apc/config.py:390
 msgid "Medium"
 msgstr ""
 
-#: apc/config.py:390
+#: apc/config.py:392
 msgid "Hard"
 msgstr ""
 
-#: apc/config.py:392
+#: apc/config.py:394
 msgid "Very Hard"
 msgstr ""
 
-#: apc/config.py:394
+#: apc/config.py:396
 msgid "Mythical"
 msgstr ""
 
-#: apc/config.py:396
+#: apc/config.py:398
 msgid "Legendary"
 msgstr ""
 
-#: apc/config.py:447
+#: apc/config.py:449
 msgid "animal_name"
 msgstr ""
 
-#: apc/config.py:450
+#: apc/config.py:452
 msgid "fur_name"
 msgstr ""
 
-#: apc/config.py:490
+#: apc/config.py:492
 msgid "reserve_name"
 msgstr ""
 
-#: apc/config.py:562
+#: apc/config.py:564
 msgid "name"
 msgstr ""
 

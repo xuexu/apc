@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-01 09:42-0500\n"
+"POT-Creation-Date: 2025-04-08 22:05-0400\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
@@ -82,7 +82,7 @@ msgstr "Мех"
 msgid "Diamond"
 msgstr "Бриллиант"
 
-#: apc/config.py:70 apc/config.py:398
+#: apc/config.py:70 apc/config.py:400
 msgid "Great One"
 msgstr "Великий"
 
@@ -459,55 +459,55 @@ msgstr "Мод экспортирован"
 msgid "Mod Imported"
 msgstr "Мод импортирован"
 
-#: apc/config.py:380
+#: apc/config.py:382
 msgid "Trivial"
 msgstr "Тривиальный"
 
-#: apc/config.py:382
+#: apc/config.py:384
 msgid "Minor"
 msgstr "Незначительный"
 
-#: apc/config.py:384
+#: apc/config.py:386
 msgid "Very Easy"
 msgstr "Очень лёгкий"
 
-#: apc/config.py:386
+#: apc/config.py:388
 msgid "Easy"
 msgstr "Лёгкий"
 
-#: apc/config.py:388
+#: apc/config.py:390
 msgid "Medium"
 msgstr "Средний"
 
-#: apc/config.py:390
+#: apc/config.py:392
 msgid "Hard"
 msgstr "Высокий"
 
-#: apc/config.py:392
+#: apc/config.py:394
 msgid "Very Hard"
 msgstr "Очень высокий"
 
-#: apc/config.py:394
+#: apc/config.py:396
 msgid "Mythical"
 msgstr "Мифический"
 
-#: apc/config.py:396
+#: apc/config.py:398
 msgid "Legendary"
 msgstr "Легендарный"
 
-#: apc/config.py:447
+#: apc/config.py:449
 msgid "animal_name"
 msgstr "имя_животного"
 
-#: apc/config.py:450
+#: apc/config.py:452
 msgid "fur_name"
 msgstr "Мех"
 
-#: apc/config.py:490
+#: apc/config.py:492
 msgid "reserve_name"
 msgstr "Заказник"
 
-#: apc/config.py:562
+#: apc/config.py:564
 msgid "name"
 msgstr "имя"
 
