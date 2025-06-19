@@ -1,12 +1,12 @@
-# animal-population-changer
+# Animal Population Changer - Revived
 
-A tool to modify attributes of animals across all reserves in theHunter: Call of the Wild (COTW).
+A GUI tool to modify attributes of animals across all reserves in *theHunter: Call of the Wild (COTW)*
 
 Release builds are available here on GitHub and on NexusMods: https://www.nexusmods.com/thehuntercallofthewild/mods/440
 
 ![Screenshot](screenshot.png)
 
-This tool can make all species a diamond, the appropriate species a Great one, or have a rare fur.
+## Features
 
 The following mods are possible with this tool:
 1. Make an animal a Great One.
@@ -15,7 +15,7 @@ The following mods are possible with this tool:
 1. Make a female animal a male.
 1. Make a male a female.
 
-The modded population files can be found in a `mods` folder in the same directory you are running the tool.
+Modded population files can be found in a `mods` folder in the same directory you are running the tool.
 
 ## Limitations:
 
@@ -25,7 +25,7 @@ The modded population files can be found in a `mods` folder in the same director
 
 ## How To Build
 
-> Note: This code was built and tested with Python 3.12.8.
+> **NOTE:** This code was built and tested with Python 3.12.8.
 
 Setup virtual environment:
 ```sh
@@ -52,7 +52,7 @@ If you want to build from a wheel:
 ```sh
 pip install -U build
 python -m build
-pip install dist/apc-1.4.3-py3-none-any.whl
+pip install dist/apc-2.0.0-py3-none-any.whl
 ```
 
 If you want to build directly from GitHub:
@@ -67,13 +67,20 @@ pyinstaller --noconsole --add-data "apc/config;config" --add-data "apc/locale;lo
 ./dist/apcgui/apcgui.exe
 ```
 
-## Updating translation data
+## Updating Translation Data
 
 I am not fluent in multiple languages and have outsourced the translation work to the robots. The translation framework is handled with [Babel](https://github.com/python-babel/babel) and the actual translation text is generated with Google Translate using [deep-translator](https://github.com/nidhaloff/deep-translator).
 
 To update the translation data:
 ```sh
-pip install -r translate_requirements.txt
+pip install -r requirements.txt -r translate_requirements.txt
 .scripts\update.bat
 .scripts\compile.bat
 ```
+
+## Credits
+
+This project would not exist without several generous developers that chose to open-source their tools and mods:
+* [**cpypasta**](https://github.com/cpypasta): Developer of the original [Animal Population Changer](https://github.com/cpypasta/apc) that this is forked from
+* [**kk49**](https://github.com/kk49): This project relies heavily on the wonderful [DECA](https://github.com/kk49/deca) to extract and modify game files
+* [**xpltive**](https://github.com/xpltive)/[**0xsthsth1337**](https://next.nexusmods.com/profile/0xSthSth1337): Cracked the fur type algorithm, shared their code, and assisted greatly with understanding fur seed generation

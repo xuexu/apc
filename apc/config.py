@@ -1,13 +1,18 @@
-import os
-import re
-import json
-import sys
-import locale
+from apc.logging_config import get_logger
+
+logger = get_logger(__name__)
+
 import gettext
-from pathlib import Path
+import json
+import locale
+import os
+import random
+import re
+import sys
 from enum import Enum
+from pathlib import Path
+
 from apc import __app_name__
-from typing import List, Tuple
 
 SUPPORTED_LANGUAGES = ["en_US", "de_DE", "zh_CN", "ru_RU", "es_ES"]
 default_locale = None
@@ -78,12 +83,12 @@ def setup_translations() -> None:
   RESERVE_NAME_KEY = translate("Reserve Name (key)")
   global YES
   YES = translate("Yes")
+  global NO
+  NO = translate("No")
   global MODDED
   MODDED = translate("Modded")
   global SPECIES_NAME_KEY
   SPECIES_NAME_KEY = translate("Species (key)")
-  global VIEWING_MODDED
-  VIEWING_MODDED = translate("viewing modded")
   global NEW_BUG
   NEW_BUG = translate("Please copy and paste as a new bug on Nexusmods here")
   global ERROR
@@ -138,14 +143,28 @@ def setup_translations() -> None:
   OTHERS = translate("Others")
   global PARTY
   PARTY = translate("Party")
+  global PARTY_DESCRIPTION
+  PARTY_DESCRIPTION = translate("The sliders set the percentage of eligible animals to modify. Changes affect all species on the reserve.")
   global GREATONE_PARTY
   GREATONE_PARTY = translate("Great One Party")
+  global GREATONE_PARTY_COMPLETE
+  GREATONE_PARTY_COMPLETE = translate("of all eligible animals are Great Ones")
   global DIAMOND_PARTY
   DIAMOND_PARTY = translate("Diamond Party")
-  global WE_ALL_PARTY
-  WE_ALL_PARTY = translate("We All Party")
+  global DIAMOND_PARTY_COMPLETE
+  DIAMOND_PARTY_COMPLETE = translate("of all animals are Diamonds")
+  # global WE_ALL_PARTY
+  # WE_ALL_PARTY = translate("We All Party")
   global FUR_PARTY
-  FUR_PARTY = translate("Fur Party")
+  FUR_PARTY = translate("Random Fur Party")
+  global FUR_PARTY_COMPLETE
+  FUR_PARTY_COMPLETE = translate("of all animals have random furs")
+  global RARE_FUR_PARTY
+  RARE_FUR_PARTY = translate("Rare Fur Party")
+  global RARE_FUR_PARTY_COMPLETE
+  RARE_FUR_PARTY_COMPLETE = translate("of all animals have rare furs")
+  global GENERATE_FUR_SEEDS
+  GENERATE_FUR_SEEDS = translate("Generating fur seeds")
   global EXPLORE
   EXPLORE = translate("Explore")
   global DIAMONDS_AND_GREATONES
@@ -160,8 +179,12 @@ def setup_translations() -> None:
   SHOW_ANIMALS = translate("Show Animals")
   global FILES
   FILES = translate("Files")
+  global FILE_NOT_FOUND
+  FILE_NOT_FOUND = translate("The file could not be found")
   global CONFIGURE_GAME_PATH
   CONFIGURE_GAME_PATH = translate("Configure Game Path")
+  global CONFIGURE_GAME_PATH_ERROR
+  CONFIGURE_GAME_PATH_ERROR = translate("Please configure the path to your game save")
   global LIST_MODS
   LIST_MODS = translate("List Mods")
   global LOAD_MOD
@@ -183,7 +206,13 @@ def setup_translations() -> None:
   global MOD
   MOD = translate("Mod")
   global VIEW_MODDED_VERSION
-  VIEW_MODDED_VERSION = translate("view modded version")
+  VIEW_MODDED_VERSION = translate("View modded version")
+  global VIEWING_LOADED_MOD
+  VIEWING_LOADED_MOD = translate("viewing loaded")
+  global VIEWING_MODDED
+  VIEWING_MODDED = translate("viewing modded")
+  global TOTAL_ANIMALS
+  TOTAL_ANIMALS = translate("Total animals")
   global LOADED
   LOADED = translate("Loaded")
   global MODDED_FILE
@@ -193,7 +222,7 @@ def setup_translations() -> None:
   global UPDATE_TRANSLATIONS
   UPDATE_TRANSLATIONS = translate("update translations")
   global SWITCH_LANGUAGE
-  SWITCH_LANGUAGE = translate("switch language")    
+  SWITCH_LANGUAGE = translate("switch language")
   global PLEASE_RESTART
   PLEASE_RESTART = translate("Please restart to see changes")
   global DEFAULT
@@ -203,9 +232,27 @@ def setup_translations() -> None:
   global OK
   OK = translate("OK")
   global CANCEL
-  CANCEL = translate("Cancel")  
+  CANCEL = translate("Cancel")
   global MODIFY_ANIMALS
   MODIFY_ANIMALS = translate("Modify Animals")
+  global GENDER_COUNTS
+  GENDER_COUNTS = translate("Gender Counts")
+  global ADD_REMOVE_ANIMALS
+  ADD_REMOVE_ANIMALS = translate("Add/Remove Animals")
+  global ADD_ANIMALS
+  ADD_ANIMALS = translate("Adding Animals")
+  global ADD_ANIMALS_ERROR
+  ADD_ANIMALS_ERROR = translate("Can't add all animals")
+  global TOO_MANY_GROUP_ANIMALS
+  TOO_MANY_GROUP_ANIMALS = translate("Each group has a limit of 30 animals")
+  global REMOVE_ANIMALS
+  REMOVE_ANIMALS = translate("Removing Animals")
+  global REMOVE_ANIMALS_ERROR
+  REMOVE_ANIMALS_ERROR = translate("Can't remove animals")
+  global TOO_FEW_GROUP_ANIMALS
+  TOO_FEW_GROUP_ANIMALS = translate("Each group needs at least 1 animal")
+  global TROPHY_RATING
+  TROPHY_RATING = translate("Trophy Rating")
   global FURS
   FURS = translate("Furs")
   global MODIFY_ANIMAL_FURS
@@ -220,12 +267,8 @@ def setup_translations() -> None:
   EXPLORE_ANIMALS = translate("Explore Animals")
   global MANAGE_MODDED_RESERVES
   MANAGE_MODDED_RESERVES = translate("Manage Modded Reserves")
-  global VIEWING_LOADED_MOD
-  VIEWING_LOADED_MOD = translate("viewing loaded")
   global USE_ALL_FURS
   USE_ALL_FURS = translate("use all furs")
-  global NO
-  NO = translate("No")
   global ANIMAL_DETAILS
   ANIMAL_DETAILS = translate("Animal Details")
   global RANDOM_FUR
@@ -237,17 +280,17 @@ def setup_translations() -> None:
   global LOADED_MOD
   LOADED_MOD = translate("Loaded")
   global EXPORT_MOD
-  EXPORT_MOD = translate("Export Mod")  
+  EXPORT_MOD = translate("Export Mod")
   global IMPORT_MOD
   IMPORT_MOD = translate("Import Mod")
   global EXPORT
-  EXPORT = translate("Export")  
+  EXPORT = translate("Export")
   global IMPORT
   IMPORT = translate("Import")
   global EXPORT_MSG
   EXPORT_MSG = translate("Select the location and filename where you want to export")
   global IMPORT_MSG
-  IMPORT_MSG = translate("Select the reserve mod to import")  
+  IMPORT_MSG = translate("Select the reserve mod to import")
   global EXPORT_AS
   EXPORT_AS = translate("Export As")
   global SELECT_FILE
@@ -255,8 +298,22 @@ def setup_translations() -> None:
   global MOD_EXPORTED
   MOD_EXPORTED = translate("Mod Exported")
   global MOD_IMPORTED
-  MOD_IMPORTED = translate("Mod Imported")  
-  
+  MOD_IMPORTED = translate("Mod Imported")
+  global SELECT_A_RESERVE
+  SELECT_A_RESERVE = translate("No reserve data loaded. Select a reserve from the list.")
+  global SELECT_AN_ANIMAL
+  SELECT_AN_ANIMAL = translate("Select an animal from the list.")
+  global LOADING_ANIMALS
+  LOADING_ANIMALS = translate("Loading animals")
+  global ANIMALS_LOADED
+  ANIMALS_LOADED = translate("Animals loaded")
+  global SELECTED_MULTIPLE_RESERVES
+  SELECTED_MULTIPLE_RESERVES = translate("Selected animals from multiple reserves. Modifications will overwrite the following files:")
+  global UPDATED_MULTIPLE_RESERVES
+  UPDATED_MULTIPLE_RESERVES = translate("Updated animals on multiple reserves. Use")
+  global UPDATED_MULTIPLE_RESERVES_2
+  UPDATED_MULTIPLE_RESERVES_2 = translate("to load the modded files for each reserve:")
+
 setup_translations()
 
 def update_language(locale: str) -> None:
@@ -272,7 +329,7 @@ def _find_saves_path() -> str:
     steam_onedrive = Path().home() / "OneDrive/Documents/Avalanche Studios/COTW/Saves"
     epic_saves = Path().home() / "Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
     epic_onedrive = Path().home() / "OneDrive/Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
-    
+
     base_saves = None
     if steam_saves.exists():
       base_saves = steam_saves
@@ -281,7 +338,7 @@ def _find_saves_path() -> str:
     elif steam_onedrive.exists():
       base_saves = steam_onedrive
     elif epic_onedrive.exists():
-      base_saves = epic_onedrive      
+      base_saves = epic_onedrive
 
     save_folder = None
     if base_saves:
@@ -309,18 +366,13 @@ BACKUP_DIR_PATH = Path().cwd() / "backups"
 BACKUP_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
-ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())["animal_names"]
-RESERVE_NAMES = json.load((CONFIG_PATH / "reserve_names.json").open())["reserve_names"]
-FUR_NAMES = json.load((CONFIG_PATH / "fur_names.json").open())["fur_names"]
+ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())
+FUR_NAMES = json.load((CONFIG_PATH / "fur_names.json").open())
 RESERVES = json.load((CONFIG_PATH / "reserve_details.json").open())
 ANIMALS = json.load((CONFIG_PATH / "animal_details.json").open())
+GLOBAL_ANIMAL_TYPES = CONFIG_PATH / "global_animal_types.blo"
+
 # TODO: diamonds that can be both genders need different weight / score values
-# TODO: kangaroos with multiple white furs
-# TODO: crocodiles with multiple spots
-# TODO: wild hogs with multiple light brown variants
-# TODO: bengal tigers with multiple pseudo leucistic and pseudo melanistic variants
-# TODO: tahr great one
-# TODO: missing great one furs
 
 class Reserve(str, Enum):
    hirsch = "hirsch"
@@ -339,11 +391,12 @@ class Reserve(str, Enum):
    emerald = "emerald"
    sundarpatan = "sundarpatan"
    salzwiesen = "salzwiesen"
+   alberta = "alberta"
 
 class Strategy(str, Enum):
-   go_all = "go-all"
-   go_furs = "go-furs"
-   go_some = "go-some"
+   great_one_all = "great-one-all"
+   great_one_furs = "great-one-furs"
+   great_one_some = "great-one-some"
    diamond_all = "diamond-all"
    diamond_furs = "diamond-furs"
    diamond_some = "diamond-some"
@@ -353,17 +406,8 @@ class Strategy(str, Enum):
    add = "add"
    remove = "remove"
 
-class GreatOnes(str, Enum):
-   moose = "moose"
-   black_bear = "black_bear"
-   whitetail_deer = "whitetail_deer"
-   red_deer = "red_deer"
-   fallow_deer = "fallow_deer"
-   tahr = "tahr"
-   red_fox = "red_fox"
-   pheasant = "pheasant"
-
 class Levels(int, Enum):
+  UNKNOWN = 0
   TRIVIAL = 1
   MINOR = 2
   VERY_EASY = 3
@@ -376,6 +420,8 @@ class Levels(int, Enum):
   GREAT_ONE = 10
 
 def get_level_name(level: Levels):
+  if level == Levels.UNKNOWN:
+    return translate("Unknown")
   if level == Levels.TRIVIAL:
    return translate("Trivial")
   if level == Levels.MINOR:
@@ -400,6 +446,8 @@ def get_level_name(level: Levels):
 
 def get_difficulty(difficulty: str):
   match difficulty:
+    case "Unknown":
+      return 0
     case "Trivial":
       return 1
     case "Minor":
@@ -423,10 +471,6 @@ def get_difficulty(difficulty: str):
     case _:
       return None
 
-def format_key(key: str) -> str:
-  key = [s.capitalize() for s in re.split("_|-", key)]
-  return " ".join(key)
-
 def load_config(config_path: Path) -> int:
   config_path.read_text()
 
@@ -442,22 +486,46 @@ def get_reserve_species_renames(reserve_key: str) -> dict:
   reserve = get_reserve(reserve_key)
   return reserve["renames"] if "renames" in reserve else {}
 
-def get_species_name(key: str) -> str:
-  is_unique = species_unique_to_reserve(key)
-  return F"{translate(ANIMAL_NAMES[key]['animal_name'])}{' ⋆' if is_unique else ''}"
+def get_species_name(species_key: str, star: bool = False) -> str:
+  is_unique = species_unique_to_reserve(species_key)
+  return F"{translate(ANIMAL_NAMES[species_key]['animal_name'])}{' ⭐' if is_unique and star else ''}"
 
 def get_fur_name(key: str) -> str:
-  return translate(FUR_NAMES[key]["fur_name"])
-
-def get_fur_seed(species_key: str, fur_key: str, gender: str, go: bool = False) -> int:
-  if go:
-    return get_species(species_key)["go"]["furs"][fur_key]
+  if fur := FUR_NAMES.get(key):
+    return translate(fur["fur_name"])
   else:
-    return get_species(species_key)["diamonds"]["furs"][gender][fur_key]
+    logger.error(f"Unable to translate fur: {key}")
+    return fur
+
+def get_furs(species_key: str, gender: str, great_one: bool = None) -> list[str]:
+  if (species_config := get_species(species_key)) is None:
+    return []
+  gender_key = f"great_one_{gender}" if great_one else gender
+  gender_furs = sorted([fur for fur, probability in species_config["gender"][gender_key]["furs"].items() if probability > 0])
+  return gender_furs
+
+def get_rare_furs(species_key: str, gender: str) -> list[str]:
+  if (species_config := get_species(species_key)) is None:
+    return []
+  fur_total_probability = species_config["gender"][gender]["fur_total_probability"]
+  gender_furs = species_config["gender"][gender]["furs"]
+  '''
+  "Rarity" values in `global_animal_types.blo` are inconsistent.
+  Not worth adding/maintaining "rarity" values for each fur and muddying up the JSON.
+  "Uncommon" is a difficult distinction. Should those be included as "rare" if they are fairly low percentage (eg <10%)?
+  - Ring-Necked Pheasant: Mottling/Grey @ 12.5% are "common"
+  - Himalayan Tahrs: Light Brown/Straw @ 12.5% are "uncommon"
+  - Feral Goats: Black-Brown/Black-White/White-Brown @ 8.33% are "uncommon"
+  - Water Buffalo Black @ 2-3% are "uncommon"
+  All true "Rare" and "Very Rare" furs are below 1%
+  '''
+  rare_furs = [fur for fur, probability in gender_furs.items() if (probability/fur_total_probability) < 0.01]  # This is 1%, not 0.01%
+  logger.debug(f"{species_key} :: {gender} >> {rare_furs}")
+  return rare_furs
 
 def species(reserve_key: str, include_keys = False) -> list:
-   species_keys = RESERVES[reserve_key]["species"]
-   return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
+  species_keys = RESERVES[reserve_key]["species"]
+  return [f"{get_species_name(s)}{' (' + s + ')' if include_keys else ''}" for s in species_keys]
 
 def get_species_key(species_name: str) -> str:
   for animal_name_key, names in ANIMAL_NAMES.items():
@@ -465,87 +533,136 @@ def get_species_key(species_name: str) -> str:
       return animal_name_key
   return None
 
-def get_species_furs(species_key: str, gender: str, go: bool = False) -> List[str]:
-  species = get_species(species_key)
-  if go:
-    return list(species["go"]["furs"].values())
-  elif gender == "both":
-    males = list(species["diamonds"]["furs"]["male"].values())
-    females = list(species["diamonds"]["furs"]["female"].values())
+def get_species_furs(species_key: str, gender: str, great_one: bool = None) -> list[str]:
+  if gender == "both":
+    males = get_furs(species_key, "male", great_one=great_one)
+    females = get_furs(species_key, "female", great_one=great_one)
     return males + females
   else:
-    return list(species["diamonds"]["furs"][gender].values())
+    return get_furs(species_key, gender, great_one=great_one)
 
-def get_species_fur_names(species_key: str, gender: str, go: bool = False) -> Tuple[List[str],List[int]]:
-  species = get_species(species_key)
-  species_config = species["go"]["furs"] if go else species["diamonds"]["furs"][gender]
-  return ([get_fur_name(x) for x in list(species_config.keys())], [x for x in list(species_config.keys())])
+def get_species_fur_names(species_key: str, gender: str, great_one: bool = None) -> dict[str, list[str]]:
+  species_furs = get_species_furs(species_key, gender, great_one)
+  return {"keys": [x for x in species_furs], "names": [get_fur_name(x) for x in species_furs]}
 
 def get_reserve_species_name(species_key: str, reserve_key: str) -> str:
   renames = get_reserve_species_renames(reserve_key)
   species_key = renames[species_key] if species_key in renames else species_key
-  return get_species_name(species_key)
+  return get_species_name(species_key, star=True)
 
 def get_reserve_name(key: str) -> str:
-  return translate(RESERVE_NAMES[key]["reserve_name"])
+  return translate(RESERVES[key]["reserve_name"])
 
-def reserve_keys() -> list:
+def reserve_keys() -> list[str]:
   return list(dict.keys(RESERVES))
 
-def reserves(include_keys = False) -> list:
-   keys = list(dict.keys(RESERVES))
-   return [f"{get_reserve_name(r)}{' (' + r + ')' if include_keys else ''}" for r in keys]
+def reserve_names(include_keys = False) -> list[str]:
+  keys = list(dict.keys(RESERVES))
+  return [f"{get_reserve_name(r)}{' (' + r + ')' if include_keys else ''}" for r in keys]
+
+def reserves() -> list[dict]:
+  return [{"key": key, "name": name} for key, name in zip(reserve_keys(), reserve_names())]
+
+def get_reserve_key_from_name(name: str) -> str:
+  return reserve_keys()[reserve_names().index(name)]
 
 def get_reserve(reserve_key: str) -> dict:
   return RESERVES[reserve_key]
 
-def get_reserve_species(reserve_key: str) -> dict:
+def get_reserve_species(reserve_key: str) -> list:
   return get_reserve(reserve_key)["species"]
 
 def get_species(species_key: str) -> dict:
-  return ANIMALS[species_key]
+  # Te AWaroa has an empty list of animals for its first population
+  # We represent this with "_BLANK_GROUPS_ARRAY" in `reserve_details.json`
+  return ANIMALS.get(species_key, None)
 
 def get_diamond_gender(species_key: str) -> str:
-  species_config = get_species(species_key)["diamonds"]
-  return species_config["gender"] if "gender" in species_config else "male"
+    if (species_config := get_species(species_key)) is None:
+      return None
+    diamond_min = species_config["trophy"]["diamond"]["score_low"]
+    male_score = species_config["gender"]["male"]["score_high"]
+    female_score = species_config["gender"]["female"]["score_high"]
 
-def _get_fur(furs: dict, seed: int) -> str:
-  try:
-    return next(key for key, value in furs.items() if value == seed)
-  except:
+    if male_score >= diamond_min and female_score >= diamond_min:
+        return "both"
+    if male_score >= diamond_min:
+      return "male"
+    if female_score >= diamond_min:
+      return "female"
+    logger.error(f"No valid Diamond genders for {species_key}")
     return None
 
-def get_animal_fur_by_seed(species: str, gender: str, seed: int, is_go: bool = False) -> str:
-  if species not in ANIMALS:
-     return "-"
+def get_great_one_gender(species_key: str) -> str | None:
+  if (species_config := get_species(species_key)) is None:
+    return None
+  keys = species_config["gender"].keys()
+  great_one_keys = {k.removeprefix("great_one_") for k in keys if k.startswith("great_one_")}
+  if not great_one_keys:
+    return None
+  return "both" if len(great_one_keys) == 2 else next(iter(great_one_keys))
 
-  animal = ANIMALS[species]
-  go_furs = animal["go"]["furs"] if "go" in animal and "furs" in animal["go"] else []
-  diamond_furs = animal["diamonds"]["furs"] if "furs" in animal["diamonds"] else []
-  diamond_furs = diamond_furs[gender] if gender in diamond_furs else []
-  go_key = _get_fur(go_furs, seed)
-  diamond_key = _get_fur(diamond_furs, seed)
-  if go_key and is_go:
-    return get_fur_name(go_key)
-  elif diamond_key:
-    return get_fur_name(diamond_key)
-  else:
-    return "-"
+def get_great_one_species(reserve_key: str) -> list[str]:
+  great_one_species = []
+  for species_key in get_reserve_species(reserve_key):
+    if valid_great_one_species(species_key):
+      great_one_species.append(species_key)
+  return great_one_species
 
-def valid_species_for_reserve(species: str, reserve: str) -> bool:
-  return reserve in RESERVES and species in RESERVES[reserve]["species"]
+def get_safe_diamond_values(species_config: dict) -> dict[str, float]:
+  '''
+  Animals that use TruRACS antler/horn generation have some randomness in their scoring
+  A TruRACS animal at the very low end of Diamond weight/score will often be a Gold due to an "imperfect" rack
+  For TruRACS animals, add 15% padding to the low end of diamond values to increase the odds that we get diamonds
+  Return regular values for non-TruRACS animals
+  '''
+  low_weight = species_config["trophy"]["diamond"]["weight_low"]
+  high_weight =species_config["trophy"]["diamond"]["weight_high"]
+  low_score = species_config["trophy"]["diamond"]["score_low"]
+  high_score = species_config["trophy"]["diamond"]["score_high"]
+  if species_config.get("truracs"):
+    low_weight = min(low_weight, high_weight) + (0.2 * abs(high_weight - low_weight))
+    low_score = min(low_score, high_score) + (0.2 * abs(high_score - low_score))
+  return {"weight_low": low_weight, "score_low": low_score, "weight_high": high_weight, "score_high": high_score}
 
-def valid_species(species: str) -> bool:
-  return species in list(ANIMALS.keys())
+def generate_weight_and_score(gender_data, percentile: float = None, fuzz: bool = True) -> tuple[float, float]:
+    '''
+    Animals spawned by the game tend to have weight and score values in roughly the same percentile
+    There is some variation of approximately to ±1% of the given range for randomness
+    For example:
+    - Male Whitetail Deer have a weight range of 59-100 and a score range of 71.2-275.5
+    - A male Whitetail Deer with a weight of 79.5kg is in the 50th percentile (halfway between min/max weights)
+    - That deer should have a score of roughly 173.35 (50th percentile, halfway between min/max scores)
+    - 1% of the score range is ~2.04 points, so our 79.5kg male Whitetail Deer should have a score between 171.31-175.39
+    '''
+    weight_low = gender_data.get("weight_low")
+    weight_high = gender_data.get("weight_high")
+    score_low = gender_data.get("score_low")
+    score_high = gender_data.get("score_high")
+    if not percentile:
+      percentile = random.uniform(0.01,1)
+    weight_variation = random.uniform(-0.01, 0.01) * (weight_high - weight_low) if fuzz else 0
+    weight = weight_low + percentile * (weight_high - weight_low) + weight_variation
+    weight = max(weight_low, min(weight_high, weight))
+    score_variation = random.uniform(-0.01, 0.01) * (score_high - score_low) if fuzz else 0
+    score = score_low + percentile * (score_high - score_low) + score_variation
+    score = max(score_low, min(score_high, score))
+    return weight, score
 
-def valid_go_species(species: str) -> bool:
-    return species in GreatOnes.__members__
+def valid_species_for_reserve(species_key: str, reserve: str) -> bool:
+  return reserve in RESERVES and species_key in RESERVES[reserve]["species"]
+
+def valid_species(species_key: str) -> bool:
+  return species_key in list(ANIMALS.keys())
+
+def valid_great_one_species(species_key: str) -> bool:
+    return get_great_one_gender(species_key) is not None
 
 def valid_fur_species(species_key: str) -> bool:
   return True
 
-def get_population_file_name(reserve: str):
-    index = RESERVES[reserve]["index"]
+def get_population_file_name(reserve_key: str):
+    index = RESERVES[reserve_key]["index"]
     return f"animal_population_{index}"
 
 def get_population_reserve_key(filename: str):
@@ -559,7 +676,7 @@ def get_population_name(filename: str):
   for _reserve, details in RESERVES.items():
     reserve_filename = f"animal_population_{details['index']}"
     if reserve_filename == filename:
-      return translate(details["name"])
+      return translate(details["reserve_name"])
   return None
 
 def species_unique_to_reserve(species_key: str) -> bool:

@@ -1,364 +1,536 @@
 {
-  "fur_names": {
-    "piebald": {
-      "fur_name": "Piebald"
-    },
-    "olive": {
-      "fur_name": "Olive"
-    },
-    "dark_brown": {
-      "fur_name": "Dark Brown"
-    },
-    "albino": {
-      "fur_name": "Albino"
-    },
-    "melanistic": {
-      "fur_name": "Melanistic"
-    },
-    "gray": {
-      "fur_name": "Gray"
-    },
-    "brown": {
-      "fur_name": "Brown"
-    },
-    "mottled": {
-      "fur_name": "Mottled"
-    },
-    "spotted": {
-      "fur_name": "Spotted"
-    },
-    "dark": {
-      "fur_name": "Dark"
-    },
-    "orange": {
-      "fur_name": "Orange"
-    },
-    "brown_hybrid": {
-      "fur_name": "Brown Hybrid"
-    },
-    "gray_brown": {
-      "fur_name": "Gray Brown"
-    },
-    "light_brown": {
-      "fur_name": "Light Brown"
-    },
-    "buff": {
-      "fur_name": "Buff"
-    },
-    "black": {
-      "fur_name": "Black"
-    },
-    "bronze": {
-      "fur_name": "Bronze"
-    },
-    "dusky": {
-      "fur_name": "Dusky"
-    },
-    "cinnamon": {
-      "fur_name": "Cinnamon"
-    },
-    "blonde": {
-      "fur_name": "Blonde"
-    },
-    "fabled_glacier": {
-      "fur_name": "Fabled Glacier"
-    },
-    "fabled_glacier2": {
-      "fur_name": "Fabled Glacier 2"
-    },
-    "fabled_chestnut": {
-      "fur_name": "Fabled Chestnut"
-    },
-    "fabled_cream": {
-      "fur_name": "Fabled Cream"
-    },
-    "fabled_spotted": {
-      "fur_name": "Fabled Spotted"
-    },
-    "fabled_spirit": {
-      "fur_name": "Fabled Spirit"
-    },
-    "leucistic": {
-      "fur_name": "Leucistic"
-    },
-    "gold": {
-      "fur_name": "Gold"
-    },
-    "dark_grey": {
-      "fur_name": "Dark Grey"
-    },
-    "tan": {
-      "fur_name": "Tan"
-    },
-    "crowned": {
-      "fur_name": "Crowned"
-    },
-    "blue": {
-      "fur_name": "Blue"
-    },
-    "red": {
-      "fur_name": "Red"
-    },
-    "lg_leucist.": {
-      "fur_name": "Light Grey Leucistic"
-    },
-    "bald_leuc.": {
-      "fur_name": "Bald Leucistic"
-    },
-    "honeytones": {
-      "fur_name": "Honeytones"
-    },
-    "beige": {
-      "fur_name": "Beige"
-    },
-    "ochre": {
-      "fur_name": "Ochre"
-    },
-    "light_gray": {
-      "fur_name": "Light Gray"
-    },
-    "light_bronze": {
-      "fur_name": "Light Bronze"
-    },
-    "spirit": {
-      "fur_name": "Spirit"
-    },
-    "red_brown": {
-      "fur_name": "Red Brown"
-    },
-    "dark_green": {
-      "fur_name": "Dark Green"
-    },
-    "light_green": {
-      "fur_name": "Light Green"
-    },
-    "hybrid_blue": {
-      "fur_name": "Hybrid Blue"
-    },
-    "hybrid_green": {
-      "fur_name": "Hybrid Green"
-    },
-    "eclipse": {
-      "fur_name": "Eclipse"
-    },
-    "hybrid": {
-      "fur_name": "Hybrid"
-    },
-    "spotted_dark": {
-      "fur_name": "Spotted Dark"
-    },
-    "spotted_red": {
-      "fur_name": "Spotted Red"
-    },
-    "white_brown": {
-      "fur_name": "White Brown"
-    },
-    "black_brown": {
-      "fur_name": "Black Brown"
-    },
-    "black_white": {
-      "fur_name": "Black White"
-    },
-    "white": {
-      "fur_name": "White"
-    },
-    "mixed": {
-      "fur_name": "Mixed"
-    },
-    "black_spots": {
-      "fur_name": "Black Spots"
-    },
-    "blackgold": {
-      "fur_name": "Blackgold"
-    },
-    "pink": {
-      "fur_name": "Pink"
-    },
-    "two_tones": {
-      "fur_name": "Two Tones"
-    },
-    "eggwhite": {
-      "fur_name": "Eggwhite"
-    },
-    "pale": {
-      "fur_name": "Pale"
-    },
-    "pristine": {
-      "fur_name": "Pristine"
-    },
-    "winter": {
-      "fur_name": "Winter"
-    },
-    "fabled_two_tone": {
-      "fur_name": "Fabled Two Tone"
-    },
-    "fabled_birch": {
-      "fur_name": "Fabled Birch"
-    },
-    "fabled_oak": {
-      "fur_name": "Fabled Oak"
-    },
-    "fabled_speckled": {
-      "fur_name": "Fabled Speckled"
-    },
-    "fabled_spruce": {
-      "fur_name": "Fabled Spruce"
-    },
-    "fabled_ashen": {
-      "fur_name": "Fabled Ashen"
-    },
-    "molting": {
-      "fur_name": "Molting"
-    },
-    "dilute": {
-      "fur_name": "Dilute"
-    },
-    "dark_red": {
-      "fur_name": "Dark Red"
-    },
-    "piebald-grey": {
-      "fur_name": "Piebald Grey"
-    },
-    "piebald-blnd": {
-      "fur_name": "Piebald Blnd"
-    },
-    "lightbuff": {
-      "fur_name": "Lightbuff"
-    },
-    "bicolor": {
-      "fur_name": "Bicolor"
-    },
-    "chestnut": {
-      "fur_name": "Chestnut"
-    },
-    "cream": {
-      "fur_name": "Cream"
-    },
-    "bright": {
-      "fur_name": "Bright"
-    },
-    "fabled_hooded": {
-      "fur_name": "Fabled Hooded"
-    },
-    "fabled_mocha": {
-      "fur_name": "Fabled Mocha"
-    },
-    "two_tone": {
-      "fur_name": "Two Tone"
-    },
-    "grey_brown": {
-      "fur_name": "Grey Brown"
-    },
-    "mocha": {
-      "fur_name": "Mocha"
-    },
-    "dusky_gradient": {
-      "fur_name": "Dusky Gradient"
-    },
-    "yellow": {
-      "fur_name": "Yellow"
-    },
-    "maroon": {
-      "fur_name": "Maroon"
-    },
-    "dark_spotted": {
-      "fur_name": "Dark Spotted"
-    },
-    "chocolate": {
-      "fur_name": "Chocolate"
-    },
-    "fabled_silver": {
-      "fur_name": "Fabled Silver"
-    },
-    "fabled_golden": {
-      "fur_name": "Fabled Golden"
-    },
-    "fabled_painted": {
-      "fur_name": "Fabled Painted"
-    },
-    "blue_grey": {
-      "fur_name": "Blue Grey"
-    },
-    "slate_grey": {
-      "fur_name": "Slate Grey"
-    },
-    "caramel": {
-      "fur_name": "Caramel"
-    },
-    "snow": {
-      "fur_name": "Snow"
-    },
-    "grey": {
-      "fur_name": "Grey"
-    },
-    "tawny": {
-      "fur_name": "Tawny"
-    },
-    "smoke": {
-      "fur_name": "Smoke"
-    },
-    "sand": {
-      "fur_name": "Sand"
-    },
-    "dark_red_brown": {
-      "fur_name": "Dark Red Brown"
-    },
-    "jet_brown": {
-      "fur_name": "Jet Brown"
-    },
-    "jet_black": {
-      "fur_name": "Jet Black"
-    },
-    "light_grey": {
-      "fur_name": "Light Grey"
-    },
-    "white_stripeless": {
-      "fur_name": "White Stripeless"
-    },
-    "pseudo_melanistic_white": {
-      "fur_name": "Pseudo Melanistic White 1"
-    },
-    "pseudo_melanistic": {
-      "fur_name": "Pseudo Melanistic 1"
-    },
-    "straw": {
-      "fur_name": "Straw"
-    },
-    "pseudo_melanistic2": {
-      "fur_name": "Pseudo Melanistic 2"
-    },
-    "pseudo_melanistic_white2": {
-      "fur_name": "Pseudo Melanistic White 2"
-    },
-    "red2": {
-      "fur_name": "Red 2"
-    },
-    "leucistic2": {
-      "fur_name": "Leucistic 2"
-    },
-    "piebald2": {
-      "fur_name": "Piebald 2"
-    },
-    "albino2": {
-      "fur_name": "Albino 2"
-    },
-    "fabled_skull": {
-      "fur_name": "Fabled Skull"
-    },
-    "fabled_latte": {
-      "fur_name": "Fabled Latte"
-    },
-    "fabled_gray": {
-      "fur_name": "Fabled Gray"
-    },
-    "fabled_scar": {
-      "fur_name": "Fabled Scar"
-    },
-    "fabled_half": {
-      "fur_name": "Fabled Half"
-    },
-    "fabled_snow": {
-      "fur_name": "Fabled Snow"
-    }
+  "albino": {
+    "fur_name": "Albino"
+  },
+  "albino_2": {
+    "fur_name": "Albino 2"
+  },
+  "albino_boss": {
+    "fur_name": "Albino - Boss"
+  },
+  "beige": {
+    "fur_name": "Beige"
+  },
+  "bicolor": {
+    "fur_name": "Bicolor"
+  },
+  "black": {
+    "fur_name": "Black"
+  },
+  "black_brown": {
+    "fur_name": "Black Brown"
+  },
+  "black_brown_2": {
+    "fur_name": "Black Brown 2"
+  },
+  "black_spots": {
+    "fur_name": "Black Spots"
+  },
+  "black_spots_2": {
+    "fur_name": "Black Spots 2"
+  },
+  "black_white": {
+    "fur_name": "Black White"
+  },
+  "blackgold": {
+    "fur_name": "Blackgold"
+  },
+  "blonde": {
+    "fur_name": "Blonde"
+  },
+  "blue": {
+    "fur_name": "Blue"
+  },
+  "blue_grey": {
+    "fur_name": "Blue Grey"
+  },
+  "blue_morph": {
+    "fur_name": "Blue Morph"
+  },
+  "bright": {
+    "fur_name": "Bright"
+  },
+  "bronze": {
+    "fur_name": "Bronze"
+  },
+  "brown": {
+    "fur_name": "Brown"
+  },
+  "brown_2": {
+    "fur_name": "Brown 2"
+  },
+  "brown_hybrid": {
+    "fur_name": "Brown Hybrid"
+  },
+  "brown_hybrid_2": {
+    "fur_name": "Brown Hybrid 2"
+  },
+  "brown_maned": {
+    "fur_name": "Brown Maned"
+  },
+  "buff": {
+    "fur_name": "Buff"
+  },
+  "caramel": {
+    "fur_name": "Caramel"
+  },
+  "chestnut": {
+    "fur_name": "Chestnut"
+  },
+  "chocolate": {
+    "fur_name": "Chocolate"
+  },
+  "cinnamon": {
+    "fur_name": "Cinnamon"
+  },
+  "cream": {
+    "fur_name": "Cream"
+  },
+  "crowned": {
+    "fur_name": "Crowned"
+  },
+  "dark": {
+    "fur_name": "Dark"
+  },
+  "dark_2": {
+    "fur_name": "Dark 2"
+  },
+  "dark_brown": {
+    "fur_name": "Dark Brown"
+  },
+  "dark_brown_2": {
+    "fur_name": "Dark Brown 2"
+  },
+  "dark_green": {
+    "fur_name": "Dark Green"
+  },
+  "dark_grey": {
+    "fur_name": "Dark Grey"
+  },
+  "dark_red": {
+    "fur_name": "Dark Red"
+  },
+  "dark_red_brown": {
+    "fur_name": "Dark Red Brown"
+  },
+  "dilute": {
+    "fur_name": "Dilute"
+  },
+  "dilute_silver": {
+    "fur_name": "Dilute Silver"
+  },
+  "dusky": {
+    "fur_name": "Dusky"
+  },
+  "duskygradient": {
+    "fur_name": "Dusky Gradient"
+  },
+  "eclipse": {
+    "fur_name": "Eclipse"
+  },
+  "eggwhite": {
+    "fur_name": "Eggwhite"
+  },
+  "erythristic": {
+    "fur_name": "Erythristic"
+  },
+  "erythristic_golden": {
+    "fur_name": "Erythristic Golden"
+  },
+  "fantasma": {
+    "fur_name": "Fantasma"
+  },
+  "ghost": {
+    "fur_name": "Ghost"
+  },
+  "ginger": {
+    "fur_name": "Ginger"
+  },
+  "gingersplit": {
+    "fur_name": "Gingersplit"
+  },
+  "gold": {
+    "fur_name": "Gold"
+  },
+  "gray_brown": {
+    "fur_name": "Grey Brown"
+  },
+  "great_one_black_bear_fabled_chestnut": {
+    "fur_name": "Fabled Chestnut"
+  },
+  "great_one_black_bear_fabled_cream": {
+    "fur_name": "Fabled Cream"
+  },
+  "great_one_black_bear_fabled_glacier": {
+    "fur_name": "Fabled Glacier"
+  },
+  "great_one_black_bear_fabled_glacier_2": {
+    "fur_name": "Fabled Glacier 2"
+  },
+  "great_one_black_bear_fabled_spirit": {
+    "fur_name": "Fabled Spirit"
+  },
+  "great_one_black_bear_fabled_spotted": {
+    "fur_name": "Fabled Spotted"
+  },
+  "great_one_fallow_deer_a": {
+    "fur_name": "Fabled Silver"
+  },
+  "great_one_fallow_deer_b": {
+    "fur_name": "Fabled Piebald"
+  },
+  "great_one_fallow_deer_c": {
+    "fur_name": "Fabled Hooded"
+  },
+  "great_one_fallow_deer_d": {
+    "fur_name": "Fabled Golden"
+  },
+  "great_one_fallow_deer_e": {
+    "fur_name": "Fabled Mocha"
+  },
+  "great_one_moose_a": {
+    "fur_name": "Fabled Spruce"
+  },
+  "great_one_moose_b": {
+    "fur_name": "Fabled Two Tone"
+  },
+  "great_one_moose_c": {
+    "fur_name": "Fabled Birch"
+  },
+  "great_one_moose_d": {
+    "fur_name": "Fabled Ashen"
+  },
+  "great_one_moose_e": {
+    "fur_name": "Fabled Spotted"
+  },
+  "great_one_moose_f": {
+    "fur_name": "Fabled Oak"
+  },
+  "great_one_muledeer_broderbuck": {
+    "fur_name": "Fabled Dripple Drizzle"
+  },
+  "great_one_muledeer_cobweb": {
+    "fur_name": "Fabled Cobweb Enigma"
+  },
+  "great_one_muledeer_corkscrew": {
+    "fur_name": "Fabled Dusky Drift"
+  },
+  "great_one_muledeer_deadtree": {
+    "fur_name": "Fabled Milky Way"
+  },
+  "great_one_muledeer_rosethorns": {
+    "fur_name": "Fabled Petal Puff"
+  },
+  "great_one_muledeer_velvetstripes": {
+    "fur_name": "Fabled Cinnamon Stripes"
+  },
+  "great_one_pheasant_citrine": {
+    "fur_name": "Fabled Citrine"
+  },
+  "great_one_pheasant_emerald": {
+    "fur_name": "Fabled Emerald"
+  },
+  "great_one_pheasant_garnet": {
+    "fur_name": "Fabled Garnet"
+  },
+  "great_one_pheasant_morganite": {
+    "fur_name": "Fabled Morganite"
+  },
+  "great_one_pheasant_obsidian": {
+    "fur_name": "Fabled Obsidian"
+  },
+  "great_one_pheasant_pearl": {
+    "fur_name": "Fabled Pearl"
+  },
+  "great_one_pheasant_ruby": {
+    "fur_name": "Fabled Ruby"
+  },
+  "great_one_pheasant_sapphire": {
+    "fur_name": "Fabled Sapphire"
+  },
+  "great_one_red_deer": {
+    "fur_name": "Fabled Spotted"
+  },
+  "great_one_red_fox_blood_moon": {
+    "fur_name": "Fabled Blood Moon"
+  },
+  "great_one_red_fox_candy_cane": {
+    "fur_name": "Fabled Candycane"
+  },
+  "great_one_red_fox_cherry_blossom": {
+    "fur_name": "Fabled Cherry Blossom"
+  },
+  "great_one_red_fox_licorice": {
+    "fur_name": "Fabled Licorice"
+  },
+  "great_one_red_fox_midnight_poppy": {
+    "fur_name": "Fabled Midnight Poppy"
+  },
+  "great_one_red_fox_mystic_snowdrop": {
+    "fur_name": "Fabled Mystic Snowdrop"
+  },
+  "great_one_red_fox_peppermint": {
+    "fur_name": "Fabled Peppermint"
+  },
+  "great_one_red_fox_rosebud_frost": {
+    "fur_name": "Fabled Rosebud Frost"
+  },
+  "great_one_red_fox_scarlet_nightshade": {
+    "fur_name": "Fabled Scarlet Nightshade"
+  },
+  "great_one_tahr_gold": {
+    "fur_name": "Fabled Gold"
+  },
+  "great_one_tahr_grey": {
+    "fur_name": "Fabled Grey"
+  },
+  "great_one_tahr_half": {
+    "fur_name": "Fabled Half"
+  },
+  "great_one_tahr_latte": {
+    "fur_name": "Fabled Latte"
+  },
+  "great_one_tahr_scars": {
+    "fur_name": "Fabled Scars"
+  },
+  "great_one_tahr_skull": {
+    "fur_name": "Fabled Skull"
+  },
+  "great_one_tahr_snow": {
+    "fur_name": "Fabled Snow"
+  },
+  "great_one_whitetail": {
+    "fur_name": "Fabled Piebald"
+  },
+  "grey": {
+    "fur_name": "Grey"
+  },
+  "grey_2": {
+    "fur_name": "Grey 2"
+  },
+  "honeytones": {
+    "fur_name": "Honeytones"
+  },
+  "hybrid": {
+    "fur_name": "Hybrid"
+  },
+  "hybrid_1": {
+    "fur_name": "Hybrid 1"
+  },
+  "hybrid_2": {
+    "fur_name": "Hybrid 2"
+  },
+  "hybrid_blue": {
+    "fur_name": "Hybrid Blue"
+  },
+  "hybrid_green": {
+    "fur_name": "Hybrid Green"
+  },
+  "intermediate_morph": {
+    "fur_name": "Intermediate Morph"
+  },
+  "jet_black": {
+    "fur_name": "Jet Black"
+  },
+  "jet_brown": {
+    "fur_name": "Jet Brown"
+  },
+  "leucistic": {
+    "fur_name": "Leucistic"
+  },
+  "leucistic_2": {
+    "fur_name": "Leucistic 2"
+  },
+  "leucistic_3": {
+    "fur_name": "Leucistic 3"
+  },
+  "leucistic_4": {
+    "fur_name": "Leucistic 4"
+  },
+  "leucistic_5": {
+    "fur_name": "Leucistic 5"
+  },
+  "light_bronze": {
+    "fur_name": "Light Bronze"
+  },
+  "light_brown": {
+    "fur_name": "Light Brown"
+  },
+  "light_brown_2": {
+    "fur_name": "Light Brown 2"
+  },
+  "light_green": {
+    "fur_name": "Light Green"
+  },
+  "light_grey": {
+    "fur_name": "Light Grey"
+  },
+  "lightbuff": {
+    "fur_name": "Lightbuff"
+  },
+  "lightgreyleucistic": {
+    "fur_name": "Light Grey Leucistic"
+  },
+  "maroon": {
+    "fur_name": "Maroon"
+  },
+  "melanistic": {
+    "fur_name": "Melanistic"
+  },
+  "melanistic_2": {
+    "fur_name": "Melanistic 2"
+  },
+  "mixed": {
+    "fur_name": "Mixed"
+  },
+  "mixed_2": {
+    "fur_name": "Mixed 2"
+  },
+  "molting": {
+    "fur_name": "Molting"
+  },
+  "molting_2": {
+    "fur_name": "Molting 2"
+  },
+  "mottled": {
+    "fur_name": "Mottled"
+  },
+  "mottled_2": {
+    "fur_name": "Mottled 2"
+  },
+  "nz_moose_mocha": {
+    "fur_name": "Mocha"
+  },
+  "ochre": {
+    "fur_name": "Ochre"
+  },
+  "ogro": {
+    "fur_name": "Ogro"
+  },
+  "olive": {
+    "fur_name": "Olive"
+  },
+  "orange": {
+    "fur_name": "Orange"
+  },
+  "pale": {
+    "fur_name": "Pale"
+  },
+  "piebald": {
+    "fur_name": "Piebald"
+  },
+  "piebald_2": {
+    "fur_name": "Piebald 2"
+  },
+  "piebald_3": {
+    "fur_name": "Piebald 3"
+  },
+  "piebald_4": {
+    "fur_name": "Piebald 4"
+  },
+  "piebald_5": {
+    "fur_name": "Piebald 5"
+  },
+  "piebald_blonde": {
+    "fur_name": "Piebald Blonde"
+  },
+  "piebald_grey": {
+    "fur_name": "Piebald Grey"
+  },
+  "pink": {
+    "fur_name": "Pink"
+  },
+  "pristine": {
+    "fur_name": "Pristine"
+  },
+  "pseudo_melanistic": {
+    "fur_name": "Pseudo-Melanistic"
+  },
+  "pseudo_melanistic_2": {
+    "fur_name": "Pseudo-Melanistic 2"
+  },
+  "pseudo_melanistic_white": {
+    "fur_name": "Pseudo-Melanistic White"
+  },
+  "pseudo_melanistic_white_2": {
+    "fur_name": "Pseudo-Melanistic White 2"
+  },
+  "red": {
+    "fur_name": "Red"
+  },
+  "red_2": {
+    "fur_name": "Red 2"
+  },
+  "red_brown": {
+    "fur_name": "Red Brown"
+  },
+  "reddish_brown": {
+    "fur_name": "Reddish Brown"
+  },
+  "sand": {
+    "fur_name": "Sand"
+  },
+  "slate_grey": {
+    "fur_name": "Slate Grey"
+  },
+  "smoke": {
+    "fur_name": "Smoke"
+  },
+  "snow": {
+    "fur_name": "Snow"
+  },
+  "sombra": {
+    "fur_name": "Sombra"
+  },
+  "spirit": {
+    "fur_name": "Spirit"
+  },
+  "spotted": {
+    "fur_name": "Spotted"
+  },
+  "spotted_2": {
+    "fur_name": "Spotted 2"
+  },
+  "spotted_dark": {
+    "fur_name": "Spotted Dark"
+  },
+  "spotted_red": {
+    "fur_name": "Spotted Red"
+  },
+  "standard": {
+    "fur_name": "Standard"
+  },
+  "straw": {
+    "fur_name": "Straw"
+  },
+  "tan": {
+    "fur_name": "Tan"
+  },
+  "tawny": {
+    "fur_name": "Tawny"
+  },
+  "tone": {
+    "fur_name": "Two Tone"
+  },
+  "white": {
+    "fur_name": "White"
+  },
+  "white_brown": {
+    "fur_name": "White Brown"
+  },
+  "white_hybrid": {
+    "fur_name": "White Hybrid"
+  },
+  "white_morph": {
+    "fur_name": "White Morph"
+  },
+  "white_stripeless": {
+    "fur_name": "White Stripeless"
+  },
+  "winter": {
+    "fur_name": "Winter"
+  },
+  "yellow": {
+    "fur_name": "Yellow"
   }
 }

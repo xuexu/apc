@@ -5,6 +5,7 @@
 
 import numpy as np
 
+
 class FFError(Exception):
     pass
 
@@ -16,15 +17,11 @@ params = {
 
 def raise_error():
     raise FFError('ff_read: not enough data')
-    return b''
 
 
-def ff_read(buffer, n_buffer, pos, n):
-    # buffer = ff
-    # n_buffer = len(buffer)
-
-    if n_buffer >= (pos + n):
-        ret = buffer[pos:(pos + n)]
+def ff_read(bufn, pos, n):
+    if bufn[1] >= (pos + n):
+        ret = bufn[0][pos:(pos + n)]
         return ret, pos + n
     else:
         return raise_error()
@@ -34,11 +31,11 @@ def make_read_one(data_type):
     dt = np.dtype(data_type)
     ele_size = dt.itemsize
 
-    def f(buffer, n_buffer, pos):
+    def f(bufn, pos):
         new_pos = pos + ele_size
-        if new_pos > n_buffer:
+        if new_pos > bufn[1]:
             raise_error()
-        v = np.frombuffer(buffer[pos:new_pos], dtype=dt)
+        v = np.frombuffer(bufn[0][pos:new_pos], dtype=dt)
         return v[0], new_pos
 
     return f
@@ -48,11 +45,11 @@ def make_read_many(data_type):
     dt = np.dtype(data_type)
     ele_size = dt.itemsize
 
-    def f(buffer, n_buffer, pos, count):
+    def f(bufn, pos, count):
         new_pos = pos + ele_size * count
-        if new_pos > n_buffer:
+        if new_pos > bufn[1]:
             raise_error()
-        v = np.frombuffer(buffer[pos:new_pos], dtype=dt)
+        v = np.frombuffer(bufn[0][pos:new_pos], dtype=dt)
         return list(v), new_pos
 
     return f
@@ -81,8 +78,8 @@ ff_read_f32s = make_read_many(np.float32)
 ff_read_f64s = make_read_many(np.float64)
 
 
-def ff_read_strz(buffer, n_buffer, pos):
+def ff_read_strz(bufn, pos):
     pos0 = pos
-    while buffer[pos] != 0 and pos < n_buffer:
+    while bufn[0][pos] != 0 and pos < bufn[1]:
         pos += 1
-    return buffer[pos0:pos], pos
+    return bufn[0][pos0:pos], pos

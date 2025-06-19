@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-08 22:05-0400\n"
+"POT-Creation-Date: 2025-06-19 08:06-0400\n"
 "PO-Revision-Date: 2023-04-17 17:13+0800\n"
 "Last-Translator: \n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
@@ -19,1454 +19,1932 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: apc/config.py:38
+#: apc/config.py:43
 msgid "Animal Population Changer"
 msgstr "动物种群调整器"
 
-#: apc/config.py:40
+#: apc/config.py:45
 msgid "Species"
 msgstr "物种"
 
-#: apc/config.py:42
+#: apc/config.py:47
 msgid "Animals"
 msgstr "总数量"
 
-#: apc/config.py:44
+#: apc/config.py:49
 msgid "Male"
 msgstr "雄性"
 
-#: apc/config.py:46
+#: apc/config.py:51
 msgid "Males"
 msgstr "雄性"
 
-#: apc/config.py:48
+#: apc/config.py:53
 msgid "Female"
 msgstr "雌性"
 
-#: apc/config.py:50
+#: apc/config.py:55
 msgid "Females"
 msgstr "雌性"
 
-#: apc/config.py:52
+#: apc/config.py:57
 msgid "High Weight"
 msgstr "最高公斤"
 
-#: apc/config.py:54
+#: apc/config.py:59
 msgid "High Score"
 msgstr "最高评分"
 
-#: apc/config.py:56
+#: apc/config.py:61
 msgid "Level"
 msgstr "等级"
 
-#: apc/config.py:58
+#: apc/config.py:63
 msgid "Gender"
 msgstr "性别"
 
-#: apc/config.py:60
+#: apc/config.py:65
 msgid "Weight"
 msgstr "公斤"
 
-#: apc/config.py:62
+#: apc/config.py:67
 msgid "Score"
 msgstr "分数"
 
-#: apc/config.py:64
+#: apc/config.py:69
 msgid "Visual Seed"
 msgstr "编号"
 
-#: apc/config.py:66
+#: apc/config.py:71
 msgid "Fur"
 msgstr "毛皮"
 
-#: apc/config.py:68
+#: apc/config.py:73
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:70 apc/config.py:400
+#: apc/config.py:75 apc/config.py:444
 msgid "Great One"
 msgstr "奇珍异兽"
 
-#: apc/config.py:72
+#: apc/config.py:77
 msgid "Summary"
 msgstr "摘要"
 
-#: apc/config.py:74
+#: apc/config.py:79
 msgid "Reserve"
 msgstr "当前狩猎区"
 
-#: apc/config.py:76
+#: apc/config.py:81
 msgid "Reserves"
 msgstr "储备"
 
-#: apc/config.py:78
+#: apc/config.py:83
 msgid "Reserve Name (key)"
 msgstr "储备名称（键）"
 
-#: apc/config.py:80
+#: apc/config.py:85
 msgid "Yes"
 msgstr "确定"
 
-#: apc/config.py:82
-msgid "Modded"
-msgstr "转变后"
-
-#: apc/config.py:84
-msgid "Species (key)"
-msgstr "生物种类 (键)"
-
-#: apc/config.py:86
-msgid "viewing modded"
-msgstr "显示当前转换后的动物"
-
-#: apc/config.py:88
-msgid "Please copy and paste as a new bug on Nexusmods here"
-msgstr "请将其复制并粘贴到Nexusmods上一份新的错误报告中"
-
-#: apc/config.py:90
-msgid "Error"
-msgstr "错误"
-
-#: apc/config.py:92
-msgid "Unexpected Error"
-msgstr "意外错误"
-
-#: apc/config.py:94
-msgid "Warning"
-msgstr "警告"
-
-#: apc/config.py:96
-msgid "Saved"
-msgstr "已保存"
-
-#: apc/config.py:98
-msgid "does not exist"
-msgstr "不存在"
-
-#: apc/config.py:100
-msgid "failed to backup game"
-msgstr "备份游戏失败"
-
-#: apc/config.py:102
-msgid "failed to load backup file"
-msgstr "加载备份文件失败"
-
-#: apc/config.py:104
-msgid "failed to load mod"
-msgstr "加载文件失败"
-
-#: apc/config.py:106
-msgid "failed to unload mod"
-msgstr "卸载文件失败"
-
-#: apc/config.py:108
-msgid "Mod has been loaded"
-msgstr "文件已加载"
-
-#: apc/config.py:110
-msgid "Mod has been unloaded"
-msgstr "文件已卸载"
-
-#: apc/config.py:112
-msgid "Version"
-msgstr "版本"
-
-#: apc/config.py:114
-msgid "Hunting Reserve"
-msgstr "狩猎区列表"
-
-#: apc/config.py:116
-msgid "update by percentage"
-msgstr "按0-100%转变"
-
-#: apc/config.py:118
-msgid "More Males"
-msgstr "雄性转换数"
-
-#: apc/config.py:120
-msgid "More Females"
-msgstr "雌性转换数"
-
-#: apc/config.py:122
-msgid "More Great Ones"
-msgstr "更多伟人"
-
-#: apc/config.py:124
-msgid "More Diamonds"
-msgstr "更多钻石"
-
-#: apc/config.py:126
-msgid "include diamond rare furs"
-msgstr "包括钻石稀有毛皮"
-
-#: apc/config.py:128
-msgid "All Furs"
-msgstr "毛皮转换数"
-
-#: apc/config.py:130
-msgid "Reset"
-msgstr "重置"
-
-#: apc/config.py:132
-msgid "Update Animals"
-msgstr "开始转变"
-
-#: apc/config.py:134
-msgid "Just the Furs"
-msgstr "仅毛皮"
-
-#: apc/config.py:136
-msgid "one of each fur"
-msgstr "转变带稀有毛皮"
-
-#: apc/config.py:138
-msgid "Others"
-msgstr "其他"
-
-#: apc/config.py:140
-msgid "Party"
-msgstr "生成"
-
-#: apc/config.py:142
-msgid "Great One Party"
-msgstr "奇珍异兽全生成"
-
-#: apc/config.py:144
-msgid "Diamond Party"
-msgstr "钻石全生成"
-
-#: apc/config.py:146
-msgid "We All Party"
-msgstr "一键生成"
-
-#: apc/config.py:148
-msgid "Fur Party"
-msgstr "毛皮全生成"
-
-#: apc/config.py:150
-msgid "Explore"
-msgstr "查看"
-
-#: apc/config.py:152
-msgid "diamonds and Great Ones"
-msgstr "钻石和奇珍异兽"
-
-#: apc/config.py:154
-msgid "look at modded animals"
-msgstr "查看转变后的动物"
-
-#: apc/config.py:156
-msgid "look at all reserves"
-msgstr "查看所有狩猎区文件"
-
-#: apc/config.py:158
-msgid "only top 10 scores"
-msgstr "仅查看前10名分数"
-
-#: apc/config.py:160
-msgid "Show Animals"
-msgstr "展示动物"
-
-#: apc/config.py:162
-msgid "Files"
-msgstr "文件"
-
-#: apc/config.py:164
-msgid "Configure Game Path"
-msgstr "配置游戏路径"
-
-#: apc/config.py:166
-msgid "List Mods"
-msgstr "列出文件"
-
-#: apc/config.py:168
-msgid "Load Mod"
-msgstr "加载文件"
-
-#: apc/config.py:170
-msgid "Unload Mod"
-msgstr "卸载文件"
-
-#: apc/config.py:172
-msgid "Select the folder where the game saves your files"
-msgstr "选择游戏保存文件的文件夹"
-
-#: apc/config.py:174
-msgid "Saves Path"
-msgstr "存档路径"
-
-#: apc/config.py:176
-msgid "Game path saved"
-msgstr "游戏路径已保存"
-
-#: apc/config.py:178
-msgid "Are you sure you want to overwrite your game file with the modded one?"
-msgstr "确定要用修改过的游戏文件覆盖原本的游戏文件吗？"
-
-#: apc/config.py:180
-msgid "Don't worry, a backup copy will be made."
-msgstr "无需担心原文件丢失，本程序会自动备份一份原始文件的副本。"
-
-#: apc/config.py:182
-msgid "Confirmation"
-msgstr "确认"
-
-#: apc/config.py:184
-msgid "Mod"
-msgstr "转变"
-
-#: apc/config.py:186
-msgid "view modded version"
-msgstr "查看转换好的文件"
-
-#: apc/config.py:188 apc/config.py:238
-msgid "Loaded"
-msgstr "已加载"
-
-#: apc/config.py:190
-msgid "Modded File"
-msgstr "修改后的文件"
-
-#: apc/config.py:192
-msgid "Back to Reserve"
-msgstr "返回原界面"
-
-#: apc/config.py:194
-msgid "update translations"
-msgstr "刷新语言包"
-
-#: apc/config.py:196
-msgid "switch language"
-msgstr "切换语言包"
-
-#: apc/config.py:198
-msgid "Please restart to see changes"
-msgstr "请重启以查看语言变化"
-
-#: apc/config.py:200
-msgid "default"
-msgstr "默认"
-
-#: apc/config.py:202
-msgid "using"
-msgstr "正在使用"
-
-#: apc/config.py:204
-msgid "OK"
-msgstr "确定"
-
-#: apc/config.py:206
-msgid "Cancel"
-msgstr "取消"
-
-#: apc/config.py:208
-msgid "Modify Animals"
-msgstr "修改动物"
-
-#: apc/config.py:210
-msgid "Furs"
-msgstr "皮草"
-
-#: apc/config.py:212
-msgid "Modify Animal Furs"
-msgstr "修改动物毛皮"
-
-#: apc/config.py:214
-msgid "Male Furs"
-msgstr "男用皮草"
-
-#: apc/config.py:216
-msgid "Female Furs"
-msgstr "女式皮草"
-
-#: apc/config.py:218
-msgid "Change All Species"
-msgstr "改变所有物种"
-
-#: apc/config.py:220
-msgid "Explore Animals"
-msgstr "探索动物"
-
-#: apc/config.py:222
-msgid "Manage Modded Reserves"
-msgstr "管理改装储备"
-
-#: apc/config.py:224
-msgid "viewing loaded"
-msgstr "查看已加载"
-
-#: apc/config.py:226
-msgid "use all furs"
-msgstr "使用所有毛皮"
-
-#: apc/config.py:228
+#: apc/config.py:87
 msgid "No"
 msgstr "不"
 
-#: apc/config.py:230
+#: apc/config.py:89
+msgid "Modded"
+msgstr "转变后"
+
+#: apc/config.py:91
+msgid "Species (key)"
+msgstr "生物种类 (键)"
+
+#: apc/config.py:93
+msgid "Please copy and paste as a new bug on Nexusmods here"
+msgstr "请将其复制并粘贴到Nexusmods上一份新的错误报告中"
+
+#: apc/config.py:95
+msgid "Error"
+msgstr "错误"
+
+#: apc/config.py:97
+msgid "Unexpected Error"
+msgstr "意外错误"
+
+#: apc/config.py:99
+msgid "Warning"
+msgstr "警告"
+
+#: apc/config.py:101
+msgid "Saved"
+msgstr "已保存"
+
+#: apc/config.py:103
+msgid "does not exist"
+msgstr "不存在"
+
+#: apc/config.py:105
+msgid "failed to backup game"
+msgstr "备份游戏失败"
+
+#: apc/config.py:107
+msgid "failed to load backup file"
+msgstr "加载备份文件失败"
+
+#: apc/config.py:109
+msgid "failed to load mod"
+msgstr "加载文件失败"
+
+#: apc/config.py:111
+msgid "failed to unload mod"
+msgstr "卸载文件失败"
+
+#: apc/config.py:113
+msgid "Mod has been loaded"
+msgstr "文件已加载"
+
+#: apc/config.py:115
+msgid "Mod has been unloaded"
+msgstr "文件已卸载"
+
+#: apc/config.py:117
+msgid "Version"
+msgstr "版本"
+
+#: apc/config.py:119
+msgid "Hunting Reserve"
+msgstr "狩猎区列表"
+
+#: apc/config.py:121
+msgid "update by percentage"
+msgstr "按0-100%转变"
+
+#: apc/config.py:123
+msgid "More Males"
+msgstr "雄性转换数"
+
+#: apc/config.py:125
+msgid "More Females"
+msgstr "雌性转换数"
+
+#: apc/config.py:127
+msgid "More Great Ones"
+msgstr "更多伟人"
+
+#: apc/config.py:129
+msgid "More Diamonds"
+msgstr "更多钻石"
+
+#: apc/config.py:131
+msgid "include diamond rare furs"
+msgstr "包括钻石稀有毛皮"
+
+#: apc/config.py:133
+msgid "All Furs"
+msgstr "毛皮转换数"
+
+#: apc/config.py:135
+msgid "Reset"
+msgstr "重置"
+
+#: apc/config.py:137
+msgid "Update Animals"
+msgstr "开始转变"
+
+#: apc/config.py:139
+msgid "Just the Furs"
+msgstr "仅毛皮"
+
+#: apc/config.py:141
+msgid "one of each fur"
+msgstr "转变带稀有毛皮"
+
+#: apc/config.py:143
+msgid "Others"
+msgstr "其他"
+
+#: apc/config.py:145
+msgid "Party"
+msgstr "生成"
+
+#: apc/config.py:147
+msgid ""
+"The sliders set the percentage of eligible animals to modify. Changes affect"
+" all species on the reserve."
+msgstr "滑块设置了合格动物的百分比进行修改。变化会影响储备上的所有物种。"
+
+#: apc/config.py:149
+msgid "Great One Party"
+msgstr "奇珍异兽全生成"
+
+#: apc/config.py:151
+msgid "of all eligible animals are Great Ones"
+msgstr "在所有合格的动物中，都是很棒的动物"
+
+#: apc/config.py:153
+msgid "Diamond Party"
+msgstr "钻石全生成"
+
+#: apc/config.py:155
+msgid "of all animals are Diamonds"
+msgstr "所有动物都是钻石"
+
+#: apc/config.py:159
+msgid "Random Fur Party"
+msgstr "随机皮草派对"
+
+#: apc/config.py:161
+msgid "of all animals have random furs"
+msgstr "所有动物中有随机的毛皮"
+
+#: apc/config.py:163
+msgid "Rare Fur Party"
+msgstr "稀有的皮草派对"
+
+#: apc/config.py:165
+msgid "of all animals have rare furs"
+msgstr "所有动物中有稀有的毛皮"
+
+#: apc/config.py:167
+msgid "Generating fur seeds"
+msgstr "产生毛皮种子"
+
+#: apc/config.py:169
+msgid "Explore"
+msgstr "查看"
+
+#: apc/config.py:171
+msgid "diamonds and Great Ones"
+msgstr "钻石和奇珍异兽"
+
+#: apc/config.py:173
+msgid "look at modded animals"
+msgstr "查看转变后的动物"
+
+#: apc/config.py:175
+msgid "look at all reserves"
+msgstr "查看所有狩猎区文件"
+
+#: apc/config.py:177
+msgid "only top 10 scores"
+msgstr "仅查看前10名分数"
+
+#: apc/config.py:179
+msgid "Show Animals"
+msgstr "展示动物"
+
+#: apc/config.py:181
+msgid "Files"
+msgstr "文件"
+
+#: apc/config.py:183
+msgid "The file could not be found"
+msgstr "该文件找不到"
+
+#: apc/config.py:185
+msgid "Configure Game Path"
+msgstr "配置游戏路径"
+
+#: apc/config.py:187
+msgid "Please configure the path to your game save"
+msgstr "请配置游戏的路径保存"
+
+#: apc/config.py:189
+msgid "List Mods"
+msgstr "列出文件"
+
+#: apc/config.py:191
+msgid "Load Mod"
+msgstr "加载文件"
+
+#: apc/config.py:193
+msgid "Unload Mod"
+msgstr "卸载文件"
+
+#: apc/config.py:195
+msgid "Select the folder where the game saves your files"
+msgstr "选择游戏保存文件的文件夹"
+
+#: apc/config.py:197
+msgid "Saves Path"
+msgstr "存档路径"
+
+#: apc/config.py:199
+msgid "Game path saved"
+msgstr "游戏路径已保存"
+
+#: apc/config.py:201
+msgid "Are you sure you want to overwrite your game file with the modded one?"
+msgstr "确定要用修改过的游戏文件覆盖原本的游戏文件吗？"
+
+#: apc/config.py:203
+msgid "Don't worry, a backup copy will be made."
+msgstr "无需担心原文件丢失，本程序会自动备份一份原始文件的副本。"
+
+#: apc/config.py:205
+msgid "Confirmation"
+msgstr "确认"
+
+#: apc/config.py:207
+msgid "Mod"
+msgstr "转变"
+
+#: apc/config.py:209
+msgid "View modded version"
+msgstr "查看改装版本"
+
+#: apc/config.py:211
+msgid "viewing loaded"
+msgstr "查看已加载"
+
+#: apc/config.py:213
+msgid "viewing modded"
+msgstr "显示当前转换后的动物"
+
+#: apc/config.py:215
+msgid "Total animals"
+msgstr "全动物"
+
+#: apc/config.py:217 apc/config.py:281
+msgid "Loaded"
+msgstr "已加载"
+
+#: apc/config.py:219
+msgid "Modded File"
+msgstr "修改后的文件"
+
+#: apc/config.py:221
+msgid "Back to Reserve"
+msgstr "返回原界面"
+
+#: apc/config.py:223
+msgid "update translations"
+msgstr "刷新语言包"
+
+#: apc/config.py:225
+msgid "switch language"
+msgstr "切换语言包"
+
+#: apc/config.py:227
+msgid "Please restart to see changes"
+msgstr "请重启以查看语言变化"
+
+#: apc/config.py:229
+msgid "default"
+msgstr "默认"
+
+#: apc/config.py:231
+msgid "using"
+msgstr "正在使用"
+
+#: apc/config.py:233
+msgid "OK"
+msgstr "确定"
+
+#: apc/config.py:235
+msgid "Cancel"
+msgstr "取消"
+
+#: apc/config.py:237
+msgid "Modify Animals"
+msgstr "修改动物"
+
+#: apc/config.py:239
+msgid "Gender Counts"
+msgstr "性别计数"
+
+#: apc/config.py:241
+msgid "Add/Remove Animals"
+msgstr "添加/删除动物"
+
+#: apc/config.py:243
+msgid "Adding Animals"
+msgstr "添加动物"
+
+#: apc/config.py:245
+msgid "Can't add all animals"
+msgstr "无法添加所有动物"
+
+#: apc/config.py:247
+msgid "Each group has a limit of 30 animals"
+msgstr "每组有30只动物的限制"
+
+#: apc/config.py:249
+msgid "Removing Animals"
+msgstr "去除动物"
+
+#: apc/config.py:251
+msgid "Can't remove animals"
+msgstr "无法移走动物"
+
+#: apc/config.py:253
+msgid "Each group needs at least 1 animal"
+msgstr "每个小组至少需要1只动物"
+
+#: apc/config.py:255
+msgid "Trophy Rating"
+msgstr "奖杯等级"
+
+#: apc/config.py:257
+msgid "Furs"
+msgstr "皮草"
+
+#: apc/config.py:259
+msgid "Modify Animal Furs"
+msgstr "修改动物毛皮"
+
+#: apc/config.py:261
+msgid "Male Furs"
+msgstr "男用皮草"
+
+#: apc/config.py:263
+msgid "Female Furs"
+msgstr "女式皮草"
+
+#: apc/config.py:265
+msgid "Change All Species"
+msgstr "改变所有物种"
+
+#: apc/config.py:267
+msgid "Explore Animals"
+msgstr "探索动物"
+
+#: apc/config.py:269
+msgid "Manage Modded Reserves"
+msgstr "管理改装储备"
+
+#: apc/config.py:271
+msgid "use all furs"
+msgstr "使用所有毛皮"
+
+#: apc/config.py:273
 msgid "Animal Details"
 msgstr "动物详情"
 
-#: apc/config.py:232
+#: apc/config.py:275
 msgid "default is random fur"
 msgstr "默认是随机毛皮"
 
-#: apc/config.py:234
+#: apc/config.py:277
 msgid "Update Animal"
 msgstr "更新动物"
 
-#: apc/config.py:236
+#: apc/config.py:279
 msgid "Top 10"
 msgstr "前 10 名"
 
-#: apc/config.py:240
+#: apc/config.py:283
 msgid "Export Mod"
 msgstr "导出模型"
 
-#: apc/config.py:242
+#: apc/config.py:285
 msgid "Import Mod"
 msgstr "导入模型"
 
-#: apc/config.py:244
+#: apc/config.py:287
 msgid "Export"
 msgstr "出口"
 
-#: apc/config.py:246
+#: apc/config.py:289
 msgid "Import"
 msgstr "进口"
 
-#: apc/config.py:248
+#: apc/config.py:291
 msgid "Select the location and filename where you want to export"
 msgstr "选择要导出的位置和文件名"
 
-#: apc/config.py:250
+#: apc/config.py:293
 msgid "Select the reserve mod to import"
 msgstr "选择要导入的备用模块"
 
-#: apc/config.py:252
+#: apc/config.py:295
 msgid "Export As"
 msgstr "导出为"
 
-#: apc/config.py:254
+#: apc/config.py:297
 msgid "Select File"
 msgstr "选择文件"
 
-#: apc/config.py:256
+#: apc/config.py:299
 msgid "Mod Exported"
 msgstr "模组导出"
 
-#: apc/config.py:258
+#: apc/config.py:301
 msgid "Mod Imported"
 msgstr "模组已导入"
 
-#: apc/config.py:382
+#: apc/config.py:303
+msgid "No reserve data loaded. Select a reserve from the list."
+msgstr "没有加载储备数据。从列表中选择一个储备金。"
+
+#: apc/config.py:305
+msgid "Select an animal from the list."
+msgstr "从列表中选择动物。"
+
+#: apc/config.py:307
+msgid "Loading animals"
+msgstr "装载动物"
+
+#: apc/config.py:309
+msgid "Animals loaded"
+msgstr "动物加载"
+
+#: apc/config.py:311
+msgid ""
+"Selected animals from multiple reserves. Modifications will overwrite the "
+"following files:"
+msgstr "来自多个储量的选择动物。修改将覆盖以下文件："
+
+#: apc/config.py:313
+msgid "Updated animals on multiple reserves. Use"
+msgstr "在多个储备金上更新动物。使用"
+
+#: apc/config.py:315
+msgid "to load the modded files for each reserve:"
+msgstr "为每个储备金加载改装文件："
+
+#: apc/config.py:424
+msgid "Unknown"
+msgstr "未知"
+
+#: apc/config.py:426
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:384
+#: apc/config.py:428
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:386
+#: apc/config.py:430
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:388
+#: apc/config.py:432
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:390
+#: apc/config.py:434
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:392
+#: apc/config.py:436
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:394
+#: apc/config.py:438
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:396
+#: apc/config.py:440
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:398
+#: apc/config.py:442
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:449
+#: apc/config.py:491
 msgid "animal_name"
 msgstr "动物名称"
 
-#: apc/config.py:452
+#: apc/config.py:495
 msgid "fur_name"
 msgstr "毛皮颜色"
 
-#: apc/config.py:492
+#: apc/config.py:554 apc/config.py:679
 msgid "reserve_name"
 msgstr "狩猎区名称"
 
-#: apc/config.py:564
-msgid "name"
-msgstr "名称"
-
-#: apc/config/animal_names.json:4
+#: apc/config/animal_names.json:3
 msgid "American Alligator"
 msgstr "美洲短吻鳄"
 
-#: apc/config/animal_names.json:7
+#: apc/config/animal_names.json:6
 msgid "Antelope Jackrabbit"
 msgstr "羚羊兔"
 
-#: apc/config/animal_names.json:10
+#: apc/config/animal_names.json:9
 msgid "Axis Deer"
 msgstr "斑轴鹿"
 
-#: apc/config/animal_names.json:13
-msgid "Beceite Ibex"
-msgstr "贝赛特山羊"
-
-#: apc/config/animal_names.json:16
-msgid "Bighorn Sheep"
-msgstr "大角羊"
-
-#: apc/config/animal_names.json:19
-msgid "Black Bear"
-msgstr "美洲黑熊"
-
-#: apc/config/animal_names.json:22
-msgid "Black Grouse"
-msgstr "黑琴鸡"
-
-#: apc/config/animal_names.json:25
-msgid "Blackbuck"
-msgstr "黑羚"
-
-#: apc/config/animal_names.json:28
-msgid "Blacktail Deer"
-msgstr "黑尾鹿"
-
-#: apc/config/animal_names.json:31
-msgid "Blue Wildebeest"
-msgstr "蓝角马"
-
-#: apc/config/animal_names.json:34
-msgid "Bobcat"
-msgstr "山猫"
-
-#: apc/config/animal_names.json:37
-msgid "Canada Goose"
-msgstr "黑额黑雁"
-
-#: apc/config/animal_names.json:40
-msgid "Cape Buffalo"
-msgstr "好望角水牛"
-
-#: apc/config/animal_names.json:43
-msgid "Caribou"
-msgstr "北美驯鹿"
-
-#: apc/config/animal_names.json:46
-msgid "Chamois"
-msgstr "臆羚"
-
-#: apc/config/animal_names.json:49
-msgid "Cinnamon Teal"
-msgstr "桂红水鸭"
-
-#: apc/config/animal_names.json:52
-msgid "Collared Peccary"
-msgstr "領西貒"
-
-#: apc/config/animal_names.json:55
-msgid "Coyote"
-msgstr "郊狼"
-
-#: apc/config/animal_names.json:58
-msgid "Eastern Cottontail Rabbit"
-msgstr "东部白尾灰免"
-
-#: apc/config/animal_names.json:61
-msgid "Eastern Wild Turkey"
-msgstr "东部野生火鸡"
-
-#: apc/config/animal_names.json:64
-msgid "Eu Bison"
-msgstr "欧洲野牛"
-
-#: apc/config/animal_names.json:67
-msgid "Eu Hare"
-msgstr "欧洲薮兔"
-
-#: apc/config/animal_names.json:70
-msgid "Eu Rabbit"
-msgstr "欧洲野兔"
-
-#: apc/config/animal_names.json:73
-msgid "Eurasian Brown Bear"
-msgstr "棕熊"
-
-#: apc/config/animal_names.json:76
-msgid "Eurasian Lynx"
-msgstr "欧亚猞猁"
-
-#: apc/config/animal_names.json:79
-msgid "Eurasian Teal"
-msgstr "绿翅鸭"
-
-#: apc/config/animal_names.json:82
-msgid "Eurasian Wigeon"
-msgstr "赤颈鸭"
-
-#: apc/config/animal_names.json:85
-msgid "Fallow Deer"
-msgstr "黄鹿"
-
-#: apc/config/animal_names.json:88
-msgid "Feral Goat"
-msgstr "野山羊"
-
-#: apc/config/animal_names.json:91
-msgid "Feral Pig"
-msgstr "野猪（山猪）"
-
-#: apc/config/animal_names.json:94
-msgid "Gemsbok"
-msgstr "南非剑羚"
-
-#: apc/config/animal_names.json:97
-msgid "Goldeneye"
-msgstr "鹊鸭"
-
-#: apc/config/animal_names.json:100
-msgid "Gray Fox"
-msgstr "灰狐"
-
-#: apc/config/animal_names.json:103
-msgid "Gray Wolf"
-msgstr "灰狼"
-
-#: apc/config/animal_names.json:106
-msgid "Gredos Ibex"
-msgstr "格雷多斯山羊"
-
-#: apc/config/animal_names.json:109
-msgid "Green Wing Teal"
-msgstr "美洲小水鸭"
-
-#: apc/config/animal_names.json:112
-msgid "Greylag Goose"
-msgstr "灰雁"
-
-#: apc/config/animal_names.json:115
-msgid "Grizzly Bear"
-msgstr "灰熊"
-
-#: apc/config/animal_names.json:118
-msgid "Harlequin Duck"
-msgstr "丑鸭"
-
-#: apc/config/animal_names.json:121
-msgid "Hazel Grouse"
-msgstr "花尾榛鸡"
-
-#: apc/config/animal_names.json:124
-msgid "Iberian Mouflon"
-msgstr "伊比利亚摩弗伦羊"
-
-#: apc/config/animal_names.json:127
-msgid "Iberian Wolf"
-msgstr "伊比利亚狼"
-
-#: apc/config/animal_names.json:130
-msgid "Jackrabbit"
-msgstr "白尾兔"
-
-#: apc/config/animal_names.json:133
-msgid "Lesser Kudu"
-msgstr "小旋角羚"
-
-#: apc/config/animal_names.json:136
-msgid "Lion"
-msgstr "狮子"
-
-#: apc/config/animal_names.json:139
-msgid "Mallard"
-msgstr "绿头鸭"
-
-#: apc/config/animal_names.json:142
-msgid "Mexican Bobcat"
-msgstr "墨西哥山猫"
-
-#: apc/config/animal_names.json:145
-msgid "Moose"
-msgstr "驼鹿"
-
-#: apc/config/animal_names.json:148
-msgid "Mountain Goat"
-msgstr "北美野山羊"
-
-#: apc/config/animal_names.json:151
-msgid "Mountain Hare"
-msgstr "雪兔"
-
-#: apc/config/animal_names.json:154
-msgid "Mountain Lion"
-msgstr "美洲狮"
-
-#: apc/config/animal_names.json:157
-msgid "Mule Deer"
-msgstr "骡鹿"
-
-#: apc/config/animal_names.json:160
-msgid "Northern Bobwhite Quail"
-msgstr "山齿鹑"
-
-#: apc/config/animal_names.json:163
-msgid "Pheasant"
-msgstr "环颈稚鸡"
-
-#: apc/config/animal_names.json:166
-msgid "Plains Bison"
-msgstr "美洲平原野牛"
-
-#: apc/config/animal_names.json:169
-msgid "Prong Horn"
-msgstr "叉角羚"
-
-#: apc/config/animal_names.json:172
-msgid "Puma"
-msgstr "美洲狮"
-
-#: apc/config/animal_names.json:175
-msgid "Raccoon"
-msgstr "北美淀熊"
-
-#: apc/config/animal_names.json:178
-msgid "Raccoon Dog"
-msgstr "貉"
-
-#: apc/config/animal_names.json:181
-msgid "Red Deer"
-msgstr "赤鹿"
-
-#: apc/config/animal_names.json:184
-msgid "Red Fox"
-msgstr "赤狐"
-
-#: apc/config/animal_names.json:187
-msgid "Reindeer"
-msgstr "驯鹿"
-
-#: apc/config/animal_names.json:190
-msgid "Rio Grande Turkey"
-msgstr "格兰德火鸡"
-
-#: apc/config/animal_names.json:193
-msgid "Rock Ptarmigan"
-msgstr "岩雷鸟"
-
-#: apc/config/animal_names.json:196
-msgid "Rockymountain Elk"
-msgstr "落基山麋鹿"
-
-#: apc/config/animal_names.json:199
-msgid "Roe Deer"
-msgstr "狍鹿"
-
-#: apc/config/animal_names.json:202
-msgid "Ronda Ibex"
-msgstr "朗达山羊"
-
-#: apc/config/animal_names.json:205
-msgid "Roosevelt Elk"
-msgstr "罗斯福麋鹿"
-
-#: apc/config/animal_names.json:208
-msgid "Scrub Hare"
-msgstr "藪兔"
-
-#: apc/config/animal_names.json:211
-msgid "Siberian Musk Deer"
-msgstr "西伯利亚原麝"
-
-#: apc/config/animal_names.json:214
-msgid "Sidestriped Jackal"
-msgstr "侧纹胡狼"
-
-#: apc/config/animal_names.json:217
-msgid "Sika Deer"
-msgstr "梅花鹿"
-
-#: apc/config/animal_names.json:220
-msgid "Southeastern Ibex"
-msgstr "西班牙东南部山羊"
-
-#: apc/config/animal_names.json:223
-msgid "Springbok"
-msgstr "跳羚"
-
-#: apc/config/animal_names.json:226
-msgid "Tufted Duck"
-msgstr "凤头潜鸭"
-
-#: apc/config/animal_names.json:229
-msgid "Tundra Bean Goose"
-msgstr "冻原豆雁"
-
-#: apc/config/animal_names.json:232
-msgid "Warthog"
-msgstr "疣猪"
-
-#: apc/config/animal_names.json:235
-msgid "Water Buffalo"
-msgstr "水牛"
-
-#: apc/config/animal_names.json:238
-msgid "Western Capercaillie"
-msgstr "西方松鸡"
-
-#: apc/config/animal_names.json:241
-msgid "Whitetail Deer"
-msgstr "白尾鹿"
-
-#: apc/config/animal_names.json:244
-msgid "Wild Boar"
-msgstr "野猪"
-
-#: apc/config/animal_names.json:247
-msgid "Wild Hog"
-msgstr "野猪"
-
-#: apc/config/animal_names.json:250
-msgid "Wild Turkey"
-msgstr "太平原火鸡"
-
-#: apc/config/animal_names.json:253
-msgid "Willow Ptarmigan"
-msgstr "柳雷鸟"
-
-#: apc/config/animal_names.json:256
-msgid "Hog Deer"
-msgstr "猪鹿"
-
-#: apc/config/animal_names.json:259
-msgid "Magpie Goose"
-msgstr "喜鹊鹅"
-
-#: apc/config/animal_names.json:262
-msgid "Eastern Kangaroo"
-msgstr "东部袋鼠"
-
-#: apc/config/animal_names.json:265
-msgid "Sambar Deer"
-msgstr "水鹿"
-
-#: apc/config/animal_names.json:268
+#: apc/config/animal_names.json:12
 msgid "Banteng"
 msgstr "野牛"
 
-#: apc/config/animal_names.json:271
-msgid "Saltwater Crocodile"
-msgstr "咸水鳄鱼"
-
-#: apc/config/animal_names.json:274
-msgid "Stubble Quail"
-msgstr "短尾鹌鹑"
-
-#: apc/config/animal_names.json:277
-msgid "Javan Rusa"
-msgstr "爪哇鲁萨"
-
-#: apc/config/animal_names.json:280
-msgid "Blue Sheep"
-msgstr "岩羊"
-
-#: apc/config/animal_names.json:283
-msgid "Snow Leopard"
-msgstr "雪豹"
-
-#: apc/config/animal_names.json:286
-msgid "Nilgai"
-msgstr "蓝牛羚"
-
-#: apc/config/animal_names.json:289
-msgid "Tibetan Fox"
-msgstr "藏狐"
-
-#: apc/config/animal_names.json:292
-msgid "Wild Yak"
-msgstr "野牦牛"
-
-#: apc/config/animal_names.json:295
-msgid "Northern Red Muntjac"
-msgstr "赤麂"
-
-#: apc/config/animal_names.json:298
+#: apc/config/animal_names.json:15
 msgid "Barasingha"
 msgstr "沼鹿"
 
-#: apc/config/animal_names.json:301
-msgid "Woolly Hare"
-msgstr "毛毛兔"
+#: apc/config/animal_names.json:18
+msgid "Beceite Ibex"
+msgstr "贝赛特山羊"
 
-#: apc/config/animal_names.json:304
+#: apc/config/animal_names.json:21
 msgid "Bengal Tiger"
 msgstr "孟加拉虎"
 
-#: apc/config/animal_names.json:307
-msgid "Tahr"
-msgstr "塔尔羊"
+#: apc/config/animal_names.json:24
+msgid "Bighorn Sheep"
+msgstr "大角羊"
 
-#: apc/config/animal_names.json:310
-msgid "Gadwall"
+#: apc/config/animal_names.json:27
+msgid "Black Bear"
+msgstr "美洲黑熊"
+
+#: apc/config/animal_names.json:30
+msgid "Black Grouse"
+msgstr "黑琴鸡"
+
+#: apc/config/animal_names.json:33
+msgid "Blackbuck"
+msgstr "黑羚"
+
+#: apc/config/animal_names.json:36
+msgid "Blacktail Deer"
+msgstr "黑尾鹿"
+
+#: apc/config/animal_names.json:39
+msgid "Blue Sheep"
+msgstr "岩羊"
+
+#: apc/config/animal_names.json:42
+msgid "Blue Wildebeest"
+msgstr "蓝角马"
+
+#: apc/config/animal_names.json:45
+msgid "Bobcat"
+msgstr "山猫"
+
+#: apc/config/animal_names.json:48
+msgid "Canada Goose"
+msgstr "黑额黑雁"
+
+#: apc/config/animal_names.json:51
+msgid "Cape Buffalo"
+msgstr "好望角水牛"
+
+#: apc/config/animal_names.json:54
+msgid "Grant Caribou"
+msgstr "格兰特·卡里布（Grant Caribou）"
+
+#: apc/config/animal_names.json:57
+msgid "Chamois"
+msgstr "臆羚"
+
+#: apc/config/animal_names.json:60
+msgid "Cinnamon Teal"
+msgstr "桂红水鸭"
+
+#: apc/config/animal_names.json:63
+msgid "Collared Peccary"
+msgstr "領西貒"
+
+#: apc/config/animal_names.json:66
+msgid "Coyote"
+msgstr "郊狼"
+
+#: apc/config/animal_names.json:69
+msgid "Dusky Grouse"
+msgstr "昏暗的松鸡"
+
+#: apc/config/animal_names.json:72
+msgid "Eastern Cottontail Rabbit"
+msgstr "东部白尾灰免"
+
+#: apc/config/animal_names.json:75
+msgid "Eastern Gray Kangaroo"
+msgstr "东方灰色袋鼠"
+
+#: apc/config/animal_names.json:78
+msgid "Eastern Wild Turkey"
+msgstr "东部野生火鸡"
+
+#: apc/config/animal_names.json:81
+msgid "European Bison"
+msgstr "欧洲野牛"
+
+#: apc/config/animal_names.json:84
+msgid "European Hare"
+msgstr "欧洲野兔"
+
+#: apc/config/animal_names.json:87
+msgid "European Rabbit"
+msgstr "欧洲兔子"
+
+#: apc/config/animal_names.json:90
+msgid "Eurasian Brown Bear"
+msgstr "棕熊"
+
+#: apc/config/animal_names.json:93
+msgid "Eurasian Lynx"
+msgstr "欧亚猞猁"
+
+#: apc/config/animal_names.json:96
+msgid "Eurasian Teal"
+msgstr "绿翅鸭"
+
+#: apc/config/animal_names.json:99
+msgid "Eurasian Wigeon"
 msgstr "赤颈鸭"
 
-#: apc/config/animal_names.json:313
+#: apc/config/animal_names.json:102
+msgid "Fallow Deer"
+msgstr "黄鹿"
+
+#: apc/config/animal_names.json:105
+msgid "Feral Goat"
+msgstr "野山羊"
+
+#: apc/config/animal_names.json:108
+msgid "Feral Pig"
+msgstr "野猪（山猪）"
+
+#: apc/config/animal_names.json:111
 msgid "Ferruginous Duck"
 msgstr "銳銳鴨"
 
-#: apc/config/fur_names.json:4
-msgid "Piebald"
-msgstr "花斑色"
+#: apc/config/animal_names.json:114
+msgid "Gadwall"
+msgstr "赤颈鸭"
 
-#: apc/config/fur_names.json:7
-msgid "Olive"
-msgstr "橄榄色"
+#: apc/config/animal_names.json:117
+msgid "Gemsbok"
+msgstr "南非剑羚"
 
-#: apc/config/fur_names.json:10
-msgid "Dark Brown"
-msgstr "深棕色"
+#: apc/config/animal_names.json:120
+msgid "Goldeneye"
+msgstr "鹊鸭"
 
-#: apc/config/fur_names.json:13
+#: apc/config/animal_names.json:123
+msgid "Gray Fox"
+msgstr "灰狐"
+
+#: apc/config/animal_names.json:126
+msgid "Gray Wolf"
+msgstr "灰狼"
+
+#: apc/config/animal_names.json:129
+msgid "Gredos Ibex"
+msgstr "格雷多斯山羊"
+
+#: apc/config/animal_names.json:132
+msgid "Green Winged Teal"
+msgstr "绿翼蓝绿色"
+
+#: apc/config/animal_names.json:135
+msgid "Greylag Goose"
+msgstr "灰雁"
+
+#: apc/config/animal_names.json:138
+msgid "Grizzly Bear"
+msgstr "灰熊"
+
+#: apc/config/animal_names.json:141
+msgid "Harlequin Duck"
+msgstr "丑鸭"
+
+#: apc/config/animal_names.json:144
+msgid "Hazel Grouse"
+msgstr "花尾榛鸡"
+
+#: apc/config/animal_names.json:147
+msgid "Hog Deer"
+msgstr "猪鹿"
+
+#: apc/config/animal_names.json:150
+msgid "Iberian Mouflon"
+msgstr "伊比利亚摩弗伦羊"
+
+#: apc/config/animal_names.json:153
+msgid "Iberian Wolf"
+msgstr "伊比利亚狼"
+
+#: apc/config/animal_names.json:156
+msgid "White-tailed Jackrabbit"
+msgstr "白尾jackrabbit"
+
+#: apc/config/animal_names.json:159
+msgid "Javan Rusa"
+msgstr "爪哇鲁萨"
+
+#: apc/config/animal_names.json:162
+msgid "Lesser Kudu"
+msgstr "小旋角羚"
+
+#: apc/config/animal_names.json:165
+msgid "Lion"
+msgstr "狮子"
+
+#: apc/config/animal_names.json:168
+msgid "Magpie Goose"
+msgstr "喜鹊鹅"
+
+#: apc/config/animal_names.json:171
+msgid "Mallard"
+msgstr "绿头鸭"
+
+#: apc/config/animal_names.json:174
+msgid "Manitoban Elk"
+msgstr "曼尼托邦麋鹿"
+
+#: apc/config/animal_names.json:177
+msgid "Mexican Bobcat"
+msgstr "墨西哥山猫"
+
+#: apc/config/animal_names.json:180
+msgid "Moose"
+msgstr "驼鹿"
+
+#: apc/config/animal_names.json:183
+msgid "Mountain Goat"
+msgstr "北美野山羊"
+
+#: apc/config/animal_names.json:186
+msgid "Mountain Hare"
+msgstr "雪兔"
+
+#: apc/config/animal_names.json:189
+msgid "Mountain Lion"
+msgstr "美洲狮"
+
+#: apc/config/animal_names.json:192
+msgid "Mule Deer"
+msgstr "骡鹿"
+
+#: apc/config/animal_names.json:195
+msgid "Nilgai"
+msgstr "蓝牛羚"
+
+#: apc/config/animal_names.json:198
+msgid "North American Beaver"
+msgstr "北美海狸"
+
+#: apc/config/animal_names.json:201
+msgid "Bobwhite Quail"
+msgstr "Bobwhite鹌鹑"
+
+#: apc/config/animal_names.json:204
+msgid "Northern Pintail"
+msgstr "北长尾"
+
+#: apc/config/animal_names.json:207
+msgid "Northern Red Muntjac"
+msgstr "赤麂"
+
+#: apc/config/animal_names.json:210
+msgid "Ring-Necked Pheasant"
+msgstr "环颈野鸡"
+
+#: apc/config/animal_names.json:213
+msgid "Plains Bison"
+msgstr "美洲平原野牛"
+
+#: apc/config/animal_names.json:216
+msgid "Pronghorn"
+msgstr "pronghorn"
+
+#: apc/config/animal_names.json:219
+msgid "Puma"
+msgstr "美洲狮"
+
+#: apc/config/animal_names.json:222
+msgid "Common Raccoon"
+msgstr "普通浣熊"
+
+#: apc/config/animal_names.json:225
+msgid "Raccoon Dog"
+msgstr "貉"
+
+#: apc/config/animal_names.json:228
+msgid "Red Deer"
+msgstr "赤鹿"
+
+#: apc/config/animal_names.json:231
+msgid "Red Fox"
+msgstr "赤狐"
+
+#: apc/config/animal_names.json:234
+msgid "Reindeer"
+msgstr "驯鹿"
+
+#: apc/config/animal_names.json:237
+msgid "Rio Grande Turkey"
+msgstr "格兰德火鸡"
+
+#: apc/config/animal_names.json:240
+msgid "Rock Ptarmigan"
+msgstr "岩雷鸟"
+
+#: apc/config/animal_names.json:243
+msgid "Rocky Mountain Elk"
+msgstr "落基山麋鹿"
+
+#: apc/config/animal_names.json:246
+msgid "Roe Deer"
+msgstr "狍鹿"
+
+#: apc/config/animal_names.json:249
+msgid "Ronda Ibex"
+msgstr "朗达山羊"
+
+#: apc/config/animal_names.json:252
+msgid "Roosevelt Elk"
+msgstr "罗斯福麋鹿"
+
+#: apc/config/animal_names.json:255
+msgid "Saltwater Crocodile"
+msgstr "咸水鳄鱼"
+
+#: apc/config/animal_names.json:258
+msgid "Sambar"
+msgstr "桑巴尔"
+
+#: apc/config/animal_names.json:261
+msgid "Scrub Hare"
+msgstr "藪兔"
+
+#: apc/config/animal_names.json:264
+msgid "Siberian Musk Deer"
+msgstr "西伯利亚原麝"
+
+#: apc/config/animal_names.json:267
+msgid "Side-Striped Jackal"
+msgstr "侧条纹的jackal"
+
+#: apc/config/animal_names.json:270
+msgid "Sika Deer"
+msgstr "梅花鹿"
+
+#: apc/config/animal_names.json:273
+msgid "Snow Goose"
+msgstr "雪鹅"
+
+#: apc/config/animal_names.json:276
+msgid "Snow Leopard"
+msgstr "雪豹"
+
+#: apc/config/animal_names.json:279
+msgid "Southeastern Spanish Ibex"
+msgstr "西班牙IBEX东南部"
+
+#: apc/config/animal_names.json:282
+msgid "Springbok"
+msgstr "跳羚"
+
+#: apc/config/animal_names.json:285
+msgid "Stubble Quail"
+msgstr "短尾鹌鹑"
+
+#: apc/config/animal_names.json:288
+msgid "Tahr"
+msgstr "塔尔羊"
+
+#: apc/config/animal_names.json:291
+msgid "Tibetan Fox"
+msgstr "藏狐"
+
+#: apc/config/animal_names.json:294
+msgid "Tufted Duck"
+msgstr "凤头潜鸭"
+
+#: apc/config/animal_names.json:297
+msgid "Tundra Bean Goose"
+msgstr "冻原豆雁"
+
+#: apc/config/animal_names.json:300
+msgid "Warthog"
+msgstr "疣猪"
+
+#: apc/config/animal_names.json:303
+msgid "Water Buffalo"
+msgstr "水牛"
+
+#: apc/config/animal_names.json:306
+msgid "Western Capercaillie"
+msgstr "西方松鸡"
+
+#: apc/config/animal_names.json:309
+msgid "Whitetail Deer"
+msgstr "白尾鹿"
+
+#: apc/config/animal_names.json:312
+msgid "Wild Boar"
+msgstr "野猪"
+
+#: apc/config/animal_names.json:315
+msgid "Wild Hog"
+msgstr "野猪"
+
+#: apc/config/animal_names.json:318
+msgid "Merriam Turkey"
+msgstr "梅里亚姆土耳其"
+
+#: apc/config/animal_names.json:321
+msgid "Wild Yak"
+msgstr "野牦牛"
+
+#: apc/config/animal_names.json:324
+msgid "Willow Ptarmigan"
+msgstr "柳雷鸟"
+
+#: apc/config/animal_names.json:327
+msgid "Wood Bison"
+msgstr "木野牛"
+
+#: apc/config/animal_names.json:330
+msgid "Wood Duck"
+msgstr "木鸭"
+
+#: apc/config/animal_names.json:333
+msgid "Woodland Caribou"
+msgstr "伍德兰北美洲"
+
+#: apc/config/animal_names.json:336
+msgid "Woolly Hare"
+msgstr "毛毛兔"
+
+#: apc/config/fur_names.json:3
 msgid "Albino"
 msgstr "白化"
 
-#: apc/config/fur_names.json:16
-msgid "Melanistic"
-msgstr "黑化"
-
-#: apc/config/fur_names.json:19
-msgid "Gray"
-msgstr "灰色"
-
-#: apc/config/fur_names.json:22
-msgid "Brown"
-msgstr "棕色"
-
-#: apc/config/fur_names.json:25
-msgid "Mottled"
-msgstr "斑驳色"
-
-#: apc/config/fur_names.json:28
-msgid "Spotted"
-msgstr "有斑点的"
-
-#: apc/config/fur_names.json:31
-msgid "Dark"
-msgstr "深色"
-
-#: apc/config/fur_names.json:34
-msgid "Orange"
-msgstr "橙色"
-
-#: apc/config/fur_names.json:37
-msgid "Brown Hybrid"
-msgstr "棕色杂交"
-
-#: apc/config/fur_names.json:40
-msgid "Gray Brown"
-msgstr "灰棕色"
-
-#: apc/config/fur_names.json:43
-msgid "Light Brown"
-msgstr "浅棕色"
-
-#: apc/config/fur_names.json:46
-msgid "Buff"
-msgstr "浅黄色"
-
-#: apc/config/fur_names.json:49
-msgid "Black"
-msgstr "黑色"
-
-#: apc/config/fur_names.json:52
-msgid "Bronze"
-msgstr "青铜色"
-
-#: apc/config/fur_names.json:55
-msgid "Dusky"
-msgstr "暗灰色"
-
-#: apc/config/fur_names.json:58
-msgid "Cinnamon"
-msgstr "肉桂色"
-
-#: apc/config/fur_names.json:61
-msgid "Blonde"
-msgstr "金黄色"
-
-#: apc/config/fur_names.json:64
-msgid "Fabled Glacier"
-msgstr "珍惜冰川色"
-
-#: apc/config/fur_names.json:67
-msgid "Fabled Glacier 2"
-msgstr "传说中的冰川 2"
-
-#: apc/config/fur_names.json:70
-msgid "Fabled Chestnut"
-msgstr "珍惜栗色"
-
-#: apc/config/fur_names.json:73
-msgid "Fabled Cream"
-msgstr "珍惜奶油色"
-
-#: apc/config/fur_names.json:76
-msgid "Fabled Spotted"
-msgstr "珍惜斑点色"
-
-#: apc/config/fur_names.json:79
-msgid "Fabled Spirit"
-msgstr "珍惜幽灵色"
-
-#: apc/config/fur_names.json:82
-msgid "Leucistic"
-msgstr "白色"
-
-#: apc/config/fur_names.json:85
-msgid "Gold"
-msgstr "金色"
-
-#: apc/config/fur_names.json:88
-msgid "Dark Grey"
-msgstr "深灰色"
-
-#: apc/config/fur_names.json:91
-msgid "Tan"
-msgstr "茶色"
-
-#: apc/config/fur_names.json:94
-msgid "Crowned"
-msgstr "带皇冠的"
-
-#: apc/config/fur_names.json:97
-msgid "Blue"
-msgstr "蓝色"
-
-#: apc/config/fur_names.json:100
-msgid "Red"
-msgstr "红色"
-
-#: apc/config/fur_names.json:103
-msgid "Light Grey Leucistic"
-msgstr "浅灰色 白化"
-
-#: apc/config/fur_names.json:106
-msgid "Bald Leucistic"
-msgstr "秃头白化"
-
-#: apc/config/fur_names.json:109
-msgid "Honeytones"
-msgstr "蜂蜜色调"
-
-#: apc/config/fur_names.json:112
-msgid "Beige"
-msgstr "米黄色"
-
-#: apc/config/fur_names.json:115
-msgid "Ochre"
-msgstr "赭色"
-
-#: apc/config/fur_names.json:118
-msgid "Light Gray"
-msgstr "浅灰色"
-
-#: apc/config/fur_names.json:121
-msgid "Light Bronze"
-msgstr "浅青铜色"
-
-#: apc/config/fur_names.json:124
-msgid "Spirit"
-msgstr "幽灵色"
-
-#: apc/config/fur_names.json:127
-msgid "Red Brown"
-msgstr "红棕色"
-
-#: apc/config/fur_names.json:130
-msgid "Dark Green"
-msgstr "深绿色"
-
-#: apc/config/fur_names.json:133
-msgid "Light Green"
-msgstr "浅绿色"
-
-#: apc/config/fur_names.json:136
-msgid "Hybrid Blue"
-msgstr "蓝色杂交"
-
-#: apc/config/fur_names.json:139
-msgid "Hybrid Green"
-msgstr "绿色杂交"
-
-#: apc/config/fur_names.json:142
-msgid "Eclipse"
-msgstr "日食色"
-
-#: apc/config/fur_names.json:145
-msgid "Hybrid"
-msgstr "杂交色"
-
-#: apc/config/fur_names.json:148
-msgid "Spotted Dark"
-msgstr "深色斑点色"
-
-#: apc/config/fur_names.json:151
-msgid "Spotted Red"
-msgstr "红色斑点色"
-
-#: apc/config/fur_names.json:154
-msgid "White Brown"
-msgstr "白棕色"
-
-#: apc/config/fur_names.json:157
-msgid "Black Brown"
-msgstr "黑棕色"
-
-#: apc/config/fur_names.json:160
-msgid "Black White"
-msgstr "黑白色"
-
-#: apc/config/fur_names.json:163
-msgid "White"
-msgstr "白色"
-
-#: apc/config/fur_names.json:166
-msgid "Mixed"
-msgstr "混合色"
-
-#: apc/config/fur_names.json:169
-msgid "Black Spots"
-msgstr "黑色斑点色"
-
-#: apc/config/fur_names.json:172
-msgid "Blackgold"
-msgstr "黑金色"
-
-#: apc/config/fur_names.json:175
-msgid "Pink"
-msgstr "粉色"
-
-#: apc/config/fur_names.json:178
-msgid "Two Tones"
-msgstr "双色调"
-
-#: apc/config/fur_names.json:181
-msgid "Eggwhite"
-msgstr "蛋白色"
-
-#: apc/config/fur_names.json:184
-msgid "Pale"
-msgstr "苍白色"
-
-#: apc/config/fur_names.json:187
-msgid "Pristine"
-msgstr "纯净色"
-
-#: apc/config/fur_names.json:190
-msgid "Winter"
-msgstr "冬季色"
-
-#: apc/config/fur_names.json:193
-msgid "Fabled Two Tone"
-msgstr "珍惜双色调"
-
-#: apc/config/fur_names.json:196
-msgid "Fabled Birch"
-msgstr "珍惜桦树皮色"
-
-#: apc/config/fur_names.json:199
-msgid "Fabled Oak"
-msgstr "珍惜橡木色"
-
-#: apc/config/fur_names.json:202
-msgid "Fabled Speckled"
-msgstr "珍惜斑点色"
-
-#: apc/config/fur_names.json:205
-msgid "Fabled Spruce"
-msgstr "珍惜云杉色"
-
-#: apc/config/fur_names.json:208
-msgid "Fabled Ashen"
-msgstr "珍惜灰色"
-
-#: apc/config/fur_names.json:211
-msgid "Molting"
-msgstr "换毛色"
-
-#: apc/config/fur_names.json:214
-msgid "Dilute"
-msgstr "淡化色"
-
-#: apc/config/fur_names.json:217
-msgid "Dark Red"
-msgstr "深红色"
-
-#: apc/config/fur_names.json:220
-msgid "Piebald Grey"
-msgstr "斑块灰色"
-
-#: apc/config/fur_names.json:223
-msgid "Piebald Blnd"
-msgstr "斑点金色"
-
-#: apc/config/fur_names.json:226
-msgid "Lightbuff"
-msgstr "浅米黄色"
-
-#: apc/config/fur_names.json:229
-msgid "Bicolor"
-msgstr "双色"
-
-#: apc/config/fur_names.json:232
-msgid "Chestnut"
-msgstr "栗色"
-
-#: apc/config/fur_names.json:235
-msgid "Cream"
-msgstr "奶油色"
-
-#: apc/config/fur_names.json:238
-msgid "Bright"
-msgstr "鲜艳色"
-
-#: apc/config/fur_names.json:241
-msgid "Fabled Hooded"
-msgstr "传说中的连帽衫"
-
-#: apc/config/fur_names.json:244
-msgid "Fabled Mocha"
-msgstr "传说中的摩卡"
-
-#: apc/config/fur_names.json:247
-msgid "Two Tone"
-msgstr "双色调"
-
-#: apc/config/fur_names.json:250
-msgid "Grey Brown"
-msgstr "灰棕色"
-
-#: apc/config/fur_names.json:253
-msgid "Mocha"
-msgstr "摩卡"
-
-#: apc/config/fur_names.json:256
-msgid "Dusky Gradient"
-msgstr "昏暗渐变"
-
-#: apc/config/fur_names.json:259
-msgid "Yellow"
-msgstr "黄色的"
-
-#: apc/config/fur_names.json:262
-msgid "Maroon"
-msgstr "栗色"
-
-#: apc/config/fur_names.json:265
-msgid "Dark Spotted"
-msgstr "暗斑"
-
-#: apc/config/fur_names.json:268
-msgid "Chocolate"
-msgstr "巧克力"
-
-#: apc/config/fur_names.json:271
-msgid "Fabled Silver"
-msgstr "传说中的银币"
-
-#: apc/config/fur_names.json:274
-msgid "Fabled Golden"
-msgstr "传说中的黄金"
-
-#: apc/config/fur_names.json:277
-msgid "Fabled Painted"
-msgstr "传说中的彩绘"
-
-#: apc/config/fur_names.json:280
-msgid "Blue Grey"
-msgstr "蓝灰色"
-
-#: apc/config/fur_names.json:283
-msgid "Slate Grey"
-msgstr "板岩灰"
-
-#: apc/config/fur_names.json:286
-msgid "Caramel"
-msgstr "焦糖"
-
-#: apc/config/fur_names.json:289
-msgid "Snow"
-msgstr "雪"
-
-#: apc/config/fur_names.json:292
-msgid "Grey"
-msgstr "灰色的"
-
-#: apc/config/fur_names.json:295
-msgid "Tawny"
-msgstr "黄褐色"
-
-#: apc/config/fur_names.json:298
-msgid "Smoke"
-msgstr "抽烟"
-
-#: apc/config/fur_names.json:301
-msgid "Sand"
-msgstr "沙"
-
-#: apc/config/fur_names.json:304
-msgid "Dark Red Brown"
-msgstr "深红棕色"
-
-#: apc/config/fur_names.json:307
-msgid "Jet Brown"
-msgstr "杰特布朗"
-
-#: apc/config/fur_names.json:310
-msgid "Jet Black"
-msgstr "乌黑"
-
-#: apc/config/fur_names.json:313
-msgid "Light Grey"
-msgstr "浅灰色"
-
-#: apc/config/fur_names.json:316
-msgid "White Stripeless"
-msgstr "白色无条纹"
-
-#: apc/config/fur_names.json:319
-msgid "Pseudo Melanistic White 1"
-msgstr "伪黑色素白 1"
-
-#: apc/config/fur_names.json:322
-msgid "Pseudo Melanistic 1"
-msgstr "伪黑色素 1"
-
-#: apc/config/fur_names.json:325
-msgid "Straw"
-msgstr "稻草"
-
-#: apc/config/fur_names.json:328
-msgid "Pseudo Melanistic 2"
-msgstr "伪黑色素 2"
-
-#: apc/config/fur_names.json:331
-msgid "Pseudo Melanistic White 2"
-msgstr "伪黑色素白 2"
-
-#: apc/config/fur_names.json:334
-msgid "Red 2"
-msgstr "红色 2"
-
-#: apc/config/fur_names.json:337
-msgid "Leucistic 2"
-msgstr "白化 2"
-
-#: apc/config/fur_names.json:340
-msgid "Piebald 2"
-msgstr "花斑 2"
-
-#: apc/config/fur_names.json:343
+#: apc/config/fur_names.json:6
 msgid "Albino 2"
 msgstr "白化病 2"
 
-#: apc/config/fur_names.json:346
-msgid "Fabled Skull"
-msgstr "传说中的头骨"
+#: apc/config/fur_names.json:9
+msgid "Albino - Boss"
+msgstr "白化病 - 老板"
 
-#: apc/config/fur_names.json:349
-msgid "Fabled Latte"
-msgstr "传说拿铁"
+#: apc/config/fur_names.json:12
+msgid "Beige"
+msgstr "米黄色"
 
-#: apc/config/fur_names.json:352
-msgid "Fabled Gray"
+#: apc/config/fur_names.json:15
+msgid "Bicolor"
+msgstr "双色"
+
+#: apc/config/fur_names.json:18
+msgid "Black"
+msgstr "黑色"
+
+#: apc/config/fur_names.json:21
+msgid "Black Brown"
+msgstr "黑棕色"
+
+#: apc/config/fur_names.json:24
+msgid "Black Brown 2"
+msgstr "黑棕色2"
+
+#: apc/config/fur_names.json:27
+msgid "Black Spots"
+msgstr "黑色斑点色"
+
+#: apc/config/fur_names.json:30
+msgid "Black Spots 2"
+msgstr "黑点2"
+
+#: apc/config/fur_names.json:33
+msgid "Black White"
+msgstr "黑白色"
+
+#: apc/config/fur_names.json:36
+msgid "Blackgold"
+msgstr "黑金色"
+
+#: apc/config/fur_names.json:39
+msgid "Blonde"
+msgstr "金黄色"
+
+#: apc/config/fur_names.json:42
+msgid "Blue"
+msgstr "蓝色"
+
+#: apc/config/fur_names.json:45
+msgid "Blue Grey"
+msgstr "蓝灰色"
+
+#: apc/config/fur_names.json:48
+msgid "Blue Morph"
+msgstr "蓝色变体"
+
+#: apc/config/fur_names.json:51
+msgid "Bright"
+msgstr "鲜艳色"
+
+#: apc/config/fur_names.json:54
+msgid "Bronze"
+msgstr "青铜色"
+
+#: apc/config/fur_names.json:57
+msgid "Brown"
+msgstr "棕色"
+
+#: apc/config/fur_names.json:60
+msgid "Brown 2"
+msgstr "布朗2"
+
+#: apc/config/fur_names.json:63
+msgid "Brown Hybrid"
+msgstr "棕色杂交"
+
+#: apc/config/fur_names.json:66
+msgid "Brown Hybrid 2"
+msgstr "棕色杂种2"
+
+#: apc/config/fur_names.json:69
+msgid "Brown Maned"
+msgstr "棕色的曼德"
+
+#: apc/config/fur_names.json:72
+msgid "Buff"
+msgstr "浅黄色"
+
+#: apc/config/fur_names.json:75
+msgid "Caramel"
+msgstr "焦糖"
+
+#: apc/config/fur_names.json:78
+msgid "Chestnut"
+msgstr "栗色"
+
+#: apc/config/fur_names.json:81
+msgid "Chocolate"
+msgstr "巧克力"
+
+#: apc/config/fur_names.json:84
+msgid "Cinnamon"
+msgstr "肉桂色"
+
+#: apc/config/fur_names.json:87
+msgid "Cream"
+msgstr "奶油色"
+
+#: apc/config/fur_names.json:90
+msgid "Crowned"
+msgstr "带皇冠的"
+
+#: apc/config/fur_names.json:93
+msgid "Dark"
+msgstr "深色"
+
+#: apc/config/fur_names.json:96
+msgid "Dark 2"
+msgstr "黑暗2"
+
+#: apc/config/fur_names.json:99
+msgid "Dark Brown"
+msgstr "深棕色"
+
+#: apc/config/fur_names.json:102
+msgid "Dark Brown 2"
+msgstr "深棕色2"
+
+#: apc/config/fur_names.json:105
+msgid "Dark Green"
+msgstr "深绿色"
+
+#: apc/config/fur_names.json:108
+msgid "Dark Grey"
+msgstr "深灰色"
+
+#: apc/config/fur_names.json:111
+msgid "Dark Red"
+msgstr "深红色"
+
+#: apc/config/fur_names.json:114
+msgid "Dark Red Brown"
+msgstr "深红棕色"
+
+#: apc/config/fur_names.json:117
+msgid "Dilute"
+msgstr "淡化色"
+
+#: apc/config/fur_names.json:120
+msgid "Dilute Silver"
+msgstr "稀银"
+
+#: apc/config/fur_names.json:123
+msgid "Dusky"
+msgstr "暗灰色"
+
+#: apc/config/fur_names.json:126
+msgid "Dusky Gradient"
+msgstr "昏暗渐变"
+
+#: apc/config/fur_names.json:129
+msgid "Eclipse"
+msgstr "日食色"
+
+#: apc/config/fur_names.json:132
+msgid "Eggwhite"
+msgstr "蛋白色"
+
+#: apc/config/fur_names.json:135
+msgid "Erythristic"
+msgstr "亲戚"
+
+#: apc/config/fur_names.json:138
+msgid "Erythristic Golden"
+msgstr "红金"
+
+#: apc/config/fur_names.json:141
+msgid "Fantasma"
+msgstr "幻想"
+
+#: apc/config/fur_names.json:144
+msgid "Ghost"
+msgstr "鬼"
+
+#: apc/config/fur_names.json:147
+msgid "Ginger"
+msgstr "姜"
+
+#: apc/config/fur_names.json:150
+msgid "Gingersplit"
+msgstr "gingersplit"
+
+#: apc/config/fur_names.json:153
+msgid "Gold"
+msgstr "金色"
+
+#: apc/config/fur_names.json:156
+msgid "Grey Brown"
+msgstr "灰棕色"
+
+#: apc/config/fur_names.json:159
+msgid "Fabled Chestnut"
+msgstr "珍惜栗色"
+
+#: apc/config/fur_names.json:162
+msgid "Fabled Cream"
+msgstr "珍惜奶油色"
+
+#: apc/config/fur_names.json:165
+msgid "Fabled Glacier"
+msgstr "珍惜冰川色"
+
+#: apc/config/fur_names.json:168
+msgid "Fabled Glacier 2"
+msgstr "传说中的冰川 2"
+
+#: apc/config/fur_names.json:171
+msgid "Fabled Spirit"
+msgstr "珍惜幽灵色"
+
+#: apc/config/fur_names.json:174 apc/config/fur_names.json:204
+#: apc/config/fur_names.json:252
+msgid "Fabled Spotted"
+msgstr "珍惜斑点色"
+
+#: apc/config/fur_names.json:177
+msgid "Fabled Silver"
+msgstr "传说中的银币"
+
+#: apc/config/fur_names.json:180 apc/config/fur_names.json:303
+msgid "Fabled Piebald"
+msgstr "传说中的piebald"
+
+#: apc/config/fur_names.json:183
+msgid "Fabled Hooded"
+msgstr "传说中的连帽衫"
+
+#: apc/config/fur_names.json:186
+msgid "Fabled Golden"
+msgstr "传说中的黄金"
+
+#: apc/config/fur_names.json:189
+msgid "Fabled Mocha"
+msgstr "传说中的摩卡"
+
+#: apc/config/fur_names.json:192
+msgid "Fabled Spruce"
+msgstr "珍惜云杉色"
+
+#: apc/config/fur_names.json:195
+msgid "Fabled Two Tone"
+msgstr "珍惜双色调"
+
+#: apc/config/fur_names.json:198
+msgid "Fabled Birch"
+msgstr "珍惜桦树皮色"
+
+#: apc/config/fur_names.json:201
+msgid "Fabled Ashen"
+msgstr "珍惜灰色"
+
+#: apc/config/fur_names.json:207
+msgid "Fabled Oak"
+msgstr "珍惜橡木色"
+
+#: apc/config/fur_names.json:210
+msgid "Fabled Dripple Drizzle"
+msgstr "传说中的滴水毛毛雨"
+
+#: apc/config/fur_names.json:213
+msgid "Fabled Cobweb Enigma"
+msgstr "传说中的蜘蛛网谜"
+
+#: apc/config/fur_names.json:216
+msgid "Fabled Dusky Drift"
+msgstr "传说中的暗淡漂移"
+
+#: apc/config/fur_names.json:219
+msgid "Fabled Milky Way"
+msgstr "传说中的银河系"
+
+#: apc/config/fur_names.json:222
+msgid "Fabled Petal Puff"
+msgstr "传说的花瓣泡芙"
+
+#: apc/config/fur_names.json:225
+msgid "Fabled Cinnamon Stripes"
+msgstr "传说中的肉桂条纹"
+
+#: apc/config/fur_names.json:228
+msgid "Fabled Citrine"
+msgstr "传说中的柠檬油"
+
+#: apc/config/fur_names.json:231
+msgid "Fabled Emerald"
+msgstr "传说中的祖母绿"
+
+#: apc/config/fur_names.json:234
+msgid "Fabled Garnet"
+msgstr "传说的石榴石"
+
+#: apc/config/fur_names.json:237
+msgid "Fabled Morganite"
+msgstr "传说中的摩根石"
+
+#: apc/config/fur_names.json:240
+msgid "Fabled Obsidian"
+msgstr "传说中的黑曜石"
+
+#: apc/config/fur_names.json:243
+msgid "Fabled Pearl"
+msgstr "传说中的珍珠"
+
+#: apc/config/fur_names.json:246
+msgid "Fabled Ruby"
+msgstr "传说中的红宝石"
+
+#: apc/config/fur_names.json:249
+msgid "Fabled Sapphire"
+msgstr "传说的蓝宝石"
+
+#: apc/config/fur_names.json:255
+msgid "Fabled Blood Moon"
+msgstr "传说中的血月"
+
+#: apc/config/fur_names.json:258
+msgid "Fabled Candycane"
+msgstr "传说中的糖果"
+
+#: apc/config/fur_names.json:261
+msgid "Fabled Cherry Blossom"
+msgstr "传说中的樱花"
+
+#: apc/config/fur_names.json:264
+msgid "Fabled Licorice"
+msgstr "传说中的甘草"
+
+#: apc/config/fur_names.json:267
+msgid "Fabled Midnight Poppy"
+msgstr "传说中的午夜罂粟"
+
+#: apc/config/fur_names.json:270
+msgid "Fabled Mystic Snowdrop"
+msgstr "传说中的神秘雪花"
+
+#: apc/config/fur_names.json:273
+msgid "Fabled Peppermint"
+msgstr "传说中的薄荷"
+
+#: apc/config/fur_names.json:276
+msgid "Fabled Rosebud Frost"
+msgstr "传说中的玫瑰花蕾霜"
+
+#: apc/config/fur_names.json:279
+msgid "Fabled Scarlet Nightshade"
+msgstr "传说中的猩红色睡衣"
+
+#: apc/config/fur_names.json:282
+msgid "Fabled Gold"
+msgstr "传说的黄金"
+
+#: apc/config/fur_names.json:285
+msgid "Fabled Grey"
 msgstr "传说中的灰色"
 
-#: apc/config/fur_names.json:355
-msgid "Fabled Scar"
-msgstr "传说之痕"
-
-#: apc/config/fur_names.json:358
+#: apc/config/fur_names.json:288
 msgid "Fabled Half"
 msgstr "传说中的一半"
 
-#: apc/config/fur_names.json:361
+#: apc/config/fur_names.json:291
+msgid "Fabled Latte"
+msgstr "传说拿铁"
+
+#: apc/config/fur_names.json:294
+msgid "Fabled Scars"
+msgstr "传说疤痕"
+
+#: apc/config/fur_names.json:297
+msgid "Fabled Skull"
+msgstr "传说中的头骨"
+
+#: apc/config/fur_names.json:300
 msgid "Fabled Snow"
 msgstr "传说中的雪"
 
-#: apc/config/reserve_names.json:4
+#: apc/config/fur_names.json:306
+msgid "Grey"
+msgstr "灰色的"
+
+#: apc/config/fur_names.json:309
+msgid "Grey 2"
+msgstr "灰色2"
+
+#: apc/config/fur_names.json:312
+msgid "Honeytones"
+msgstr "蜂蜜色调"
+
+#: apc/config/fur_names.json:315
+msgid "Hybrid"
+msgstr "杂交色"
+
+#: apc/config/fur_names.json:318
+msgid "Hybrid 1"
+msgstr "杂种1"
+
+#: apc/config/fur_names.json:321
+msgid "Hybrid 2"
+msgstr "混合2"
+
+#: apc/config/fur_names.json:324
+msgid "Hybrid Blue"
+msgstr "蓝色杂交"
+
+#: apc/config/fur_names.json:327
+msgid "Hybrid Green"
+msgstr "绿色杂交"
+
+#: apc/config/fur_names.json:330
+msgid "Intermediate Morph"
+msgstr "中间变形"
+
+#: apc/config/fur_names.json:333
+msgid "Jet Black"
+msgstr "乌黑"
+
+#: apc/config/fur_names.json:336
+msgid "Jet Brown"
+msgstr "杰特布朗"
+
+#: apc/config/fur_names.json:339
+msgid "Leucistic"
+msgstr "白色"
+
+#: apc/config/fur_names.json:342
+msgid "Leucistic 2"
+msgstr "白化 2"
+
+#: apc/config/fur_names.json:345
+msgid "Leucistic 3"
+msgstr "Leucistic 3"
+
+#: apc/config/fur_names.json:348
+msgid "Leucistic 4"
+msgstr "Leucistic 4"
+
+#: apc/config/fur_names.json:351
+msgid "Leucistic 5"
+msgstr "Leucistic 5"
+
+#: apc/config/fur_names.json:354
+msgid "Light Bronze"
+msgstr "浅青铜色"
+
+#: apc/config/fur_names.json:357
+msgid "Light Brown"
+msgstr "浅棕色"
+
+#: apc/config/fur_names.json:360
+msgid "Light Brown 2"
+msgstr "浅棕色2"
+
+#: apc/config/fur_names.json:363
+msgid "Light Green"
+msgstr "浅绿色"
+
+#: apc/config/fur_names.json:366
+msgid "Light Grey"
+msgstr "浅灰色"
+
+#: apc/config/fur_names.json:369
+msgid "Lightbuff"
+msgstr "浅米黄色"
+
+#: apc/config/fur_names.json:372
+msgid "Light Grey Leucistic"
+msgstr "浅灰色 白化"
+
+#: apc/config/fur_names.json:375
+msgid "Maroon"
+msgstr "栗色"
+
+#: apc/config/fur_names.json:378
+msgid "Melanistic"
+msgstr "黑化"
+
+#: apc/config/fur_names.json:381
+msgid "Melanistic 2"
+msgstr "黑色素2"
+
+#: apc/config/fur_names.json:384
+msgid "Mixed"
+msgstr "混合色"
+
+#: apc/config/fur_names.json:387
+msgid "Mixed 2"
+msgstr "混合2"
+
+#: apc/config/fur_names.json:390
+msgid "Molting"
+msgstr "换毛色"
+
+#: apc/config/fur_names.json:393
+msgid "Molting 2"
+msgstr "摩尔2"
+
+#: apc/config/fur_names.json:396
+msgid "Mottled"
+msgstr "斑驳色"
+
+#: apc/config/fur_names.json:399
+msgid "Mottled 2"
+msgstr "mottled 2"
+
+#: apc/config/fur_names.json:402
+msgid "Mocha"
+msgstr "摩卡"
+
+#: apc/config/fur_names.json:405
+msgid "Ochre"
+msgstr "赭色"
+
+#: apc/config/fur_names.json:408
+msgid "Ogro"
+msgstr "欧格罗"
+
+#: apc/config/fur_names.json:411
+msgid "Olive"
+msgstr "橄榄色"
+
+#: apc/config/fur_names.json:414
+msgid "Orange"
+msgstr "橙色"
+
+#: apc/config/fur_names.json:417
+msgid "Pale"
+msgstr "苍白色"
+
+#: apc/config/fur_names.json:420
+msgid "Piebald"
+msgstr "花斑色"
+
+#: apc/config/fur_names.json:423
+msgid "Piebald 2"
+msgstr "花斑 2"
+
+#: apc/config/fur_names.json:426
+msgid "Piebald 3"
+msgstr "Piebald 3"
+
+#: apc/config/fur_names.json:429
+msgid "Piebald 4"
+msgstr "Piebald 4"
+
+#: apc/config/fur_names.json:432
+msgid "Piebald 5"
+msgstr "Piebald 5"
+
+#: apc/config/fur_names.json:435
+msgid "Piebald Blonde"
+msgstr "Piebald金发"
+
+#: apc/config/fur_names.json:438
+msgid "Piebald Grey"
+msgstr "斑块灰色"
+
+#: apc/config/fur_names.json:441
+msgid "Pink"
+msgstr "粉色"
+
+#: apc/config/fur_names.json:444
+msgid "Pristine"
+msgstr "纯净色"
+
+#: apc/config/fur_names.json:447
+msgid "Pseudo-Melanistic"
+msgstr "伪梅拉主义"
+
+#: apc/config/fur_names.json:450
+msgid "Pseudo-Melanistic 2"
+msgstr "伪 - 媒体2"
+
+#: apc/config/fur_names.json:453
+msgid "Pseudo-Melanistic White"
+msgstr "伪黑色的白色"
+
+#: apc/config/fur_names.json:456
+msgid "Pseudo-Melanistic White 2"
+msgstr "伪黑人白色2"
+
+#: apc/config/fur_names.json:459
+msgid "Red"
+msgstr "红色"
+
+#: apc/config/fur_names.json:462
+msgid "Red 2"
+msgstr "红色 2"
+
+#: apc/config/fur_names.json:465
+msgid "Red Brown"
+msgstr "红棕色"
+
+#: apc/config/fur_names.json:468
+msgid "Reddish Brown"
+msgstr "红棕色"
+
+#: apc/config/fur_names.json:471
+msgid "Sand"
+msgstr "沙"
+
+#: apc/config/fur_names.json:474
+msgid "Slate Grey"
+msgstr "板岩灰"
+
+#: apc/config/fur_names.json:477
+msgid "Smoke"
+msgstr "抽烟"
+
+#: apc/config/fur_names.json:480
+msgid "Snow"
+msgstr "雪"
+
+#: apc/config/fur_names.json:483
+msgid "Sombra"
+msgstr "sombra"
+
+#: apc/config/fur_names.json:486
+msgid "Spirit"
+msgstr "幽灵色"
+
+#: apc/config/fur_names.json:489
+msgid "Spotted"
+msgstr "有斑点的"
+
+#: apc/config/fur_names.json:492
+msgid "Spotted 2"
+msgstr "发现2"
+
+#: apc/config/fur_names.json:495
+msgid "Spotted Dark"
+msgstr "深色斑点色"
+
+#: apc/config/fur_names.json:498
+msgid "Spotted Red"
+msgstr "红色斑点色"
+
+#: apc/config/fur_names.json:501
+msgid "Standard"
+msgstr "标准"
+
+#: apc/config/fur_names.json:504
+msgid "Straw"
+msgstr "稻草"
+
+#: apc/config/fur_names.json:507
+msgid "Tan"
+msgstr "茶色"
+
+#: apc/config/fur_names.json:510
+msgid "Tawny"
+msgstr "黄褐色"
+
+#: apc/config/fur_names.json:513
+msgid "Two Tone"
+msgstr "双色调"
+
+#: apc/config/fur_names.json:516
+msgid "White"
+msgstr "白色"
+
+#: apc/config/fur_names.json:519
+msgid "White Brown"
+msgstr "白棕色"
+
+#: apc/config/fur_names.json:522
+msgid "White Hybrid"
+msgstr "白色杂种"
+
+#: apc/config/fur_names.json:525
+msgid "White Morph"
+msgstr "白色变体"
+
+#: apc/config/fur_names.json:528
+msgid "White Stripeless"
+msgstr "白色无条纹"
+
+#: apc/config/fur_names.json:531
+msgid "Winter"
+msgstr "冬季色"
+
+#: apc/config/fur_names.json:534
+msgid "Yellow"
+msgstr "黄色的"
+
+#: apc/config/reserve_details.json:3
 msgid "Hirschfelden Hunting Reserve"
 msgstr "赫希费尔登狩猎保护区"
 
-#: apc/config/reserve_names.json:7
+#: apc/config/reserve_details.json:18
 msgid "Layton Lake District"
 msgstr "莱顿湖区"
 
-#: apc/config/reserve_names.json:10
+#: apc/config/reserve_details.json:33
 msgid "Medved-Taiga National Park"
 msgstr "梅德韦泰嘉国家公园"
 
-#: apc/config/reserve_names.json:13
+#: apc/config/reserve_details.json:47
 msgid "Vurhonga Savanna"
 msgstr "乌尔霍加热带稀树草原"
 
-#: apc/config/reserve_names.json:16
+#: apc/config/reserve_details.json:63
 msgid "Parque Fernando"
 msgstr "费南多自然公园"
 
-#: apc/config/reserve_names.json:19
+#: apc/config/reserve_details.json:77
 msgid "Yukon Valley Nature Reserve"
 msgstr "育空谷自然保护区"
 
-#: apc/config/reserve_names.json:22
+#: apc/config/reserve_details.json:91
 msgid "Cuatro Colinas Game Reserve"
 msgstr "夸特罗·科利纳斯野生动物保护区"
 
-#: apc/config/reserve_names.json:25
+#: apc/config/reserve_details.json:108
 msgid "Silver Ridge Peaks"
 msgstr "银岭峰"
 
-#: apc/config/reserve_names.json:28
+#: apc/config/reserve_details.json:126
 msgid "Te Awaroa National Park"
 msgstr "蒂阿拉罗瓦国家公园"
 
-#: apc/config/reserve_names.json:31
+#: apc/config/reserve_details.json:143
 msgid "Rancho del Arroyo"
 msgstr "阿罗约牧场"
 
-#: apc/config/reserve_names.json:34
+#: apc/config/reserve_details.json:159
 msgid "Mississippi Acres Preserve"
 msgstr "密西西比阿克里斯保护区"
 
-#: apc/config/reserve_names.json:37
+#: apc/config/reserve_details.json:178
 msgid "Revontuli Coast"
 msgstr "雷文图里海岸"
 
-#: apc/config/reserve_names.json:40
+#: apc/config/reserve_details.json:203
 msgid "New England Mountains"
 msgstr "新英格兰山脉"
 
-#: apc/config/reserve_names.json:43
+#: apc/config/reserve_details.json:224
 msgid "Emerald Coast"
 msgstr "翡翠海岸"
 
-#: apc/config/reserve_names.json:46
+#: apc/config/reserve_details.json:244
 msgid "Sundarpatan Nepal Hunting Reserve"
 msgstr "尼泊尔桑达尔帕坦狩猎保护区"
 
-#: apc/config/reserve_names.json:49
+#: apc/config/reserve_details.json:263
 msgid "Salzwiesen Park"
 msgstr "萨尔茨维森公园"
+
+#: apc/config/reserve_details.json:284
+msgid "Alberta Hunting Preserve"
+msgstr "艾伯塔省狩猎保护区"
+
+#~ msgid "We All Party"
+#~ msgstr "一键生成"
+
+#~ msgid "Fur Party"
+#~ msgstr "毛皮全生成"
+
+#~ msgid "view modded version"
+#~ msgstr "查看转换好的文件"
+
+#~ msgid "name"
+#~ msgstr "名称"
+
+#~ msgid "Eu Bison"
+#~ msgstr "欧洲野牛"
+
+#~ msgid "Eu Hare"
+#~ msgstr "欧洲薮兔"
+
+#~ msgid "Eu Rabbit"
+#~ msgstr "欧洲野兔"
+
+#~ msgid "Green Wing Teal"
+#~ msgstr "美洲小水鸭"
+
+#~ msgid "Jackrabbit"
+#~ msgstr "白尾兔"
+
+#~ msgid "Northern Bobwhite Quail"
+#~ msgstr "山齿鹑"
+
+#~ msgid "Pheasant"
+#~ msgstr "环颈稚鸡"
+
+#~ msgid "Prong Horn"
+#~ msgstr "叉角羚"
+
+#~ msgid "Raccoon"
+#~ msgstr "北美淀熊"
+
+#~ msgid "Rockymountain Elk"
+#~ msgstr "落基山麋鹿"
+
+#~ msgid "Sidestriped Jackal"
+#~ msgstr "侧纹胡狼"
+
+#~ msgid "Southeastern Ibex"
+#~ msgstr "西班牙东南部山羊"
+
+#~ msgid "Wild Turkey"
+#~ msgstr "太平原火鸡"
+
+#~ msgid "Eastern Kangaroo"
+#~ msgstr "东部袋鼠"
+
+#~ msgid "Sambar Deer"
+#~ msgstr "水鹿"
+
+#~ msgid "Gray"
+#~ msgstr "灰色"
+
+#~ msgid "Gray Brown"
+#~ msgstr "灰棕色"
+
+#~ msgid "Light Gray"
+#~ msgstr "浅灰色"
+
+#~ msgid "Two Tones"
+#~ msgstr "双色调"
+
+#~ msgid "Fabled Speckled"
+#~ msgstr "珍惜斑点色"
+
+#~ msgid "Piebald Blnd"
+#~ msgstr "斑点金色"
+
+#~ msgid "Dark Spotted"
+#~ msgstr "暗斑"
+
+#~ msgid "Fabled Painted"
+#~ msgstr "传说中的彩绘"
+
+#~ msgid "Pseudo Melanistic White 1"
+#~ msgstr "伪黑色素白 1"
+
+#~ msgid "Pseudo Melanistic 1"
+#~ msgstr "伪黑色素 1"
+
+#~ msgid "Pseudo Melanistic 2"
+#~ msgstr "伪黑色素 2"
+
+#~ msgid "Pseudo Melanistic White 2"
+#~ msgstr "伪黑色素白 2"
+
+#~ msgid "Fabled Gray"
+#~ msgstr "传说中的灰色"
+
+#~ msgid "Fabled Scar"
+#~ msgstr "传说之痕"
+
+#~ msgid "Can't add animals"
+#~ msgstr "无法添加动物"
+
+#~ msgid "The reserve has a limit of 50,000 animals"
+#~ msgstr "储备有50,000只动物的限制"
+
+#~ msgid "WHite Brown 2"
+#~ msgstr "白棕色2"
+
+#~ msgid "Caribou"
+#~ msgstr "北美驯鹿"
+
+#~ msgid "Bald Leucistic"
+#~ msgstr "秃头白化"
+
+#~ msgid "Light Brown 3"
+#~ msgstr "浅棕色3"

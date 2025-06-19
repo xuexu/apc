@@ -1,226 +1,227 @@
 {
   "hirsch": {
-      "name": "Hirschfelden Hunting Reserve",
-      "index": 0,
-      "species": [
-        "wild_boar",
-        "eu_rabbit",
-        "fallow_deer",
-        "eu_bison",
-        "roe_deer",
-        "red_fox",
-        "pheasant",
-        "canada_goose",
-        "red_deer"
-      ]
+    "reserve_name": "Hirschfelden Hunting Reserve",
+    "index": 0,
+    "species": [
+      "wild_boar",
+      "eu_rabbit",
+      "fallow_deer",
+      "eu_bison",
+      "roe_deer",
+      "red_fox",
+      "pheasant",
+      "canada_goose",
+      "red_deer"
+    ]
   },
   "layton": {
-      "name": "Layton Lake District",
-      "index": 1,
-      "species": [
-        "moose",
-        "jackrabbit",
-        "mallard",
-        "wild_turkey",
-        "black_bear",
-        "roosevelt_elk",
-        "coyote",
-        "blacktail_deer",
-        "whitetail_deer"
-      ]
+    "reserve_name": "Layton Lake District",
+    "index": 1,
+    "species": [
+      "moose",
+      "jackrabbit",
+      "mallard",
+      "wild_turkey",
+      "black_bear",
+      "roosevelt_elk",
+      "coyote",
+      "blacktail_deer",
+      "whitetail_deer"
+    ]
   },
   "medved": {
-      "name": "Medved-Taiga National Park",
-      "index": 2,
-      "species": [
-        "siberian_musk_deer",
-        "moose",
-        "wild_boar",
-        "reindeer",
-        "eurasian_lynx",
-        "eurasian_brown_bear",
-        "western_capercaillie",
-        "gray_wolf"
-      ]
+    "reserve_name": "Medved-Taiga National Park",
+    "index": 2,
+    "species": [
+      "siberian_musk_deer",
+      "moose",
+      "wild_boar",
+      "reindeer",
+      "eurasian_lynx",
+      "eurasian_brown_bear",
+      "western_capercaillie",
+      "gray_wolf"
+    ]
   },
   "vurhonga": {
-      "name": "Vurhonga Savanna",
-      "index": 3,
-      "species": [
-        "eurasian_wigeon",
-        "blue_wildebeest",
-        "sidestriped_jackal",
-        "gemsbok",
-        "lesser_kudu",
-        "scrub_hare",
-        "lion",
-        "warthog",
-        "cape_buffalo",
-        "springbok"
-      ]
+    "reserve_name": "Vurhonga Savanna",
+    "index": 3,
+    "species": [
+      "eurasian_wigeon",
+      "blue_wildebeest",
+      "sidestriped_jackal",
+      "gemsbok",
+      "lesser_kudu",
+      "scrub_hare",
+      "lion",
+      "warthog",
+      "cape_buffalo",
+      "springbok"
+    ]
   },
   "parque": {
-      "name": "Parque Fernando",
-      "index": 4,
-      "species": [
-        "red_deer",
-        "water_buffalo",
-        "puma",
-        "blackbuck",
-        "cinnamon_teal",
-        "collared_peccary",
-        "mule_deer",
-        "axis_deer"
-      ]
+    "reserve_name": "Parque Fernando",
+    "index": 4,
+    "species": [
+      "red_deer",
+      "water_buffalo",
+      "puma",
+      "blackbuck",
+      "cinnamon_teal",
+      "collared_peccary",
+      "mule_deer",
+      "axis_deer"
+    ]
   },
   "yukon": {
-      "name": "Yukon Valley Nature Reserve",
-      "index": 6,
-      "species": [
-        "harlequin_duck",
-        "moose",
-        "red_fox",
-        "caribou",
-        "canada_goose",
-        "grizzly_bear",
-        "gray_wolf",
-        "plains_bison"
-      ]
+    "reserve_name": "Yukon Valley Nature Reserve",
+    "index": 6,
+    "species": [
+      "harlequin_duck",
+      "moose",
+      "red_fox",
+      "caribou",
+      "canada_goose",
+      "grizzly_bear",
+      "gray_wolf",
+      "plains_bison"
+    ]
   },
   "cuatro": {
-      "name": "Cuatro Colinas Game Reserve",
-      "index": 8,
-      "species": [
-        "southeastern_ibex",
-        "iberian_wolf",
-        "red_deer",
-        "iberian_mouflon",
-        "wild_boar",
-        "beceite_ibex",
-        "eu_hare",
-        "roe_deer",
-        "ronda_ibex",
-        "pheasant",
-        "gredos_ibex"
-      ]
+    "reserve_name": "Cuatro Colinas Game Reserve",
+    "index": 8,
+    "species": [
+      "southeastern_ibex",
+      "iberian_wolf",
+      "red_deer",
+      "iberian_mouflon",
+      "wild_boar",
+      "beceite_ibex",
+      "eu_hare",
+      "roe_deer",
+      "ronda_ibex",
+      "pheasant",
+      "gredos_ibex"
+    ]
   },
   "silver": {
-      "name": "Silver Ridge Peaks",
-      "index": 9,
-      "renames": {
-        "puma": "mountain_lion"
-      },
-      "species": [
-        "prong_horn",
-        "puma",
-        "mountain_goat",
-        "bighorn_sheep",
-        "wild_turkey",
-        "black_bear",
-        "mule_deer",
-        "rockymountain_elk",
-        "plains_bison"
-      ]
+    "reserve_name": "Silver Ridge Peaks",
+    "index": 9,
+    "renames": {
+      "puma": "mountain_lion"
+    },
+    "species": [
+      "prong_horn",
+      "puma",
+      "mountain_goat",
+      "bighorn_sheep",
+      "wild_turkey",
+      "black_bear",
+      "mule_deer",
+      "rockymountain_elk",
+      "plains_bison"
+    ]
   },
   "teawaroa": {
-      "name": "Te Awaroa National Park",
-      "index": 10,
-      "species": [
-        "red_deer",
-        "eu_rabbit",
-        "feral_pig",
-        "fallow_deer",
-        "chamois",
-        "mallard",
-        "wild_turkey",
-        "sika_deer",
-        "feral_goat",
-        "tahr"
-      ]
+    "reserve_name": "Te Awaroa National Park",
+    "index": 10,
+    "species": [
+      "_BLANK_GROUPS_ARRAY",
+      "red_deer",
+      "eu_rabbit",
+      "feral_pig",
+      "fallow_deer",
+      "chamois",
+      "mallard",
+      "wild_turkey",
+      "sika_deer",
+      "feral_goat",
+      "tahr"
+    ]
   },
   "rancho": {
-      "name": "Rancho del Arroyo",
-      "index": 11,
-      "species": [
-        "mexican_bobcat",
-        "rio_grande_turkey",
-        "prong_horn",
-        "bighorn_sheep",
-        "collared_peccary",
-        "antelope_jackrabbit",
-        "mule_deer",
-        "coyote",
-        "pheasant",
-        "whitetail_deer"
-      ]
+    "reserve_name": "Rancho del Arroyo",
+    "index": 11,
+    "species": [
+      "mexican_bobcat",
+      "rio_grande_turkey",
+      "prong_horn",
+      "bighorn_sheep",
+      "collared_peccary",
+      "antelope_jackrabbit",
+      "mule_deer",
+      "coyote",
+      "pheasant",
+      "whitetail_deer"
+    ]
   },
   "mississippi": {
-      "name": "Mississippi Acres Preserve",
-      "index": 12,
-      "renames": {
-        "feral_pig": "wild_hog"
-      },
-      "species": [
-        "feral_pig",
-        "raccoon",
-        "eastern_cottontail_rabbit",
-        "northern_bobwhite_quail",
-        "eastern_wild_turkey",
-        "gray_fox",
-        "black_bear",
-        "american_alligator",
-        "green_wing_teal",
-        "whitetail_deer"
-      ]
+    "reserve_name": "Mississippi Acres Preserve",
+    "index": 12,
+    "renames": {
+      "feral_pig": "wild_hog"
+    },
+    "species": [
+      "feral_pig",
+      "raccoon",
+      "eastern_cottontail_rabbit",
+      "northern_bobwhite_quail",
+      "eastern_wild_turkey",
+      "gray_fox",
+      "black_bear",
+      "american_alligator",
+      "green_wing_teal",
+      "whitetail_deer"
+    ]
   },
   "revontuli": {
-      "name": "Revontuli Coast",
-      "index": 13,
-      "species": [
-        "mallard",
-        "rock_ptarmigan",
-        "eurasian_wigeon",
-        "moose",
-        "goldeneye",
-        "mountain_hare",
-        "tufted_duck",
-        "black_grouse",
-        "tundra_bean_goose",
-        "willow_ptarmigan",
-        "eurasian_lynx",
-        "hazel_grouse",
-        "eurasian_brown_bear",
-        "eurasian_teal",
-        "western_capercaillie",
-        "canada_goose",
-        "greylag_goose",
-        "whitetail_deer",
-        "raccoon_dog"
-      ]
+    "reserve_name": "Revontuli Coast",
+    "index": 13,
+    "species": [
+      "mallard",
+      "rock_ptarmigan",
+      "eurasian_wigeon",
+      "moose",
+      "goldeneye",
+      "mountain_hare",
+      "tufted_duck",
+      "black_grouse",
+      "tundra_bean_goose",
+      "willow_ptarmigan",
+      "eurasian_lynx",
+      "hazel_grouse",
+      "eurasian_brown_bear",
+      "eurasian_teal",
+      "western_capercaillie",
+      "canada_goose",
+      "greylag_goose",
+      "whitetail_deer",
+      "raccoon_dog"
+    ]
   },
   "newengland": {
-      "name": "New England Mountains",
-      "index": 14,
-      "species": [
-        "mallard",
-        "moose",
-        "goldeneye",
-        "raccoon",
-        "eastern_cottontail_rabbit",
-        "northern_bobwhite_quail",
-        "eastern_wild_turkey",
-        "gray_fox",
-        "red_fox",
-        "black_bear",
-        "bobcat",
-        "coyote",
-        "pheasant",
-        "green_wing_teal",
-        "whitetail_deer"
-      ]
+    "reserve_name": "New England Mountains",
+    "index": 14,
+    "species": [
+      "mallard",
+      "moose",
+      "goldeneye",
+      "raccoon",
+      "eastern_cottontail_rabbit",
+      "northern_bobwhite_quail",
+      "eastern_wild_turkey",
+      "gray_fox",
+      "red_fox",
+      "black_bear",
+      "bobcat",
+      "coyote",
+      "pheasant",
+      "green_wing_teal",
+      "whitetail_deer"
+    ]
   },
   "emerald": {
-    "name": "Emerald Coast",
+    "reserve_name": "Emerald Coast",
     "index": 16,
     "species": [
       "hog_deer",
@@ -228,55 +229,80 @@
       "red_deer",
       "feral_pig",
       "magpie_goose",
-      "eg_kangaroo",
+      "eastern_grey_kangaroo",
       "red_fox",
       "sambar",
       "banteng",
-      "sw_crocodile",
+      "saltwater_crocodile",
       "feral_goat",
       "stubble_quail",
       "axis_deer",
       "javan_rusa"
     ]
   },
-    "sundarpatan": {
-    "name": "Sundarpatan Nepal Hunting Reserve",
+  "sundarpatan": {
+    "reserve_name": "Sundarpatan Nepal Hunting Reserve",
     "index": 17,
     "species": [
-    "blue_sheep",
-    "water_buffalo",
-    "snow_leopard",
-    "blackbuck",
-    "nilgai",
-    "tibetan_fox",
-    "wild_yak",
-    "northern_red_muntjac",
-    "barasingha",
-    "woolly_hare",
-    "bengal_tiger",
-    "greylag_goose",
-    "tahr"
+      "blue_sheep",
+      "water_buffalo",
+      "snow_leopard",
+      "blackbuck",
+      "nilgai",
+      "tibetan_fox",
+      "wild_yak",
+      "northern_red_muntjac",
+      "barasingha",
+      "woolly_hare",
+      "bengal_tiger",
+      "greylag_goose",
+      "tahr"
     ]
   },
-    "salzwiesen": {
-    "name": "Salzwiesen Park",
+  "salzwiesen": {
+    "reserve_name": "Salzwiesen Park",
     "index": 18,
     "species": [
-    "mallard",
-    "eurasian_wigeon",
-    "goldeneye",
-    "eu_rabbit",
-    "raccoon",
-    "tufted_duck",
-    "black_grouse",
-    "tundra_bean_goose",
-    "red_fox",
-    "eurasian_teal",
-    "gadwall",
-    "pheasant",
-    "greylag_goose",
-    "ferruginous_duck",
-    "raccoon_dog"
+      "mallard",
+      "eurasian_wigeon",
+      "goldeneye",
+      "eu_rabbit",
+      "raccoon",
+      "tufted_duck",
+      "black_grouse",
+      "tundra_bean_goose",
+      "red_fox",
+      "eurasian_teal",
+      "gadwall",
+      "pheasant",
+      "greylag_goose",
+      "ferruginous_duck",
+      "raccoon_dog"
+    ]
+  },
+  "alberta": {
+    "reserve_name": "Alberta Hunting Preserve",
+    "index": 19,
+    "species": [
+      "mallard",
+      "manitoban_elk",
+      "moose",
+      "woodland_caribou",
+      "prong_horn",
+      "wood_bison",
+      "wood_duck",
+      "northern_pintail",
+      "mountain_goat",
+      "bighorn_sheep",
+      "black_bear",
+      "mule_deer",
+      "snow_goose",
+      "pheasant",
+      "canada_goose",
+      "gray_wolf",
+      "dusky_grouse",
+      "whitetail_deer",
+      "north_american_beaver"
     ]
   }
 }

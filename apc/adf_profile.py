@@ -1,6 +1,8 @@
+from apc.logging_config import get_logger
+logger = get_logger(__name__)
+
 import struct, json, re
 from pathlib import Path
-from typing import Tuple, List
 
 typedef_s8 = 1477249634
 typedef_u8 = 211976733
@@ -20,7 +22,7 @@ STRUCTURE = 1
 ARRAY = 3
 
 class AdfArray:
-  def __init__(self, name: str, population: int, group: int, length: int, header_start_offset: int, header_length_offset: int, header_array_offset: int, array_start_offset: int, array_end_offset: int, rel_array_start_offset: int, rel_array_end_offset: int, male_indices: List[int], female_indices: List[int]) -> None:
+  def __init__(self, name: str, population: int, group: int, length: int, header_start_offset: int, header_length_offset: int, header_array_offset: int, array_start_offset: int, array_end_offset: int, rel_array_start_offset: int, rel_array_end_offset: int, male_indices: list[int], female_indices: list[int]) -> None:
     self.name = name
     self.population = population
     self.group = group
@@ -53,7 +55,7 @@ class Animal:
     self.map_position_x = 0.0
     self.map_position_y = 0.0
     self.size = len(self.to_bytes())
-    
+
   def __repr__(self) -> str:
     return f"""
       gender: {self.gender},{create_u8(self.gender)},
@@ -65,7 +67,7 @@ class Animal:
       x: {self.map_position_x},{create_f32(self.map_position_x)},
       y: {self.map_position_y},{create_f32(self.map_position_y)}
     """
-    
+
   def to_bytes(self) -> bytearray:
     gender = create_u8(self.gender)
     weight = create_f32(self.weight)
@@ -87,8 +89,13 @@ def create_u32(value: int) -> bytearray:
 def read_u8(data: bytearray) -> int:
   return struct.unpack("B", data)[0]
 
-def create_u8(value: int) -> bytearray:
+def create_u8(value: int, small: bool = False) -> bytearray:
+  if small:
+    return bytearray(struct.pack("B", value))
   return bytearray(struct.pack("B0I", value))
+
+def read_f32(data: bytearray) -> float:
+  return struct.unpack("f", data)[0]
 
 def create_f32(value: float) -> bytearray:
   return bytearray(struct.pack("f", value))
@@ -102,6 +109,9 @@ def read_str(data: bytearray) -> str:
 
 def write_value(data: bytearray, new_data: bytearray, offset: int) -> None:
   data[offset:offset+len(new_data)] = new_data
+
+def insert_data(data: bytearray, new_data: bytearray, offset: int) -> None:
+  data[offset:offset] = new_data
 
 def find_length_of_string(data: bytearray) -> bytearray:
   for i in range(len(data)):
@@ -117,7 +127,7 @@ def find_nametable_size(data: bytearray, count: int) -> int:
     size += 1 + i_length + eos
   return size
 
-def read_nametables(data: bytearray, count: int) -> List[str]:
+def read_nametables(data: bytearray, count: int) -> list[str]:
   nametable_sizes = []
   nametables = []
   for i in range(count):
@@ -134,7 +144,7 @@ def read_nametables(data: bytearray, count: int) -> List[str]:
   
   return nametables
 
-def read_typemember(data: bytearray, nametables: List[str]) -> dict:
+def read_typemember(data: bytearray, nametables: list[str]) -> dict:
   name_index = read_u64(data[0:8]) 
   name = nametables[name_index]
   type_hash = read_u32(data[8:12])
@@ -147,7 +157,7 @@ def read_typemember(data: bytearray, nametables: List[str]) -> dict:
     "offset": offset
   }
 
-def read_typedef(header: bytearray, offset: int, nametables: List[str]) -> Tuple[int, dict]:
+def read_typedef(header: bytearray, offset: int, nametables: list[str]) -> tuple[int, dict]:
   header_size = 36
   member_size = 32
   metatype = read_u32(header[0:4])
@@ -191,7 +201,7 @@ def read_typedef(header: bytearray, offset: int, nametables: List[str]) -> Tuple
       "end": offset+header_size+4
     })
 
-def find_typedef_offset(data: bytearray, typedef_offset: int, count: int, nametables: List[str]) -> dict:
+def find_typedef_offset(data: bytearray, typedef_offset: int, count: int, nametables: list[str]) -> dict:
   pointer = typedef_offset
   offsets = []
   for i in range(count):
@@ -282,7 +292,7 @@ def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type
   
   return (value, pointer)
 
-def find_instance_offset(data: bytearray, offset: int, count: int, nametables: List[str], type_map: dict) -> dict:
+def find_instance_offset(data: bytearray, offset: int, count: int, nametables: list[str], type_map: dict) -> dict:
   instance_header_size = 24
   instances = []
   for i in range(count):
@@ -302,7 +312,7 @@ def find_instance_offset(data: bytearray, offset: int, count: int, nametables: L
     "instances": instances
   }
   
-def find_population_array_offsets(offsets: dict, result: List[dict] = [], org_path: str = "", prev_key: str = "", index: int = 0) -> List[dict]:
+def find_population_array_offsets(offsets: dict, result: list[dict] = [], org_path: str = "", prev_key: str = "", index: int = 0) -> list[dict]:
   for key, v in offsets.items():
     if org_path == "":
       path = ""
@@ -441,7 +451,7 @@ def create_profile(filename: Path) -> None:
     }
   }
   
-def find_arrays(profile: dict, data: bytearray) -> Tuple[List[AdfArray], List[AdfArray]]:
+def find_arrays(profile: dict, data: bytearray) -> tuple[list[AdfArray], list[AdfArray]]:
   instance_offsets = profile["details"]["instance_offsets"]
   instance_offset = instance_offsets["instances"][0]["offset"][0]
   array_offsets = find_population_array_offsets(instance_offsets["instances"][0]["0"], [])

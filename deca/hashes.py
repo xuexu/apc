@@ -1,3 +1,22 @@
+# This file is part of the original MIT-licensed project:
+# https://github.com/kk49/deca
+# Copyright (c) 2018–2019 Krzysztof Kamieniecki
+# Licensed under the MIT License. See LICENSE file for details.
+
+'''
+KK FOUND HERE: https://stackoverflow.com/questions/3279615/python-implementation-of-jenkins-hash
+'''
+
+# Need to constrain U32 to only 32 bits using the & 0xffffffff
+# since Python has no native notion of integers limited to 32 bit
+# http://docs.python.org/library/stdtypes.html#numeric-types-int-float-long-complex
+
+'''
+Original copyright notice:
+    By Bob Jenkins, 1996.  bob_jenkins@burtleburtle.net.  You may use this
+    code any way you wish, private, educational, or commercial.  Its free.
+'''
+
 def rot(x, k):
     return (x << k) | (x >> (32 - k))
 
