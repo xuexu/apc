@@ -928,8 +928,8 @@ def _update_animal_details(window: sg.Window, animal_details: AnimalDetails) -> 
     high_score = round(species_config["gender"][gender_key]["score_high"], 1)
     window["animal_gender"].update(animal_details.gender, disabled=False)
 
-    safe_diamonds = config.get_safe_diamond_values(species_config)
-    logger.info(safe_diamonds)
+    # safe_diamonds = config.get_safe_diamond_values(species_config)
+    # logger.info(safe_diamonds)
     diamond_low_weight = round(species_config["trophy"]["diamond"]["weight_low"], 1)
     diamond_low_score = round(species_config["trophy"]["diamond"]["score_low"], 1)
 
@@ -942,7 +942,7 @@ def _update_animal_details(window: sg.Window, animal_details: AnimalDetails) -> 
   window["animal_weight"].update(value = animal_details.weight, range=(low_weight, high_weight))
   window["animal_score"].update(value = animal_details.score, range=(low_score, high_score))
   if animal_details.can_be_diamond and not animal_details.great_one:
-    window["animal_weight_info"].update(f"({config.DIAMOND}: {round(safe_diamonds["weight_low"], 1)})")
+    window["animal_weight_info"].update(f"({config.DIAMOND}: {diamond_low_weight})")
     window["animal_score_info"].update(f"({config.DIAMOND}: {diamond_low_score})")
   else:
     window["animal_weight_info"].update(f"")
@@ -1143,7 +1143,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
           ],
         ], vertical_alignment="top", expand_x=True, expand_y=True),
         sg.Column([
-          [sg.Text("species_name_here", key="species_name", text_color="orange", justification="right", expand_x=True, p=((5,5),(0,0)))],
+          [sg.Text("", key="species_name", text_color="orange", justification="right", expand_x=True, p=((5,5),(0,0)))],
           [
             sg.Column([
               [
@@ -1238,14 +1238,13 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
             sg.Column([[
               sg.Frame(None, [
                 [sg.T(textwrap.fill(config.ANIMAL_DETAILS, 30), font=MEDIUM_FONT, expand_x=True, justification="c", text_color="orange", p=(0,10))],
-                [sg.T(f"{config.GREATONE}:", p=((10,0),(10,0)))],
-                [sg.Combo([config.YES, config.NO], None, p=((20,0),(5,5)), k="animal_great_one", enable_events=True, disabled=True)],
-                [sg.T(f"{config.GENDER}:", p=((10,0),(10,0)))],
-                [sg.Combo([config.MALE, config.FEMALE], None, p=((20,0),(5,5)), k="animal_gender", enable_events=True, disabled=True)],
+                [sg.T(f"{config.GREATONE}:", p=((10,0),(0,10))), sg.Combo([config.YES, config.NO], None, p=((20,0),(0,10)), k="animal_great_one", enable_events=True, disabled=True)],
+                [sg.T(f"{config.GENDER}:", p=((10,0),(0,10))), sg.Combo([config.MALE, config.FEMALE], None, p=((20,0),(0,10)), k="animal_gender", enable_events=True, disabled=True)],
+                # [sg.T(f"{config.TROPHY_RATING}:", p=((10,0),(0,10))), sg.Combo([config.YES, config.NO], None, p=((20,0),(0,10)), k="animal_great_one", enable_events=True, disabled=True)],
                 [sg.Checkbox("", default=True, k="animal_weight_checkbox", p=((10,0),(10,0))), sg.T(f"{config.WEIGHT}:", p=((0,0),(10,0))), sg.T("", p=((0,0),(10,0)), k="animal_weight_info", font=MEDIUM_FONT, text_color="orange")],
-                [sg.Slider((0,0), orientation="h", resolution=0.01, p=((20,10),(5,5)), k="animal_weight", enable_events=True)],
+                [sg.Slider((0,0), orientation="h", resolution=0.01, p=((20,10),(0,5)), k="animal_weight", enable_events=True)],
                 [sg.Checkbox("", default=True, k="animal_score_checkbox", p=((10,0),(10,0))), sg.T(f"{config.SCORE}:", p=((00,0),(10,0))), sg.T("", p=((0,0),(10,0)), k="animal_score_info", font=MEDIUM_FONT, text_color="orange")],
-                [sg.Slider((0,0), orientation="h", resolution=0.01, p=((20,10),(5,5)), k="animal_score", enable_events=True)],
+                [sg.Slider((0,0), orientation="h", resolution=0.01, p=((20,10),(0,5)), k="animal_score", enable_events=True)],
                 [sg.Checkbox("", default=True, k="animal_fur_checkbox", p=((10,0),(10,0))), sg.T(f"{config.FUR}:", p=((0,0),(10,0))), sg.T(f"({config.RANDOM_FUR})", p=((0,0),(10,0)), font=MEDIUM_FONT, text_color="orange")],
                 [sg.Combo([],  p=((20,10),(5,5)), k="animal_fur", expand_x=True, disabled=True)],
                 [sg.Button(config.RESET, k="animal_reset", font=BUTTON_FONT, p=((15,0),(20,10))), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="details_update_animals", font=BUTTON_FONT, p=((10,15),(20,10)))],

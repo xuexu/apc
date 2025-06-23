@@ -613,7 +613,7 @@ def get_safe_diamond_values(species_config: dict) -> dict[str, float]:
   '''
   Animals that use TruRACS antler/horn generation have some randomness in their scoring
   A TruRACS animal at the very low end of Diamond weight/score will often be a Gold due to an "imperfect" rack
-  For TruRACS animals, add 15% padding to the low end of diamond values to increase the odds that we get diamonds
+  For TruRACS animals, add 20% padding to the low end of diamond values to increase the odds that we get diamonds
   Return regular values for non-TruRACS animals
   '''
   low_weight = species_config["trophy"]["diamond"]["weight_low"]

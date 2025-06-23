@@ -523,7 +523,7 @@ def _process_some(species_key: str, species_config: dict, groups: list, loaded_r
   animal_cnt = round((modifier / 100) * len(eligible_animals)) if percentage else modifier
   if party and animal_cnt > len(eligible_animals):
     animal_cnt = len(eligible_animals)  # just convert all eligible animals for a party
-  if (len(eligible_animals) == 0 or len(eligible_animals) < animal_cnt):
+  if (len(eligible_animals) == 0 or len(eligible_animals) < animal_cnt) and not party:
     raise NoAnimalsException(f"There are not enough {get_species_name(species_key)} to process")
   if progress_bar is not None:
     progress_bar.update(0, max=animal_cnt)
@@ -725,10 +725,10 @@ def mod(loaded_reserve: LoadedReserve, species_key: str, strategy: str, modifier
     _diamond_some(species_key, groups, loaded_reserve, modifier, percentage, rares, party=party, progress_bar=progress_bar, message_box=message_box)
     logger.info(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now Diamonds![/green]")
   elif (strategy == config.Strategy.males):
-    _male_some(species_key, groups, loaded_reserve, modifier, percentage, progress_bar=progress_bar, message_box=message_box)
+    _male_some(species_key, groups, loaded_reserve, modifier, percentage, party=party, progress_bar=progress_bar, message_box=message_box)
     logger.info(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now males![/green]")
   elif (strategy == config.Strategy.females):
-    _female_some(species_key, groups, loaded_reserve, modifier, percentage, progress_bar=progress_bar, message_box=message_box)
+    _female_some(species_key, groups, loaded_reserve, modifier, percentage, party=party, progress_bar=progress_bar, message_box=message_box)
     logger.info(f"[green]All {modifier}{'%' if percentage else ''} {species_name} are now females![/green]")
   elif (strategy == config.Strategy.furs_some):
     _furs_some(species_key, groups, loaded_reserve, modifier, percentage, rares, progress_bar=progress_bar, message_box=message_box)

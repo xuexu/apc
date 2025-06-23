@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-19 08:06-0400\n"
+"POT-Creation-Date: 2025-06-22 23:07-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1794,39 +1794,39 @@ msgstr ""
 msgid "Silver Ridge Peaks"
 msgstr ""
 
-#: apc/config/reserve_details.json:126
+#: apc/config/reserve_details.json:127
 msgid "Te Awaroa National Park"
 msgstr ""
 
-#: apc/config/reserve_details.json:143
+#: apc/config/reserve_details.json:144
 msgid "Rancho del Arroyo"
 msgstr ""
 
-#: apc/config/reserve_details.json:159
+#: apc/config/reserve_details.json:160
 msgid "Mississippi Acres Preserve"
 msgstr ""
 
-#: apc/config/reserve_details.json:178
+#: apc/config/reserve_details.json:179
 msgid "Revontuli Coast"
 msgstr ""
 
-#: apc/config/reserve_details.json:203
+#: apc/config/reserve_details.json:204
 msgid "New England Mountains"
 msgstr ""
 
-#: apc/config/reserve_details.json:224
+#: apc/config/reserve_details.json:225
 msgid "Emerald Coast"
 msgstr ""
 
-#: apc/config/reserve_details.json:244
+#: apc/config/reserve_details.json:245
 msgid "Sundarpatan Nepal Hunting Reserve"
 msgstr ""
 
-#: apc/config/reserve_details.json:263
+#: apc/config/reserve_details.json:264
 msgid "Salzwiesen Park"
 msgstr ""
 
-#: apc/config/reserve_details.json:284
+#: apc/config/reserve_details.json:285
 msgid "Alberta Hunting Preserve"
 msgstr ""
 

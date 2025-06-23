@@ -427,7 +427,7 @@ def merge_animal_details(old_animal_details: dict, new_animal_details: dict) -> 
     old_animal_details[name]["gender"] = new_animal_details[name]["gender"]
     old_animal_details[name] = dict(sorted(old_animal_details[name].items()))
 
-def seed_reserve_animal_details(reserve_key: str, skip_update_fur: bool = False, skip_levels: bool = True) -> None:
+def seed_reserve_animal_details(reserve_key: str, skip_update_fur: bool = False, skip_levels: bool = False) -> None:
   if not skip_update_fur:
     update_global_animal_data()
   logger.info(f"Seeding reserve '{reserve_key}': {config.get_reserve_name(reserve_key)} [animal_population_{config.get_population_reserve_key}]")
@@ -692,58 +692,17 @@ def seed_weights(
     seed += 1
   return seed
 
-def seed_scores(
-  species_key: str,
-  groups: list,
-  data: bytearray,
-  seed: int,
-  # gender: int,
-  weight: float,
-  precise: bool = False
-) -> None:
-  # seed animals with increasing trophy ratings to determine bronze/silver/gold/diamond brackets
-  # use minimum weight to isolate trophy rating as a variable
-  # defaults to 0.1 score between seeds
-  # precise = True uses 0.001 steps to determine precise break points
-  eligible_animals: list[AdfAnimal] = []
-  for group in groups:
-    animals = group.value["Animals"].value
-    for animal in animals:
-      animal = AdfAnimal(animal, species_key)
-      eligible_animals.append(animal)
-  divisor = 1000 if precise else 10
-  for animal in eligible_animals:
-    utils.update_float(data, animal.weight_offset, weight)
-    utils.update_float(data, animal.score_offset, seed / divisor)
-    utils.update_uint(data, animal.visual_seed_offset, 0) # , seed)
-    # utils.update_uint(data, animal.gender_offset, gender)
-    utils.update_uint(data, animal.great_one_offset, 0)
-    seed += 1
-  return seed
-
-def merge_trophy_values(values: dict, min_weight: float, max_weight: float, min_score: float, max_score: float, w_min: float, w_max: float, tr_min: float, tr_max: float) -> dict:
-  if min_weight <= w_min < values["weight_low"]:
-    values["weight_low"] = w_min
-  if max_weight >= w_max > values["weight_high"]:
-    values["weight_high"] = w_max
-  if min_score <= tr_min < values["score_low"]:
-    values["score_low"] = tr_min
-  if max_score >= tr_max > values["score_high"]:
-    values["score_high"] = tr_max
-  return values
-
-
 def process_aps_levels(species_key: str, filename: Path, attribute: str) -> dict:
   levels = [[] for _ in range(9)]
   with filename.open() as csvfile:
     animals = csvfile.readlines()
     for animal in animals:
       try:
-        animal = ApsAnimal(animal)
-        if animal.species_key.lower() == species_key.lower():
-          level = config.get_difficulty(animal.difficulty)
+        aps_animal = ApsAnimal(animal)
+        if aps_animal.species_key.lower() == species_key.lower():
+          level = config.get_difficulty(aps_animal.difficulty)
           i = level - 1
-          value = round(getattr(animal, attribute), 3)  # attribute should be "weight" or "score"
+          value = round(getattr(aps_animal, attribute), 3)  # attribute should be "weight" or "score"
           if not levels[i]:
             # print(f"{level} - {animal.difficulty} : {value}")
             levels[i] = [value, value]
@@ -780,21 +739,6 @@ def sanitize_levels(levels: list[list], min_value: float, max_value: float) -> l
   except IndexError:
     pass
   return levels
-
-def parse_diamond_details(animal: str, furs: list[dict], levels: list[dict]) -> dict:
-  last_level = list(levels[animal].items())[-1]
-  if last_level[0] == "Great One":
-    last_level = list(levels[animal].items())[-2]
-  weight_low, weight_high = last_level[1]
-  diamonds = {
-    "score_low": 0,
-    "score_high": 0,
-    "weight_low": weight_low,
-    "weight_high": weight_high,
-    "furs": furs[animal],
-    "level": parse_level_details(levels[animal])
-  }
-  return diamonds
 
 def parse_level_details(levels: dict) -> dict:
   parsed_levels = [None] * 10
@@ -882,7 +826,7 @@ def reserve_coords(line: float) -> int:
 
 def click_reserve(reserve_name: str, no_exit: bool = False) -> None:
   # Select Population File window should be 525x260
-  action_duration = 1
+  action_duration = 0.5
   dropdown = (450, 175)
   scrollbar_top = (450, 200)
   scrollbar_middle = (450, 250)
@@ -941,48 +885,54 @@ def click_reserve(reserve_name: str, no_exit: bool = False) -> None:
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "teawaroa":
-    line = 1.5
+    line = 0.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "rancho":
-    line = 2.5
+    line = 1.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "mississippi":
-    line = 3.5
+    line = 2.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "revontuli":
-    line = 4.5
+    line = 3.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "newengland":
-    line = 5.5
+    line = 4.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "emerald":
-    line = 6.5
+    line = 5.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "sundarpatan":
-    line = 7.5
+    line = 6.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line))
     click()
   if reserve_name == "salzwiesen":
+    line = 7.5
+    pyautogui.moveTo(scrollbar_middle)
+    pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
+    pyautogui.moveTo(reserve_coords(line))
+    click()
+  if reserve_name == "alberta":
     line = 8.5
     pyautogui.moveTo(scrollbar_middle)
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
@@ -995,7 +945,7 @@ def click_reserve(reserve_name: str, no_exit: bool = False) -> None:
     close_reserve()
 
 def close_reserve() -> None:
-  action_duration = 1
+  action_duration = 0.5
   exit_x = (1600, 115)
   pyautogui.moveTo(exit_x, duration=action_duration)
   click()
@@ -1003,7 +953,7 @@ def close_reserve() -> None:
 class ApsAnimal:
   def __init__(self, animal_line: str) -> None:
     animal_parts = animal_line.split(",")
-    self.species = utils.unformat_key(animal_parts[0])
+    self.species_key = utils.unformat_key(animal_parts[0])
     self.difficulty = animal_parts[1]
     self.gender = "male" if animal_parts[2].lower() == "male" else "female"
     self.weight = float(animal_parts[3].split(" ")[0])
@@ -1011,7 +961,7 @@ class ApsAnimal:
     self.fur = animal_parts[5].lower().rstrip()
 
   def __repr__(self) -> str:
-    return f"{self.species}, {self.difficulty}, {self.gender}, {self.weight}, {self.score}, {self.fur}"
+    return f"{self.species_key}, {self.difficulty}, {self.gender}, {self.weight}, {self.score}, {self.fur}"
 
 def reset_ini() -> None:
   filename = Path("imgui.ini")
@@ -1022,13 +972,13 @@ def reset_ini() -> None:
 
 def launch_aps() -> None:
   reset_ini()
-  subprocess.Popen(f"AnimalPopulationScanner.exe -p > scans/scan.csv", shell=True)  
+  subprocess.Popen(f"AnimalPopulationScanner.exe -p > scans/scan.csv", shell=True)
 
 def map_aps(reserve_name: str, species_key: str) -> str:
   # APC uses species keys from the `global_animal_data.bin` file
   # APS has some mismatches with unique species keys
   aps_key = {
-    "american_alligator": "Am._Alligator",
+    "american_alligator": "am._alligator",
     "antelope_jackrabbit": "ant._jackrabbit",
     "cinnamon_teal": "cin_teal",
     "collared_peccary": "coll._peccary",
@@ -1040,22 +990,25 @@ def map_aps(reserve_name: str, species_key: str) -> str:
     "eu_rabbit": "euro_rabbit",
     "eurasian_brown_bear": "brown_bear",
     "eurasian_teal": "eu.teal",
-    "eurasian_wigeon": "Eu.Wigeon",
+    "eurasian_wigeon": "eu.wigeon",
     "green_wing_teal": "green-winged_teal",
     "gray_wolf": "grey_wolf",
     "harlequin_duck": "h_duck",
-    "northern_bobwhite_quail": "Bobwhite_Quail",
+    "north_american_beaver": "beaver",
+    "northern_bobwhite_quail": "bobwhite_quail",
+    "northern_pintail": "pintail",
     "northern_red_muntjac": "muntjac",
     "prong_horn": "pronghorn",
     "rio_grande_turkey": "rg_turkey",
     "rockymountain_elk": "rm_elk",
     "saltwater_crocodile": "sw_crocodile",
     "siberian_musk_deer": "musk_deer",
-    "sidestriped_jackal": "S-Striped_jackal",
+    "sidestriped_jackal": "s-striped_jackal",
     "southeastern_ibex": "ses_ibex",
     "tundra_bean_goose": "t.bean_goose",
-    "western_capercaillie": "W.Capercaillie",
+    "western_capercaillie": "w.capercaillie",
     "wild_turkey": "turkey",
+    "woodland_caribou": "caribou",
   }
   # Some animals are duplicated across reserves with unique names
   if reserve_name == "mississippi" and species_key == "feral_pig":
@@ -1067,5 +1020,5 @@ def map_aps(reserve_name: str, species_key: str) -> str:
 if __name__ == "__main__":
   update_global_animal_data()
   analyze_reserve(config.get_save_path() / "animal_population_19")
-  # seed_reserve_animal_details("alberta", skip_update_fur=True, skip_levels=True)
+  seed_reserve_animal_details("alberta", skip_update_fur=True, skip_levels=False)
   # seed_all_reserves()
