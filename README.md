@@ -2,7 +2,9 @@
 
 A GUI tool to modify attributes of animals across all reserves in *theHunter: Call of the Wild (COTW)*
 
-Release builds are available here on GitHub and on NexusMods: https://www.nexusmods.com/thehuntercallofthewild/mods/440
+Release builds are available in multiple locations:
+* GitHub: https://github.com/RyMaxim/apc/releases
+* NexusMods: https://www.nexusmods.com/thehuntercallofthewild/mods/440
 
 ![Screenshot](screenshot.png)
 
@@ -25,58 +27,31 @@ Modded population files can be found in a `mods` folder in the same directory yo
 
 ## How To Build
 
-> **NOTE:** This code was built and tested with Python 3.12.8.
+> **NOTE:** This was built and tested with Python 3.12.10
 
-Setup virtual environment:
-```sh
-python -m venv venv
-venv\Scripts\activate
-```
-
-Install dependencies:
-```sh
-pip install -r requirements.txt
-```
-
-You can run the packages directly by using:
-```sh
-python -m apcgui
-```
-
-You can install a developer version by using:
-```sh
-pip install .
-```
-
-If you want to build from a wheel:
-```sh
-pip install -U build
-python -m build
-pip install dist/apc-2.0.1-py3-none-any.whl
-```
-
-If you want to build directly from GitHub:
-```sh
-pip install -e git+https://github.com/RyMaxim/apc.git#egg=apc
-```
-
-If you want to build an executable (for Windows):
-```sh
-pip install -U pyinstaller
-pyinstaller --noconsole --add-data "apc/config;config" --add-data "apc/locale;locale" --add-data "apcgui/locale;locale" apcgui.py
-./dist/apcgui/apcgui.exe
-```
+1. Install `hatch`: https://hatch.pypa.io/latest/install
+1. Set up the virtual environment:
+   ```
+   hatch env create
+   ```
+1. Run the application to test:
+   ```
+   hatch run apcgui
+   ```
+1. Build and package the application. The `apcgui_X.Y.Z.7z` file will be placed in `\dist`
+   ```
+   hatch run build
+   hatch run pack
+   ```
 
 ## Updating Translation Data
 
 I am not fluent in multiple languages and have outsourced the translation work to the robots. The translation framework is handled with [Babel](https://github.com/python-babel/babel) and the actual translation text is generated with Google Translate using [deep-translator](https://github.com/nidhaloff/deep-translator).
 
 To update the translation data:
-```sh
-pip install -r requirements.txt -r translate_requirements.txt
-.scripts\update.bat
-.scripts\compile.bat
-```
+   ```
+   hatch run translate
+   ```
 
 ## Credits
 

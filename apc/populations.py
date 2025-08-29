@@ -34,12 +34,6 @@ def _get_species_groups(reserve_key: str, reserve_adf: Adf, species_key: str) ->
     raise NoAnimalsException(f"Invalid population data: There are no animal groups for {species_key} on {reserve_key}.")
   return groups
 
-def _random_float(low: int, high: int, precision: int = 3) -> float:
-  return round(random.uniform(low, high), precision)
-
-def _random_choice(choices: dict):
-  return random.choice(list(choices.keys()))
-
 def _get_populations(reserve_adf: Adf) -> list[AdfValue]:
   populations = reserve_adf.table_instance_full_values[0].value["Populations"].value
   return populations
@@ -121,13 +115,12 @@ def describe_animal_group(reserve_key: str, species_key: str, animals: list[AdfV
       level_name = get_level_name(config.Levels(level))
       animal_data.append([
         get_reserve_name(reserve_key),
-        f"{level_name}, {level}",
+        f"{level} : {level_name}",
         config.MALE if adf_animal.gender == "male" else config.FEMALE,
         round(adf_animal.weight, precision),
         round(adf_animal.score, precision),
         fur_seed.get_fur_name_for_seed(adf_animal.visual_seed, species_key, adf_animal.gender, great_one=is_great_one),
-        config.YES if is_diamond and not is_great_one else "-",
-        config.YES if is_great_one else "-",
+        adf_animal.trophy,
         adf_animal
       ])
   return animal_data
@@ -247,38 +240,30 @@ def _update_animal(data: bytearray, animal: AdfAnimal, great_one: bool, gender: 
 
 def _create_great_one(animal: AdfAnimal, species_config: dict, data: bytearray, fur_key: str = None, kwargs: dict = {}) -> None:
   gender_config = species_config["gender"][f"great_one_{animal.gender}"]
-  new_weight = _random_float(gender_config["weight_low"], gender_config["weight_high"])
-  new_score = _random_float(gender_config["score_low"], gender_config["score_high"])
-  if fur_key is None:
-    fur_keys = config.get_furs(animal.species_key, animal.gender, great_one=True)
-    fur_key = random.choice(fur_keys)
+  new_weight, new_score = config.generate_weight_and_score(gender_config)
   visual_seed = fur_seed.find_fur_seed(animal.species_key, animal.gender, great_one=True, fur_key=fur_key)
+  update_uint(data, animal.visual_seed_offset, visual_seed)
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
   update_uint(data, animal.great_one_offset, 1)
   update_uint(data, animal.gender_offset, 1 if animal.gender == "male" else 2)
-  update_uint(data, animal.visual_seed_offset, visual_seed)
 
 def _create_diamond(animal: AdfAnimal, species_config: dict, data: bytearray, fur_key: str = None, kwargs: dict = {}) -> None:
   safe_diamonds_config = config.get_safe_diamond_values(species_config)
   new_weight, new_score = config.generate_weight_and_score(safe_diamonds_config)
   if fur_key:
     visual_seed = fur_seed.find_fur_seed(animal.species_key, animal.gender, fur_key=fur_key)
+    update_uint(data, animal.visual_seed_offset, visual_seed)
   update_float(data, animal.weight_offset, new_weight)
   update_float(data, animal.score_offset, new_score)
   update_uint(data, animal.great_one_offset, 0)
   update_uint(data, animal.gender_offset, 1 if animal.gender == "male" else 2)
-  if fur_key:
-    update_uint(data, animal.visual_seed_offset, visual_seed)
 
 def _create_fur(animal: AdfAnimal, _species_config: dict, data: bytearray, fur_key: str = None, kwargs: dict = {}) -> None:
   rares = kwargs.get("rares", False)
-  if fur_key is None:
-    if rares and not animal.great_one:
-      fur_keys = config.get_rare_furs(animal.species_key, animal.gender)
-    else:
-      fur_keys = config.get_furs(animal.species_key, animal.gender, great_one=animal.great_one)
-    fur_key = random.choice(fur_keys)
+  if fur_key is None and rares and not animal.great_one:
+      rare_fur_keys = config.get_rare_furs(animal.species_key, animal.gender)
+      fur_key = random.choice(rare_fur_keys)
   visual_seed = fur_seed.find_fur_seed(animal.species_key, animal.gender, great_one=animal.great_one, fur_key=fur_key)
   update_uint(data, animal.visual_seed_offset, visual_seed)
 
@@ -675,14 +660,12 @@ def mod_diamonds(loaded_reserve: LoadedReserve, species_key: str, diamond_cnt: i
   logger.info(f"[green]All {diamond_cnt} {species_name} diamonds have been added![/green]")
   loaded_reserve.save()
 
-def mod_animal(loaded_reserve: LoadedReserve, animal: AdfAnimal, great_one: bool, gender: str, weight: float, score: float, fur: str | int = None) -> list:
+def mod_animal(loaded_reserve: LoadedReserve, animal: AdfAnimal, great_one: bool, gender: str, weight: float, score: float, fur_key_or_seed: str | int = None) -> list:
   # an integer is passed if we are keeping an existing VisualVariationSeed
-  if isinstance(fur, int):
-    visual_seed = fur
+  if isinstance(fur_key_or_seed, int):
+    visual_seed = fur_key_or_seed
   else:
-    if fur == None:
-      fur = random.choice(config.get_species_furs(animal.species_key, gender, great_one))
-    visual_seed = fur_seed.find_fur_seed(animal.species_key, gender, great_one, fur_key=fur)
+    visual_seed = fur_seed.find_fur_seed(animal.species_key, gender, great_one, fur_key=fur_key_or_seed)
   _update_animal(loaded_reserve.parsed_adf.decompressed.data, animal, great_one, gender, weight, score, visual_seed)
   logger.info(f"[green]Animal has been updated![/green]")
 

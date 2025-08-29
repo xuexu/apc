@@ -69,6 +69,16 @@ def setup_translations() -> None:
   VISUALSEED = translate("Visual Seed")
   global FUR
   FUR = translate("Fur")
+  global UNKNOWN
+  UNKNOWN = translate("Unknown")
+  global NONE
+  NONE = translate("None")
+  global BRONZE
+  BRONZE = translate("Bronze")
+  global SILVER
+  SILVER = translate("Silver")
+  global GOLD
+  GOLD = translate("Gold")
   global DIAMOND
   DIAMOND = translate("Diamond")
   global GREATONE
@@ -501,7 +511,7 @@ def get_furs(species_key: str, gender: str, great_one: bool = None) -> list[str]
   if (species_config := get_species(species_key)) is None:
     return []
   gender_key = f"great_one_{gender}" if great_one else gender
-  gender_furs = sorted([fur for fur, probability in species_config["gender"][gender_key]["furs"].items() if probability > 0])
+  gender_furs = sorted([fur for fur, probability in species_config["gender"][gender_key]["furs"].items() if probability > 0])  # exclude quest-only furs with 0 probability
   return gender_furs
 
 def get_rare_furs(species_key: str, gender: str) -> list[str]:
@@ -519,7 +529,13 @@ def get_rare_furs(species_key: str, gender: str) -> list[str]:
   - Water Buffalo Black @ 2-3% are "uncommon"
   All true "Rare" and "Very Rare" furs are below 1%
   '''
-  rare_furs = [fur for fur, probability in gender_furs.items() if (probability/fur_total_probability) < 0.01]  # This is 1%, not 0.01%
+  rare_furs = [
+    fur for fur, probability in gender_furs.items()
+    if (
+      probability > 0  # exclude quest-only furs with 0 probability
+      and (probability/fur_total_probability) < 0.01  # This is 1%, not 0.01%
+    )
+  ]
   logger.debug(f"{species_key} :: {gender} >> {rare_furs}")
   return rare_furs
 

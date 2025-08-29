@@ -1,3 +1,84 @@
 [build-system]
-build-backend = "setuptools.build_meta"
-requires = ["setuptools", "wheel"]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "apc-revived"
+version = "2.0.2"
+description = "GUI tool to modify attributes of animals across all reserves in theHunter: Call of the Wild (COTW)"
+authors = [{ name = "Ryan Maxim" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+
+dependencies = [
+  "Babel==2.*",
+  "FreeSimpleGUI==5.*",
+  "numpy==2.0.2",
+  "pybabel-json-md==0.1.0",
+  "rich==14.*",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pyautogui",
+  "pyinstaller>=6.15",
+]
+translate = [
+  "polib",
+  "deep-translator",
+  "tqdm",
+]
+
+[project.scripts]
+apc = "apc.__main__:main"
+
+[project.gui-scripts]
+apcgui = "apcgui.__main__:main"
+
+
+[tool.hatch.envs.default]
+python = "3.12"
+features = ["dev","translate"]
+
+[tool.hatch.envs.default.scripts]  # defaults for Windows
+apcgui = "python apcgui"
+build = 'cmd /c ".\\scripts\\apcgui.bat"'
+pack = 'cmd /c ".\\scripts\\apcgui_pack.bat"'
+translate = [
+  'cmd /c ".\\scripts\\update.bat"',
+  'cmd /c ".\\scripts\\compile.bat"',
+]
+
+[tool.hatch.envs.default.overrides]
+platform.macos.scripts = [
+  "build=sh ./scripts/build.sh",
+  "pack=sh ./scripts/pack.sh",
+]
+platform.linux.scripts = [
+  "build=sh ./scripts/build.sh",
+  "pack=sh ./scripts/pack.sh",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["apc", "apcgui", "deca"]
+include = [
+  "apc/**",
+  "apcgui/**",
+  "deca/**",
+  "README.md",
+  "LICENSE",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "apc/**",
+  "apcgui/**",
+  "deca/**",
+  "README.md",
+  "LICENSE",
+]
+
+[tool.ruff.lint]
+ignore = ["N813"]
+

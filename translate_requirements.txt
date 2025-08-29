@@ -1,3 +1,0 @@
-polib
-deep-translator
-tqdm

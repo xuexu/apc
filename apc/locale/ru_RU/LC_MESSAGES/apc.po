@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-22 23:07-0400\n"
+"POT-Creation-Date: 2025-08-29 16:55-0400\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: apc/config.py:43
 msgid "Animal Population Changer"
@@ -78,155 +78,175 @@ msgstr "Спаун"
 msgid "Fur"
 msgstr "Мех"
 
-#: apc/config.py:73
+#: apc/config.py:73 apc/config.py:434 apc/config/fur_names.json:522
+msgid "Unknown"
+msgstr "Неизвестный"
+
+#: apc/config.py:75
+msgid "None"
+msgstr "Никто"
+
+#: apc/config.py:77 apc/config/fur_names.json:57
+msgid "Bronze"
+msgstr "Бронза"
+
+#: apc/config.py:79
+msgid "Silver"
+msgstr "Серебро"
+
+#: apc/config.py:81 apc/config/fur_names.json:156
+msgid "Gold"
+msgstr "Золотистый"
+
+#: apc/config.py:83
 msgid "Diamond"
 msgstr "Бриллиант"
 
-#: apc/config.py:75 apc/config.py:444
+#: apc/config.py:85 apc/config.py:454
 msgid "Great One"
 msgstr "Великий"
 
-#: apc/config.py:77
+#: apc/config.py:87
 msgid "Summary"
 msgstr "Резюме"
 
-#: apc/config.py:79
+#: apc/config.py:89
 msgid "Reserve"
 msgstr "Заказник"
 
-#: apc/config.py:81
+#: apc/config.py:91
 msgid "Reserves"
 msgstr "Заказники"
 
-#: apc/config.py:83
+#: apc/config.py:93
 msgid "Reserve Name (key)"
 msgstr "Имя заказника (key)"
 
-#: apc/config.py:85
+#: apc/config.py:95
 msgid "Yes"
 msgstr "Да"
 
-#: apc/config.py:87
+#: apc/config.py:97
 msgid "No"
 msgstr "Нет"
 
-#: apc/config.py:89
+#: apc/config.py:99
 msgid "Modded"
 msgstr "Изменённые"
 
-#: apc/config.py:91
+#: apc/config.py:101
 msgid "Species (key)"
 msgstr "Вид (key)"
 
-#: apc/config.py:93
+#: apc/config.py:103
 msgid "Please copy and paste as a new bug on Nexusmods here"
 msgstr "Пожалуйста, скопируйте и вставьте как новую ошибку в Nexusmods здесь"
 
-#: apc/config.py:95
+#: apc/config.py:105
 msgid "Error"
 msgstr "Ошибка"
 
-#: apc/config.py:97
+#: apc/config.py:107
 msgid "Unexpected Error"
 msgstr "Непредвиденная ошибка"
 
-#: apc/config.py:99
+#: apc/config.py:109
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: apc/config.py:101
+#: apc/config.py:111
 msgid "Saved"
 msgstr "Сохраненный"
 
-#: apc/config.py:103
+#: apc/config.py:113
 msgid "does not exist"
 msgstr "не существует"
 
-#: apc/config.py:105
+#: apc/config.py:115
 msgid "failed to backup game"
 msgstr "не удалось создать резервную копию игры"
 
-#: apc/config.py:107
+#: apc/config.py:117
 msgid "failed to load backup file"
 msgstr "не удалось загрузить файл резервной копии"
 
-#: apc/config.py:109
+#: apc/config.py:119
 msgid "failed to load mod"
 msgstr "не удалось загрузить мод"
 
-#: apc/config.py:111
+#: apc/config.py:121
 msgid "failed to unload mod"
 msgstr "Не удалось выгрузить мод"
 
-#: apc/config.py:113
+#: apc/config.py:123
 msgid "Mod has been loaded"
 msgstr "не удалось выгрузить мод"
 
-#: apc/config.py:115
+#: apc/config.py:125
 msgid "Mod has been unloaded"
 msgstr "Мод был выгружен"
 
-#: apc/config.py:117
+#: apc/config.py:127
 msgid "Version"
 msgstr "Версия"
 
-#: apc/config.py:119
+#: apc/config.py:129
 msgid "Hunting Reserve"
 msgstr "Охотничий заказник"
 
-#: apc/config.py:121
+#: apc/config.py:131
 msgid "update by percentage"
 msgstr "обновление в процентах"
 
-#: apc/config.py:123
+#: apc/config.py:133
 msgid "More Males"
 msgstr "Больше самцов"
 
-#: apc/config.py:125
+#: apc/config.py:135
 msgid "More Females"
 msgstr "Больше самок"
 
-#: apc/config.py:127
+#: apc/config.py:137
 msgid "More Great Ones"
 msgstr "Еще больше великих"
 
-#: apc/config.py:129
+#: apc/config.py:139
 msgid "More Diamonds"
 msgstr "Больше бриллиантов"
 
-#: apc/config.py:131
+#: apc/config.py:141
 msgid "include diamond rare furs"
 msgstr "включая бриллианты и редкие меха"
 
-#: apc/config.py:133
+#: apc/config.py:143
 msgid "All Furs"
 msgstr "Все меха"
 
-#: apc/config.py:135
+#: apc/config.py:145
 msgid "Reset"
 msgstr "Сброс"
 
-#: apc/config.py:137
+#: apc/config.py:147
 msgid "Update Animals"
 msgstr "Обновление животных"
 
-#: apc/config.py:139
+#: apc/config.py:149
 msgid "Just the Furs"
 msgstr "Только меха"
 
-#: apc/config.py:141
+#: apc/config.py:151
 msgid "one of each fur"
 msgstr "по одному из каждого меха"
 
-#: apc/config.py:143
+#: apc/config.py:153
 msgid "Others"
 msgstr "Другие"
 
-#: apc/config.py:145
+#: apc/config.py:155
 msgid "Party"
 msgstr "Веселье"
 
-#: apc/config.py:147
+#: apc/config.py:157
 msgid ""
 "The sliders set the percentage of eligible animals to modify. Changes affect"
 " all species on the reserve."
@@ -234,324 +254,324 @@ msgstr ""
 "Ползунки устанавливают процент подходящих животных для модификации. "
 "Изменения влияют на все виды на заповеднике."
 
-#: apc/config.py:149
+#: apc/config.py:159
 msgid "Great One Party"
 msgstr "Сказочное веселье"
 
-#: apc/config.py:151
+#: apc/config.py:161
 msgid "of all eligible animals are Great Ones"
 msgstr "из всех подходящих животных - отличные"
 
-#: apc/config.py:153
+#: apc/config.py:163
 msgid "Diamond Party"
 msgstr "Бриллиантовое веселье"
 
-#: apc/config.py:155
+#: apc/config.py:165
 msgid "of all animals are Diamonds"
 msgstr "всех животных - бриллианты"
 
-#: apc/config.py:159
+#: apc/config.py:169
 msgid "Random Fur Party"
 msgstr "Случайная меховая вечеринка"
 
-#: apc/config.py:161
+#: apc/config.py:171
 msgid "of all animals have random furs"
 msgstr "у всех животных есть случайные меха"
 
-#: apc/config.py:163
+#: apc/config.py:173
 msgid "Rare Fur Party"
 msgstr "Редкая меховая вечеринка"
 
-#: apc/config.py:165
+#: apc/config.py:175
 msgid "of all animals have rare furs"
 msgstr "у всех животных есть редкие меха"
 
-#: apc/config.py:167
+#: apc/config.py:177
 msgid "Generating fur seeds"
 msgstr "Создание семян меха"
 
-#: apc/config.py:169
+#: apc/config.py:179
 msgid "Explore"
 msgstr "Исследовать"
 
-#: apc/config.py:171
+#: apc/config.py:181
 msgid "diamonds and Great Ones"
 msgstr "Великие и бриллианты"
 
-#: apc/config.py:173
+#: apc/config.py:183
 msgid "look at modded animals"
 msgstr "Изменённые животные"
 
-#: apc/config.py:175
+#: apc/config.py:185
 msgid "look at all reserves"
 msgstr "Все заказники"
 
-#: apc/config.py:177
+#: apc/config.py:187
 msgid "only top 10 scores"
 msgstr "10 лучших результатов"
 
-#: apc/config.py:179
+#: apc/config.py:189
 msgid "Show Animals"
 msgstr "Показать животных"
 
-#: apc/config.py:181
+#: apc/config.py:191
 msgid "Files"
 msgstr "Файлы"
 
-#: apc/config.py:183
+#: apc/config.py:193
 msgid "The file could not be found"
 msgstr "Файл не может быть найден"
 
-#: apc/config.py:185
+#: apc/config.py:195
 msgid "Configure Game Path"
 msgstr "Настройка игрового пути"
 
-#: apc/config.py:187
+#: apc/config.py:197
 msgid "Please configure the path to your game save"
 msgstr "Пожалуйста, настройте путь к сохранению игры"
 
-#: apc/config.py:189
+#: apc/config.py:199
 msgid "List Mods"
 msgstr "Список модов"
 
-#: apc/config.py:191
+#: apc/config.py:201
 msgid "Load Mod"
 msgstr "Загрузить мод"
 
-#: apc/config.py:193
+#: apc/config.py:203
 msgid "Unload Mod"
 msgstr "Выгрузить мод"
 
-#: apc/config.py:195
+#: apc/config.py:205
 msgid "Select the folder where the game saves your files"
 msgstr "Выберите папку для сохранения файлов"
 
-#: apc/config.py:197
+#: apc/config.py:207
 msgid "Saves Path"
 msgstr "Путь сохранений"
 
-#: apc/config.py:199
+#: apc/config.py:209
 msgid "Game path saved"
 msgstr "Сохранен игровой путь"
 
-#: apc/config.py:201
+#: apc/config.py:211
 msgid "Are you sure you want to overwrite your game file with the modded one?"
 msgstr ""
 "Вы уверены, что хотите перезаписать свой игровой файл модифицированным?"
 
-#: apc/config.py:203
+#: apc/config.py:213
 msgid "Don't worry, a backup copy will be made."
 msgstr "Не волнуйтесь, резервная копия будет создана."
 
-#: apc/config.py:205
+#: apc/config.py:215
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: apc/config.py:207
+#: apc/config.py:217
 msgid "Mod"
 msgstr "Мод"
 
-#: apc/config.py:209
+#: apc/config.py:219
 msgid "View modded version"
 msgstr "Просмотреть модифицированную версию"
 
-#: apc/config.py:211
+#: apc/config.py:221
 msgid "viewing loaded"
 msgstr "просмотр загружен"
 
-#: apc/config.py:213
+#: apc/config.py:223
 msgid "viewing modded"
 msgstr "просмотр изменённых"
 
-#: apc/config.py:215
+#: apc/config.py:225
 msgid "Total animals"
 msgstr "Всего животных"
 
-#: apc/config.py:217 apc/config.py:281
+#: apc/config.py:227 apc/config.py:291
 msgid "Loaded"
 msgstr "Загруженный"
 
-#: apc/config.py:219
+#: apc/config.py:229
 msgid "Modded File"
 msgstr "Изменённый файл"
 
-#: apc/config.py:221
+#: apc/config.py:231
 msgid "Back to Reserve"
 msgstr "Вернуться к заказнику"
 
-#: apc/config.py:223
+#: apc/config.py:233
 msgid "update translations"
 msgstr "обновить переводы"
 
-#: apc/config.py:225
+#: apc/config.py:235
 msgid "switch language"
 msgstr "переключить язык"
 
-#: apc/config.py:227
+#: apc/config.py:237
 msgid "Please restart to see changes"
 msgstr "Пожалуйста, перезапустите, чтобы увидеть изменения"
 
-#: apc/config.py:229
+#: apc/config.py:239
 msgid "default"
 msgstr "по умолчанию"
 
-#: apc/config.py:231
+#: apc/config.py:241
 msgid "using"
 msgstr "с помощью"
 
-#: apc/config.py:233
+#: apc/config.py:243
 msgid "OK"
 msgstr "Хорошо"
 
-#: apc/config.py:235
+#: apc/config.py:245
 msgid "Cancel"
 msgstr "Отменить"
 
-#: apc/config.py:237
+#: apc/config.py:247
 msgid "Modify Animals"
 msgstr "Модифицируйте животных"
 
-#: apc/config.py:239
+#: apc/config.py:249
 msgid "Gender Counts"
 msgstr "Гендерные подсчеты"
 
-#: apc/config.py:241
+#: apc/config.py:251
 msgid "Add/Remove Animals"
 msgstr "Добавить/удалить животных"
 
-#: apc/config.py:243
+#: apc/config.py:253
 msgid "Adding Animals"
 msgstr "Добавление животных"
 
-#: apc/config.py:245
+#: apc/config.py:255
 msgid "Can't add all animals"
 msgstr "Не могу добавить всех животных"
 
-#: apc/config.py:247
+#: apc/config.py:257
 msgid "Each group has a limit of 30 animals"
 msgstr "Каждая группа имеет предел 30 животных"
 
-#: apc/config.py:249
+#: apc/config.py:259
 msgid "Removing Animals"
 msgstr "Удаление животных"
 
-#: apc/config.py:251
+#: apc/config.py:261
 msgid "Can't remove animals"
 msgstr "Не могу удалить животных"
 
-#: apc/config.py:253
+#: apc/config.py:263
 msgid "Each group needs at least 1 animal"
 msgstr "Каждой группе нужно как минимум 1 животное"
 
-#: apc/config.py:255
+#: apc/config.py:265
 msgid "Trophy Rating"
 msgstr "Трофейный рейтинг"
 
-#: apc/config.py:257
+#: apc/config.py:267
 msgid "Furs"
 msgstr "Мех"
 
-#: apc/config.py:259
+#: apc/config.py:269
 msgid "Modify Animal Furs"
 msgstr "Модифицируйте меха животных"
 
-#: apc/config.py:261
+#: apc/config.py:271
 msgid "Male Furs"
 msgstr "Мех самцов"
 
-#: apc/config.py:263
+#: apc/config.py:273
 msgid "Female Furs"
 msgstr "Мех самок"
 
-#: apc/config.py:265
+#: apc/config.py:275
 msgid "Change All Species"
 msgstr "Изменить все виды"
 
-#: apc/config.py:267
+#: apc/config.py:277
 msgid "Explore Animals"
 msgstr "Исследуйте животных"
 
-#: apc/config.py:269
+#: apc/config.py:279
 msgid "Manage Modded Reserves"
 msgstr "Управляйте измененными заказниками"
 
-#: apc/config.py:271
+#: apc/config.py:281
 msgid "use all furs"
 msgstr "все виды меха"
 
-#: apc/config.py:273
+#: apc/config.py:283
 msgid "Animal Details"
 msgstr "Подробности о животных"
 
-#: apc/config.py:275
+#: apc/config.py:285
 msgid "default is random fur"
 msgstr "по умолчанию случайный мех"
 
-#: apc/config.py:277
+#: apc/config.py:287
 msgid "Update Animal"
 msgstr "Обновление Животное"
 
-#: apc/config.py:279
+#: apc/config.py:289
 msgid "Top 10"
 msgstr "Топ 10"
 
-#: apc/config.py:283
+#: apc/config.py:293
 msgid "Export Mod"
 msgstr "Экспортировать мод"
 
-#: apc/config.py:285
+#: apc/config.py:295
 msgid "Import Mod"
 msgstr "Импорт Мод"
 
-#: apc/config.py:287
+#: apc/config.py:297
 msgid "Export"
 msgstr "Экспорт"
 
-#: apc/config.py:289
+#: apc/config.py:299
 msgid "Import"
 msgstr "Импорт"
 
-#: apc/config.py:291
+#: apc/config.py:301
 msgid "Select the location and filename where you want to export"
 msgstr "Выберите местоположение и имя файла, куда вы хотите экспортировать"
 
-#: apc/config.py:293
+#: apc/config.py:303
 msgid "Select the reserve mod to import"
 msgstr "Выберите резервный мод для импорта"
 
-#: apc/config.py:295
+#: apc/config.py:305
 msgid "Export As"
 msgstr "Экспортировать как"
 
-#: apc/config.py:297
+#: apc/config.py:307
 msgid "Select File"
 msgstr "Выбрать файл"
 
-#: apc/config.py:299
+#: apc/config.py:309
 msgid "Mod Exported"
 msgstr "Мод экспортирован"
 
-#: apc/config.py:301
+#: apc/config.py:311
 msgid "Mod Imported"
 msgstr "Мод импортирован"
 
-#: apc/config.py:303
+#: apc/config.py:313
 msgid "No reserve data loaded. Select a reserve from the list."
 msgstr "Без резервных данных не загружено. Выберите резерв из списка."
 
-#: apc/config.py:305
+#: apc/config.py:315
 msgid "Select an animal from the list."
 msgstr "Выберите животное из списка."
 
-#: apc/config.py:307
+#: apc/config.py:317
 msgid "Loading animals"
 msgstr "Загрузка животных"
 
-#: apc/config.py:309
+#: apc/config.py:319
 msgid "Animals loaded"
 msgstr "Животные загружены"
 
-#: apc/config.py:311
+#: apc/config.py:321
 msgid ""
 "Selected animals from multiple reserves. Modifications will overwrite the "
 "following files:"
@@ -559,63 +579,59 @@ msgstr ""
 "Выбранные животные из нескольких резервов. Модификации перезаписывают "
 "следующие файлы:"
 
-#: apc/config.py:313
+#: apc/config.py:323
 msgid "Updated animals on multiple reserves. Use"
 msgstr "Обновленные животные в нескольких резервах. Использовать"
 
-#: apc/config.py:315
+#: apc/config.py:325
 msgid "to load the modded files for each reserve:"
 msgstr "Чтобы загрузить модные файлы для каждого резерва:"
 
-#: apc/config.py:424
-msgid "Unknown"
-msgstr "Неизвестный"
-
-#: apc/config.py:426
+#: apc/config.py:436
 msgid "Trivial"
 msgstr "Тривиальный"
 
-#: apc/config.py:428
+#: apc/config.py:438
 msgid "Minor"
 msgstr "Незначительный"
 
-#: apc/config.py:430
+#: apc/config.py:440
 msgid "Very Easy"
 msgstr "Очень лёгкий"
 
-#: apc/config.py:432
+#: apc/config.py:442
 msgid "Easy"
 msgstr "Лёгкий"
 
-#: apc/config.py:434
+#: apc/config.py:444
 msgid "Medium"
 msgstr "Средний"
 
-#: apc/config.py:436
+#: apc/config.py:446
 msgid "Hard"
 msgstr "Высокий"
 
-#: apc/config.py:438
+#: apc/config.py:448
 msgid "Very Hard"
 msgstr "Очень высокий"
 
-#: apc/config.py:440
+#: apc/config.py:450
 msgid "Mythical"
 msgstr "Мифический"
 
-#: apc/config.py:442
+#: apc/config.py:452
 msgid "Legendary"
 msgstr "Легендарный"
 
-#: apc/config.py:491
+#: apc/config.py:501
 msgid "animal_name"
 msgstr "имя_животного"
 
-#: apc/config.py:495
+#: apc/config.py:505
 msgid "fur_name"
 msgstr "Мех"
 
-#: apc/config.py:554 apc/config.py:679
+#: apc/config.py:570 apc/config.py:695
 msgid "reserve_name"
 msgstr "Заказник"
 
@@ -1068,703 +1084,703 @@ msgid "Woolly Hare"
 msgstr "Шерстистый заяц"
 
 #: apc/config/fur_names.json:3
+msgid "Acromelanistic"
+msgstr "Акромеланистический"
+
+#: apc/config/fur_names.json:6
 msgid "Albino"
 msgstr "Альбинос"
 
-#: apc/config/fur_names.json:6
+#: apc/config/fur_names.json:9
 msgid "Albino 2"
 msgstr "Альбинос 2"
 
-#: apc/config/fur_names.json:9
+#: apc/config/fur_names.json:12
 msgid "Albino - Boss"
 msgstr "Альбино - босс"
 
-#: apc/config/fur_names.json:12
+#: apc/config/fur_names.json:15
 msgid "Beige"
 msgstr "Бежевый"
 
-#: apc/config/fur_names.json:15
+#: apc/config/fur_names.json:18
 msgid "Bicolor"
 msgstr "Двухцветный"
 
-#: apc/config/fur_names.json:18
+#: apc/config/fur_names.json:21
 msgid "Black"
 msgstr "Черный"
 
-#: apc/config/fur_names.json:21
+#: apc/config/fur_names.json:24
 msgid "Black Brown"
 msgstr "Чёрно-коричневый"
 
-#: apc/config/fur_names.json:24
+#: apc/config/fur_names.json:27
 msgid "Black Brown 2"
 msgstr "Черный коричневый 2"
 
-#: apc/config/fur_names.json:27
+#: apc/config/fur_names.json:30
 msgid "Black Spots"
 msgstr "Черные пятна"
 
-#: apc/config/fur_names.json:30
+#: apc/config/fur_names.json:33
 msgid "Black Spots 2"
 msgstr "Черные пятна 2"
 
-#: apc/config/fur_names.json:33
+#: apc/config/fur_names.json:36
 msgid "Black White"
 msgstr "Чёрно-белый"
 
-#: apc/config/fur_names.json:36
+#: apc/config/fur_names.json:39
 msgid "Blackgold"
 msgstr "Чёрный с золотом"
 
-#: apc/config/fur_names.json:39
+#: apc/config/fur_names.json:42
 msgid "Blonde"
 msgstr "Светлый"
 
-#: apc/config/fur_names.json:42
+#: apc/config/fur_names.json:45
 msgid "Blue"
 msgstr "Голубой"
 
-#: apc/config/fur_names.json:45
+#: apc/config/fur_names.json:48
 msgid "Blue Grey"
 msgstr "Серо-голубой"
 
-#: apc/config/fur_names.json:48
+#: apc/config/fur_names.json:51
 msgid "Blue Morph"
 msgstr "Синий морф"
 
-#: apc/config/fur_names.json:51
+#: apc/config/fur_names.json:54
 msgid "Bright"
 msgstr "Светлый"
 
-#: apc/config/fur_names.json:54
-msgid "Bronze"
-msgstr "Бронза"
-
-#: apc/config/fur_names.json:57
+#: apc/config/fur_names.json:60
 msgid "Brown"
 msgstr "Бурый"
 
-#: apc/config/fur_names.json:60
+#: apc/config/fur_names.json:63
 msgid "Brown 2"
 msgstr "Коричневый 2"
 
-#: apc/config/fur_names.json:63
+#: apc/config/fur_names.json:66
 msgid "Brown Hybrid"
 msgstr "Коричневый"
 
-#: apc/config/fur_names.json:66
+#: apc/config/fur_names.json:69
 msgid "Brown Hybrid 2"
 msgstr "Коричневый гибрид 2"
 
-#: apc/config/fur_names.json:69
+#: apc/config/fur_names.json:72
 msgid "Brown Maned"
 msgstr "Коричневый Мэн"
 
-#: apc/config/fur_names.json:72
+#: apc/config/fur_names.json:75
 msgid "Buff"
 msgstr "Бежевый"
 
-#: apc/config/fur_names.json:75
+#: apc/config/fur_names.json:78
 msgid "Caramel"
 msgstr "карамель"
 
-#: apc/config/fur_names.json:78
+#: apc/config/fur_names.json:81
 msgid "Chestnut"
 msgstr "Каштановый"
 
-#: apc/config/fur_names.json:81
+#: apc/config/fur_names.json:84
 msgid "Chocolate"
 msgstr "Шоколад"
 
-#: apc/config/fur_names.json:84
+#: apc/config/fur_names.json:87
 msgid "Cinnamon"
 msgstr "Коричный"
 
-#: apc/config/fur_names.json:87
+#: apc/config/fur_names.json:90
 msgid "Cream"
 msgstr "Песочный"
 
-#: apc/config/fur_names.json:90
+#: apc/config/fur_names.json:93
 msgid "Crowned"
 msgstr "Увенчанный"
 
-#: apc/config/fur_names.json:93
+#: apc/config/fur_names.json:96
 msgid "Dark"
 msgstr "Темный"
 
-#: apc/config/fur_names.json:96
+#: apc/config/fur_names.json:99
 msgid "Dark 2"
 msgstr "Темный 2"
 
-#: apc/config/fur_names.json:99
+#: apc/config/fur_names.json:102
 msgid "Dark Brown"
 msgstr "Тёмно-коричневый"
 
-#: apc/config/fur_names.json:102
+#: apc/config/fur_names.json:105
 msgid "Dark Brown 2"
 msgstr "Темно -коричневый 2"
 
-#: apc/config/fur_names.json:105
+#: apc/config/fur_names.json:108
 msgid "Dark Green"
 msgstr "Тёмно-зелёный"
 
-#: apc/config/fur_names.json:108
+#: apc/config/fur_names.json:111
 msgid "Dark Grey"
 msgstr "Тёмно-серый"
 
-#: apc/config/fur_names.json:111
+#: apc/config/fur_names.json:114
 msgid "Dark Red"
 msgstr "Тёмно-красный"
 
-#: apc/config/fur_names.json:114
+#: apc/config/fur_names.json:117
 msgid "Dark Red Brown"
 msgstr "Темно-красно-коричневый"
 
-#: apc/config/fur_names.json:117
+#: apc/config/fur_names.json:120
 msgid "Dilute"
 msgstr "Выцветший"
 
-#: apc/config/fur_names.json:120
+#: apc/config/fur_names.json:123
 msgid "Dilute Silver"
 msgstr "Разбавлять серебро"
 
-#: apc/config/fur_names.json:123
+#: apc/config/fur_names.json:126
 msgid "Dusky"
 msgstr "Темный"
 
-#: apc/config/fur_names.json:126
+#: apc/config/fur_names.json:129
 msgid "Dusky Gradient"
 msgstr "Градиент темного цвета"
 
-#: apc/config/fur_names.json:129
+#: apc/config/fur_names.json:132
 msgid "Eclipse"
 msgstr "Летний"
 
-#: apc/config/fur_names.json:132
+#: apc/config/fur_names.json:135
 msgid "Eggwhite"
 msgstr "Белоснежный"
 
-#: apc/config/fur_names.json:135
+#: apc/config/fur_names.json:138
 msgid "Erythristic"
 msgstr "Эритристический"
 
-#: apc/config/fur_names.json:138
+#: apc/config/fur_names.json:141
 msgid "Erythristic Golden"
 msgstr "Эритристическое золотое"
 
-#: apc/config/fur_names.json:141
+#: apc/config/fur_names.json:144
 msgid "Fantasma"
 msgstr "Фантаста"
 
-#: apc/config/fur_names.json:144
+#: apc/config/fur_names.json:147
 msgid "Ghost"
 msgstr "Призрак"
 
-#: apc/config/fur_names.json:147
+#: apc/config/fur_names.json:150
 msgid "Ginger"
 msgstr "Имбирь"
 
-#: apc/config/fur_names.json:150
+#: apc/config/fur_names.json:153
 msgid "Gingersplit"
 msgstr "Gingersplit"
 
-#: apc/config/fur_names.json:153
-msgid "Gold"
-msgstr "Золотистый"
-
-#: apc/config/fur_names.json:156
+#: apc/config/fur_names.json:159
 msgid "Grey Brown"
 msgstr "Серо-коричневый"
 
-#: apc/config/fur_names.json:159
+#: apc/config/fur_names.json:162
 msgid "Fabled Chestnut"
 msgstr "Лег. каштановый"
 
-#: apc/config/fur_names.json:162
+#: apc/config/fur_names.json:165
 msgid "Fabled Cream"
 msgstr "Лег. песочный"
 
-#: apc/config/fur_names.json:165
+#: apc/config/fur_names.json:168
 msgid "Fabled Glacier"
 msgstr "Лег. с подпал."
 
-#: apc/config/fur_names.json:168
+#: apc/config/fur_names.json:171
 msgid "Fabled Glacier 2"
 msgstr "Легендарный ледник 2"
 
-#: apc/config/fur_names.json:171
+#: apc/config/fur_names.json:174
 msgid "Fabled Spirit"
 msgstr "Лег. выгоревший"
 
-#: apc/config/fur_names.json:174 apc/config/fur_names.json:204
-#: apc/config/fur_names.json:252
+#: apc/config/fur_names.json:177 apc/config/fur_names.json:207
+#: apc/config/fur_names.json:255
 msgid "Fabled Spotted"
 msgstr "Лег. в крапинку"
 
-#: apc/config/fur_names.json:177
+#: apc/config/fur_names.json:180
 msgid "Fabled Silver"
 msgstr "Легендарное серебро"
 
-#: apc/config/fur_names.json:180 apc/config/fur_names.json:303
+#: apc/config/fur_names.json:183 apc/config/fur_names.json:306
 msgid "Fabled Piebald"
 msgstr "Легендарный Piebald"
 
-#: apc/config/fur_names.json:183
+#: apc/config/fur_names.json:186
 msgid "Fabled Hooded"
 msgstr "Сказочный капюшон"
 
-#: apc/config/fur_names.json:186
+#: apc/config/fur_names.json:189
 msgid "Fabled Golden"
 msgstr "Легендарный Золотой"
 
-#: apc/config/fur_names.json:189
+#: apc/config/fur_names.json:192
 msgid "Fabled Mocha"
 msgstr "Легендарный Мокко"
 
-#: apc/config/fur_names.json:192
+#: apc/config/fur_names.json:195
 msgid "Fabled Spruce"
 msgstr "Лег. еловый"
 
-#: apc/config/fur_names.json:195
+#: apc/config/fur_names.json:198
 msgid "Fabled Two Tone"
 msgstr "Лег. двухцветный"
 
-#: apc/config/fur_names.json:198
+#: apc/config/fur_names.json:201
 msgid "Fabled Birch"
 msgstr "Лег. березовый"
 
-#: apc/config/fur_names.json:201
+#: apc/config/fur_names.json:204
 msgid "Fabled Ashen"
 msgstr "Лег. пепельный"
 
-#: apc/config/fur_names.json:207
+#: apc/config/fur_names.json:210
 msgid "Fabled Oak"
 msgstr "Лег. дубовый"
 
-#: apc/config/fur_names.json:210
+#: apc/config/fur_names.json:213
 msgid "Fabled Dripple Drizzle"
 msgstr "Легендарная капля"
 
-#: apc/config/fur_names.json:213
+#: apc/config/fur_names.json:216
 msgid "Fabled Cobweb Enigma"
 msgstr "Легендарная павикация загадка"
 
-#: apc/config/fur_names.json:216
+#: apc/config/fur_names.json:219
 msgid "Fabled Dusky Drift"
 msgstr "Легендарный сумерки дрейф"
 
-#: apc/config/fur_names.json:219
+#: apc/config/fur_names.json:222
 msgid "Fabled Milky Way"
 msgstr "Легендарный Млечный путь"
 
-#: apc/config/fur_names.json:222
+#: apc/config/fur_names.json:225
 msgid "Fabled Petal Puff"
 msgstr "Легендарная лепестка"
 
-#: apc/config/fur_names.json:225
+#: apc/config/fur_names.json:228
 msgid "Fabled Cinnamon Stripes"
 msgstr "Легендарные корицы"
 
-#: apc/config/fur_names.json:228
+#: apc/config/fur_names.json:231
 msgid "Fabled Citrine"
 msgstr "Легендарный цитрин"
 
-#: apc/config/fur_names.json:231
+#: apc/config/fur_names.json:234
 msgid "Fabled Emerald"
 msgstr "Легендарный Изумруд"
 
-#: apc/config/fur_names.json:234
+#: apc/config/fur_names.json:237
 msgid "Fabled Garnet"
 msgstr "Легендарный гранат"
 
-#: apc/config/fur_names.json:237
+#: apc/config/fur_names.json:240
 msgid "Fabled Morganite"
 msgstr "Легендарный Морганит"
 
-#: apc/config/fur_names.json:240
+#: apc/config/fur_names.json:243
 msgid "Fabled Obsidian"
 msgstr "Легендарный обсидиан"
 
-#: apc/config/fur_names.json:243
+#: apc/config/fur_names.json:246
 msgid "Fabled Pearl"
 msgstr "Легендарная жемчужина"
 
-#: apc/config/fur_names.json:246
+#: apc/config/fur_names.json:249
 msgid "Fabled Ruby"
 msgstr "Легендарный рубин"
 
-#: apc/config/fur_names.json:249
+#: apc/config/fur_names.json:252
 msgid "Fabled Sapphire"
 msgstr "Легендарный сапфир"
 
-#: apc/config/fur_names.json:255
+#: apc/config/fur_names.json:258
 msgid "Fabled Blood Moon"
 msgstr "Легендарная кровяная луна"
 
-#: apc/config/fur_names.json:258
+#: apc/config/fur_names.json:261
 msgid "Fabled Candycane"
 msgstr "Легендарный Candycane"
 
-#: apc/config/fur_names.json:261
+#: apc/config/fur_names.json:264
 msgid "Fabled Cherry Blossom"
 msgstr "Легендарный вишневый цвет"
 
-#: apc/config/fur_names.json:264
+#: apc/config/fur_names.json:267
 msgid "Fabled Licorice"
 msgstr "Легендарная солодка"
 
-#: apc/config/fur_names.json:267
+#: apc/config/fur_names.json:270
 msgid "Fabled Midnight Poppy"
 msgstr "Легендарный полуночный мак"
 
-#: apc/config/fur_names.json:270
+#: apc/config/fur_names.json:273
 msgid "Fabled Mystic Snowdrop"
 msgstr "Легендарный мистический снежок"
 
-#: apc/config/fur_names.json:273
+#: apc/config/fur_names.json:276
 msgid "Fabled Peppermint"
 msgstr "Легендарная мята"
 
-#: apc/config/fur_names.json:276
+#: apc/config/fur_names.json:279
 msgid "Fabled Rosebud Frost"
 msgstr "Легендарный розовый мороз"
 
-#: apc/config/fur_names.json:279
+#: apc/config/fur_names.json:282
 msgid "Fabled Scarlet Nightshade"
 msgstr "Легендарный алый паслен"
 
-#: apc/config/fur_names.json:282
+#: apc/config/fur_names.json:285
 msgid "Fabled Gold"
 msgstr "Легендарное золото"
 
-#: apc/config/fur_names.json:285
+#: apc/config/fur_names.json:288
 msgid "Fabled Grey"
 msgstr "Легендарный серый"
 
-#: apc/config/fur_names.json:288
+#: apc/config/fur_names.json:291
 msgid "Fabled Half"
 msgstr "Легендарная половина"
 
-#: apc/config/fur_names.json:291
+#: apc/config/fur_names.json:294
 msgid "Fabled Latte"
 msgstr "Легендарный латте"
 
-#: apc/config/fur_names.json:294
+#: apc/config/fur_names.json:297
 msgid "Fabled Scars"
 msgstr "Легендарные шрамы"
 
-#: apc/config/fur_names.json:297
+#: apc/config/fur_names.json:300
 msgid "Fabled Skull"
 msgstr "Легендарный череп"
 
-#: apc/config/fur_names.json:300
+#: apc/config/fur_names.json:303
 msgid "Fabled Snow"
 msgstr "Сказочный снег"
 
-#: apc/config/fur_names.json:306
+#: apc/config/fur_names.json:309
 msgid "Grey"
 msgstr "Серый"
 
-#: apc/config/fur_names.json:309
+#: apc/config/fur_names.json:312
 msgid "Grey 2"
 msgstr "Серый 2"
 
-#: apc/config/fur_names.json:312
+#: apc/config/fur_names.json:315
 msgid "Honeytones"
 msgstr "Медовый"
 
-#: apc/config/fur_names.json:315
+#: apc/config/fur_names.json:318
 msgid "Hybrid"
 msgstr "Гибридный"
 
-#: apc/config/fur_names.json:318
+#: apc/config/fur_names.json:321
 msgid "Hybrid 1"
 msgstr "Гибрид 1"
 
-#: apc/config/fur_names.json:321
+#: apc/config/fur_names.json:324
 msgid "Hybrid 2"
 msgstr "Гибрид 2"
 
-#: apc/config/fur_names.json:324
+#: apc/config/fur_names.json:327
 msgid "Hybrid Blue"
 msgstr "Гибридный-голубой"
 
-#: apc/config/fur_names.json:327
+#: apc/config/fur_names.json:330
 msgid "Hybrid Green"
 msgstr "Гибридный-зелёный"
 
-#: apc/config/fur_names.json:330
+#: apc/config/fur_names.json:333
 msgid "Intermediate Morph"
 msgstr "Промежуточный морф"
 
-#: apc/config/fur_names.json:333
+#: apc/config/fur_names.json:336
 msgid "Jet Black"
 msgstr "Черный как смоль"
 
-#: apc/config/fur_names.json:336
+#: apc/config/fur_names.json:339
 msgid "Jet Brown"
 msgstr "Джет Браун"
 
-#: apc/config/fur_names.json:339
+#: apc/config/fur_names.json:342
 msgid "Leucistic"
 msgstr "В крапинку"
 
-#: apc/config/fur_names.json:342
+#: apc/config/fur_names.json:345
 msgid "Leucistic 2"
 msgstr "Лейцистик 2"
 
-#: apc/config/fur_names.json:345
+#: apc/config/fur_names.json:348
 msgid "Leucistic 3"
 msgstr "Лейцист 3"
 
-#: apc/config/fur_names.json:348
+#: apc/config/fur_names.json:351
 msgid "Leucistic 4"
 msgstr "Лейцист 4"
 
-#: apc/config/fur_names.json:351
+#: apc/config/fur_names.json:354
 msgid "Leucistic 5"
 msgstr "Лейцист 5"
 
-#: apc/config/fur_names.json:354
+#: apc/config/fur_names.json:357
 msgid "Light Bronze"
 msgstr "Светло-бронзовый"
 
-#: apc/config/fur_names.json:357
+#: apc/config/fur_names.json:360
 msgid "Light Brown"
 msgstr "Светло-коричневый"
 
-#: apc/config/fur_names.json:360
+#: apc/config/fur_names.json:363
 msgid "Light Brown 2"
 msgstr "Светло -коричневый 2"
 
-#: apc/config/fur_names.json:363
+#: apc/config/fur_names.json:366
 msgid "Light Green"
 msgstr "Светло-зелёный"
 
-#: apc/config/fur_names.json:366
+#: apc/config/fur_names.json:369
 msgid "Light Grey"
 msgstr "Светло-серый"
 
-#: apc/config/fur_names.json:369
+#: apc/config/fur_names.json:372
 msgid "Lightbuff"
 msgstr "Светло-бежевый"
 
-#: apc/config/fur_names.json:372
+#: apc/config/fur_names.json:375
 msgid "Light Grey Leucistic"
 msgstr "Светло-серый лейцистический"
 
-#: apc/config/fur_names.json:375
+#: apc/config/fur_names.json:378
 msgid "Maroon"
 msgstr "Бордовый"
 
-#: apc/config/fur_names.json:378
+#: apc/config/fur_names.json:381
 msgid "Melanistic"
 msgstr "Меланизм"
 
-#: apc/config/fur_names.json:381
+#: apc/config/fur_names.json:384
 msgid "Melanistic 2"
 msgstr "Меланистический 2"
 
-#: apc/config/fur_names.json:384
+#: apc/config/fur_names.json:387
+msgid "Melanistic Charcoal"
+msgstr "Меланистический уголь"
+
+#: apc/config/fur_names.json:390
 msgid "Mixed"
 msgstr "Смешанный"
 
-#: apc/config/fur_names.json:387
+#: apc/config/fur_names.json:393
 msgid "Mixed 2"
 msgstr "Смешанный 2"
 
-#: apc/config/fur_names.json:390
+#: apc/config/fur_names.json:396
 msgid "Molting"
 msgstr "Линяющий"
 
-#: apc/config/fur_names.json:393
+#: apc/config/fur_names.json:399
 msgid "Molting 2"
 msgstr "Лишение 2"
 
-#: apc/config/fur_names.json:396
+#: apc/config/fur_names.json:402
 msgid "Mottled"
 msgstr "Пятнистый"
 
-#: apc/config/fur_names.json:399
+#: apc/config/fur_names.json:405
 msgid "Mottled 2"
 msgstr "Петиновый 2"
 
-#: apc/config/fur_names.json:402
+#: apc/config/fur_names.json:408
 msgid "Mocha"
 msgstr "Мокко"
 
-#: apc/config/fur_names.json:405
+#: apc/config/fur_names.json:411
 msgid "Ochre"
 msgstr "Коричневато-жёлтый"
 
-#: apc/config/fur_names.json:408
+#: apc/config/fur_names.json:414
 msgid "Ogro"
 msgstr "Огро"
 
-#: apc/config/fur_names.json:411
+#: apc/config/fur_names.json:417
 msgid "Olive"
 msgstr "Оливка"
 
-#: apc/config/fur_names.json:414
+#: apc/config/fur_names.json:420
 msgid "Orange"
 msgstr "Оранжевый"
 
-#: apc/config/fur_names.json:417
+#: apc/config/fur_names.json:423
 msgid "Pale"
 msgstr "Светлый"
 
-#: apc/config/fur_names.json:420
+#: apc/config/fur_names.json:426
 msgid "Piebald"
 msgstr "Разношёрстный"
 
-#: apc/config/fur_names.json:423
+#: apc/config/fur_names.json:429
 msgid "Piebald 2"
 msgstr "Пегий 2"
 
-#: apc/config/fur_names.json:426
+#: apc/config/fur_names.json:432
 msgid "Piebald 3"
 msgstr "Piebald 3"
 
-#: apc/config/fur_names.json:429
+#: apc/config/fur_names.json:435
 msgid "Piebald 4"
 msgstr "Piebald 4"
 
-#: apc/config/fur_names.json:432
+#: apc/config/fur_names.json:438
 msgid "Piebald 5"
 msgstr "Piebald 5"
 
-#: apc/config/fur_names.json:435
+#: apc/config/fur_names.json:441
 msgid "Piebald Blonde"
 msgstr "Шибальд Блондинка"
 
-#: apc/config/fur_names.json:438
+#: apc/config/fur_names.json:444
 msgid "Piebald Grey"
 msgstr "Серый разношёрстный"
 
-#: apc/config/fur_names.json:441
+#: apc/config/fur_names.json:447
 msgid "Pink"
 msgstr "Розовый"
 
-#: apc/config/fur_names.json:444
+#: apc/config/fur_names.json:450
 msgid "Pristine"
 msgstr "Чистота"
 
-#: apc/config/fur_names.json:447
+#: apc/config/fur_names.json:453
 msgid "Pseudo-Melanistic"
 msgstr "Псевдомеланистичный"
 
-#: apc/config/fur_names.json:450
+#: apc/config/fur_names.json:456
 msgid "Pseudo-Melanistic 2"
 msgstr "Псевдомеланистичный 2"
 
-#: apc/config/fur_names.json:453
+#: apc/config/fur_names.json:459
 msgid "Pseudo-Melanistic White"
 msgstr "Псевдомеланистичный белый"
 
-#: apc/config/fur_names.json:456
+#: apc/config/fur_names.json:462
 msgid "Pseudo-Melanistic White 2"
 msgstr "Псевдомеланистичный белый 2"
 
-#: apc/config/fur_names.json:459
+#: apc/config/fur_names.json:465
 msgid "Red"
 msgstr "Рыжий"
 
-#: apc/config/fur_names.json:462
+#: apc/config/fur_names.json:468
 msgid "Red 2"
 msgstr "Красный 2"
 
-#: apc/config/fur_names.json:465
+#: apc/config/fur_names.json:471
 msgid "Red Brown"
 msgstr "Красно-коричневый"
 
-#: apc/config/fur_names.json:468
+#: apc/config/fur_names.json:474
 msgid "Reddish Brown"
 msgstr "Красновато -коричневый"
 
-#: apc/config/fur_names.json:471
+#: apc/config/fur_names.json:477
 msgid "Sand"
 msgstr "Песок"
 
-#: apc/config/fur_names.json:474
+#: apc/config/fur_names.json:480
 msgid "Slate Grey"
 msgstr "Сланцево-серый"
 
-#: apc/config/fur_names.json:477
+#: apc/config/fur_names.json:483
 msgid "Smoke"
 msgstr "Дым"
 
-#: apc/config/fur_names.json:480
+#: apc/config/fur_names.json:486
 msgid "Snow"
 msgstr "Снег"
 
-#: apc/config/fur_names.json:483
+#: apc/config/fur_names.json:489
 msgid "Sombra"
 msgstr "Сомбра"
 
-#: apc/config/fur_names.json:486
+#: apc/config/fur_names.json:492
 msgid "Spirit"
 msgstr "Призрак"
 
-#: apc/config/fur_names.json:489
+#: apc/config/fur_names.json:495
 msgid "Spotted"
 msgstr "В крапинку"
 
-#: apc/config/fur_names.json:492
+#: apc/config/fur_names.json:498
 msgid "Spotted 2"
 msgstr "Пятнистый 2"
 
-#: apc/config/fur_names.json:495
+#: apc/config/fur_names.json:501
 msgid "Spotted Dark"
 msgstr "Тёмный в крапинку"
 
-#: apc/config/fur_names.json:498
+#: apc/config/fur_names.json:504
 msgid "Spotted Red"
 msgstr "Красный в крапинку"
 
-#: apc/config/fur_names.json:501
+#: apc/config/fur_names.json:507
 msgid "Standard"
 msgstr "Стандартный"
 
-#: apc/config/fur_names.json:504
+#: apc/config/fur_names.json:510
 msgid "Straw"
 msgstr "Солома"
 
-#: apc/config/fur_names.json:507
+#: apc/config/fur_names.json:513
 msgid "Tan"
 msgstr "Рыже-коричневый"
 
-#: apc/config/fur_names.json:510
+#: apc/config/fur_names.json:516
 msgid "Tawny"
 msgstr "Тони"
 
-#: apc/config/fur_names.json:513
+#: apc/config/fur_names.json:519
 msgid "Two Tone"
 msgstr "Двухцветный"
 
-#: apc/config/fur_names.json:516
+#: apc/config/fur_names.json:525
 msgid "White"
 msgstr "Белый"
 
-#: apc/config/fur_names.json:519
+#: apc/config/fur_names.json:528
 msgid "White Brown"
 msgstr "Бело-коричневый"
 
-#: apc/config/fur_names.json:522
+#: apc/config/fur_names.json:531
 msgid "White Hybrid"
 msgstr "Белый гибрид"
 
-#: apc/config/fur_names.json:525
+#: apc/config/fur_names.json:534
 msgid "White Morph"
 msgstr "Белый морф"
 
-#: apc/config/fur_names.json:528
+#: apc/config/fur_names.json:537
 msgid "White Stripeless"
 msgstr "Белый без полос"
 
-#: apc/config/fur_names.json:531
+#: apc/config/fur_names.json:540
 msgid "Winter"
 msgstr "Зима"
 
-#: apc/config/fur_names.json:534
+#: apc/config/fur_names.json:543
 msgid "Yellow"
 msgstr "Желтый"
 

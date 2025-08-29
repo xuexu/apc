@@ -93,24 +93,16 @@ class LoadedReserve:
 #   offset: int
 
 class AdfAnimal:
-    def __init__(self, adf_value: AdfValue, species_key: str, reserve_key: str = "", species_index: int = None) -> None:
+    def __init__(self, adf_value: AdfValue, species_key: str, reserve_key: str = "") -> None:
       self.adf = adf_value
-      self._parse_details()
       self.species_key: str = species_key
       self.reserve_key: str = reserve_key
-      if species_index is not None:
-        self.species_index = species_index
-      else:
-        try:
-          self.species_index = config.RESERVES[reserve_key]["species"].index(species_key)
-        except (KeyError, ValueError):
-          self.species_index = None
+      self._parse_details()
 
     def _parse_details(self) -> None:
       self.gender = "male" if self.adf.value["Gender"].value == 1 else "female"
       self.weight = float(self.adf.value["Weight"].value)
       self.score = float(self.adf.value["Score"].value)
-      self.scripted = self.adf.value["IsScripted"].value == 1
       self.visual_seed = int(self.adf.value["VisualVariationSeed"].value)
       self.id = int(self.adf.value["Id"].value)
       self.map_position_x = float(self.adf.value["MapPosition"].value["X"].value)
@@ -118,12 +110,15 @@ class AdfAnimal:
       self.gender_offset = int(self.adf.value["Gender"].data_offset)
       self.weight_offset = int(self.adf.value["Weight"].data_offset)
       self.score_offset = int(self.adf.value["Score"].data_offset)
-      self.scripted_offset = int(self.adf.value["IsScripted"].data_offset)
       self.visual_seed_offset = int(self.adf.value["VisualVariationSeed"].data_offset)
       self.id_offset = int(self.adf.value["Id"].data_offset)
       self.map_position_x_offset = float(self.adf.value["MapPosition"].value["X"].data_offset)
       self.map_position_y_offset = float(self.adf.value["MapPosition"].value["Y"].data_offset)
       self._parse_great_one()
+      self._parse_is_scripted()
+      self._parse_trophy()
+      fur_key = fur_seed.get_fur_for_seed(self.visual_seed, self.species_key, self.gender, self.great_one)
+      self.fur_key = fur_key if fur_key else "unknown"
       self.offset = self.gender_offset  # gender is the first byte of the animal data
 
     def _parse_great_one(self) -> None:
@@ -136,6 +131,30 @@ class AdfAnimal:
         self.great_one_offset = int(self.adf.value["FeatureModifiers"].value["Flags"].data_offset)
         return
       raise ValueError
+
+    def _parse_is_scripted(self) -> None:
+      if "IsScripted" in self.adf.value:
+        self.scripted = self.adf.value["IsScripted"].value == 1
+        self.scripted_offset = int(self.adf.value["IsScripted"].data_offset)
+      else:
+        self.scripted = False
+        self.scripted_offset = self.great_one_offset + 1
+
+    def _parse_trophy(self) -> None:
+      if self.great_one:
+        self.trophy = config.GREATONE
+        return
+      species_config = config.get_species(self.species_key)
+      if species_config is None:
+        self.trophy = config.UNKNOWN
+        return
+      trophy_config = species_config.get("trophy", {})
+      for level in ["bronze", "silver", "gold", "diamond"]:
+        data = trophy_config.get(level)
+        if data and data["score_low"] <= self.score <= data["score_high"]:
+            self.trophy = getattr(config, level.upper())
+            return
+      self.trophy = config.NONE
 
     def __repr__(self) -> str:
       return str({
@@ -165,7 +184,7 @@ class AdfAnimal:
     def clone(self) -> 'AdfAnimal':
       logger.debug(f"Cloning animal: {self.species_key} {self.gender} @ {self.reserve_key}")
       cloned_adf = deepcopy(self.adf)
-      clone = AdfAnimal(cloned_adf, self.species_key, self.reserve_key, self.species_index)
+      clone = AdfAnimal(cloned_adf, self.species_key, self.reserve_key)
       return clone
 
     def _randomize(self, gender: str = None, fur_key: str = None, keep_great_one: bool = False) -> None:
@@ -210,7 +229,8 @@ class AdfAnimal:
         self.adf.value["IsGreatOne"].value = 1 if great_one else 0
       if "FeatureModifiers" in self.adf.value:
         self.adf.value["FeatureModifiers"].value["Flags"].value = 1 if great_one else 0
-      self.adf.value["IsScripted"].value = 0
+      if "IsScripted" in self.adf.value:
+        self.adf.value["IsScripted"].value = 0
       self.adf.value["VisualVariationSeed"].value = new_fur_seed
       self.adf.value["Id"].value = 0
       self._parse_details()
@@ -379,7 +399,7 @@ def _insert_animal(loaded_reserve: LoadedReserve, group: AdfValue, animal: AdfAn
   insert_data(reserve_bytes, animal_bytes, animal.offset)
   write_value(reserve_bytes, create_u32(3), 4)  # ADFv3 to prevent crash on load
   # insert animal into Group list in extracted ADF
-  logger.debug(f"Inserting animal into ADF >> Species: {animal.species_index}")
+  logger.debug(f"Inserting animal into ADF >> Species: {animal.species_key}")
   group_animals.value.insert(0, animal.adf)
 
 def _remove_animal(loaded_reserve: LoadedReserve, group: AdfValue, animal: AdfAnimal) -> None:
@@ -399,7 +419,7 @@ def _remove_animal(loaded_reserve: LoadedReserve, group: AdfValue, animal: AdfAn
   del reserve_bytes[animal.offset:animal.offset+len(animal_bytes)]
   write_value(reserve_bytes, create_u32(3), 4)  # ADFv3 to prevent crash on load
   # insert animal into Group list in extracted ADF
-  logger.debug(f"Deleting animal from ADF >> Species: {animal.species_index}")
+  logger.debug(f"Deleting animal from ADF >> Species: {animal.species_key}")
   del group_animals.value[0]
 
 def add_animal_to_group(loaded_reserve: LoadedReserve, group: AdfValue, species_key: str, gender: str) -> None:
@@ -431,51 +451,3 @@ def remove_animal_from_group(loaded_reserve: LoadedReserve, group: AdfValue, spe
       return True
     # Return False if we did not find an eligible animal to remove
     return False
-'''
-def remove_animals_from_reserve(reserve_name: str, species_key: str, animal_cnt: int, gender: str, mod: bool) -> None:
-  logger.debug("remove animals")
-  if animal_cnt == 0:
-    return
-  org_filename = _get_file_name(reserve_name, mod)
-  decompressed_adf = _decompress_adf_file(org_filename)
-  profile = create_profile(decompressed_adf.filename)
-  reserve_data = decompressed_adf.data
-  animal_arrays, other_arrays = find_arrays(profile, reserve_data)
-  all_arrays = animal_arrays+other_arrays
-  population_index = config.RESERVES[reserve_name]["species"].index(species_key)
-  eligible_animal_arrays = [x for x in animal_arrays if x.population == population_index and ((x.male_cnt > 0 and gender == "male") or (x.female_cnt > 0 and gender == "female"))]
-  eligible_animal_arrays = sorted(eligible_animal_arrays, key=lambda x: x.array_start_offset, reverse=True)
-  animal_size = 32
-
-  animals_left_to_remove = animal_cnt
-  arrays_to_remove_from = []
-  for animal_array in eligible_animal_arrays:
-    if animals_left_to_remove == 0:
-      break
-    array_length = animal_array.length
-    if array_length > 1:
-      if gender == "male":
-        remove_cnt = animal_array.male_cnt - 1
-      else:
-        remove_cnt = animal_array.female_cnt - 1
-      if remove_cnt > animals_left_to_remove:
-        remove_cnt = animals_left_to_remove
-      if remove_cnt > 0:
-        arrays_to_remove_from.append((remove_cnt, animal_array))
-        animals_left_to_remove = animals_left_to_remove - remove_cnt
-  if animals_left_to_remove > 0:
-    raise Exception("Not enough animals to remove")
-
-  total_size = animal_size * animal_cnt
-  _update_non_instance_offsets(reserve_data, profile, -total_size)
-  for remove_cnt, animal_array in arrays_to_remove_from:
-    _update_instance_arrays(reserve_data, all_arrays, animal_array, -(animal_size*remove_cnt))
-  for remove_cnt, animal_array in arrays_to_remove_from:
-    remove_indices = animal_array.male_indices if gender == "male" else animal_array.female_indices
-    removed_cnt = 0
-    while removed_cnt < remove_cnt:
-      _remove_animal(reserve_data, animal_array, remove_indices[remove_cnt-removed_cnt])
-      removed_cnt += 1
-
-  decompressed_adf.save(config.MOD_DIR_PATH)
-'''

@@ -1,4 +1,7 @@
 {
+  "acromelanistic": {
+    "fur_name": "Acromelanistic"
+  },
   "albino": {
     "fur_name": "Albino"
   },
@@ -380,6 +383,9 @@
   "melanistic_2": {
     "fur_name": "Melanistic 2"
   },
+  "melanisticcharcoal": {
+    "fur_name": "Melanistic Charcoal"
+  },
   "mixed": {
     "fur_name": "Mixed"
   },
@@ -511,6 +517,9 @@
   },
   "tone": {
     "fur_name": "Two Tone"
+  },
+  "unknown": {
+    "fur_name": "Unknown"
   },
   "white": {
     "fur_name": "White"

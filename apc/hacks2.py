@@ -23,10 +23,10 @@ ANIMAL_NAMES_FILE = Path(config.CONFIG_PATH / "animal_names.json")
 FUR_NAMES_FILE = Path(config.CONFIG_PATH / "fur_names.json")
 
 class RtpcAnimal:
-  __slots__ = ("name", "name_hash", "ammo_class", "truracs", "great_one", "scoring_data", "fur_data", "fur_details")
+  __slots__ = ("name", "full_name", "ammo_class", "truracs", "great_one", "scoring_data", "fur_data", "fur_details")
 
   name: str
-  name_hash: int
+  full_name: str
   ammo_class: int
   truracs: bool
   great_one: bool
@@ -37,6 +37,10 @@ class RtpcAnimal:
   def __init__(self, animal_node: RtpcNode) -> None:
     prop_data = RtpcAnimal._parse_prop_table(animal_node)
     self.name = prop_data["name"]
+    try:
+      self.full_name = prop_data["full_name"]
+    except:
+      print(f"No 'full_name' for {self.name}")
     self.ammo_class = prop_data["ammo_class"]
     self._parse_scoring_data(animal_node)
     self._parse_fur_data(animal_node)
@@ -48,6 +52,7 @@ class RtpcAnimal:
   def _parse_prop_table(node: RtpcNode) -> dict:
     prop_hashes = {
       343126393:  "_class",           # "_class" 0x1473b179
+      1986754702: "full_name",        # 0x766b788e - animal
       3541743236: "name",             # "name" 0xd31ab684
       1776847959: "gender",           # "gender" 0x69e88c57
       3489629189: "_object_id",       # "_object_id" 0xcfff8405
@@ -148,6 +153,18 @@ def get_global_animals() -> list[RtpcAnimal]:
     # print(f"parsed {animal.name}")
   rtpc_animals.sort(key=lambda a: a.name)
   return rtpc_animals
+
+def export_animal_hashes_to_json() -> None:
+  rtpc_animals = get_global_animals()
+  animal_name_hashes = {}
+  name_hashes = {}
+  for a in rtpc_animals:
+    animal_name_hashes[hash32_func(a.full_name)] = a.full_name
+    name_hashes[hash32_func(a.name)] = a.name
+  animal_name_hashes = {str(k): v for k, v in sorted(animal_name_hashes.items())}
+  name_hashes = {str(k): v for k, v in sorted(name_hashes.items())}
+  hash_map = {"animal_name": animal_name_hashes, "name": name_hashes}
+  save_json(config.CONFIG_PATH / "species_hashes_2.json", hash_map)
 
 class RtpcJSONEncoder(json.JSONEncoder):
   def default(self, o):
@@ -769,7 +786,7 @@ def analyze_reserve(path: Path) -> None:
     for group in groups:
       animals = group.value["Animals"].value
       for animal in animals:
-        a = populations.AdfAnimal(animal, "unknown", reserve_key=reserve_key, species_index=pop_i)
+        a = populations.AdfAnimal(animal, "unknown", reserve_key=reserve_key)
         low_score = min(low_score, a.score)
         high_score = max(high_score, a.score)
         low_weight = min(low_weight, a.weight)
@@ -1019,6 +1036,6 @@ def map_aps(reserve_name: str, species_key: str) -> str:
 
 if __name__ == "__main__":
   update_global_animal_data()
-  analyze_reserve(config.get_save_path() / "animal_population_19")
-  seed_reserve_animal_details("alberta", skip_update_fur=True, skip_levels=False)
+  # analyze_reserve(config.get_save_path() / "animal_population_19")
+  # seed_reserve_animal_details("alberta", skip_update_fur=True, skip_levels=False)
   # seed_all_reserves()

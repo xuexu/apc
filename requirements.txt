@@ -1,5 +1,0 @@
-rich==13.9.4
-numpy==2.0.2
-FreeSimpleGUI==5.1.1
-pybabel-json-md==0.1.0
-Babel==2.16.0

@@ -6,6 +6,7 @@ import sys
 import textwrap
 import time
 import traceback
+from importlib.metadata import version
 from pathlib import Path
 from typing import Callable
 
@@ -14,9 +15,10 @@ import FreeSimpleGUI as sg
 from apc import adf, config, populations, utils
 from apc.config import BACKUP_DIR_PATH, MOD_DIR_PATH, Strategy
 from apc.logging_config import get_logger
-from apcgui import __version__, logo
+from apcgui import logo
 
 logger = get_logger(__name__)
+__version__ = version("apc-revived")
 
 DEFAULT_FONT = "_ 14"
 MEDIUM_FONT = "_ 13"
@@ -289,6 +291,7 @@ def _show_species_description(window: sg.Window, reserve_key: str, species_key: 
   window["species_description"].update(visible=True)
   window["show_reserve"].update(visible=True)
   window["exploring"].update(visible=True)
+  window["exploring"].metadata = (-1, True)
   species_text = [config.get_species_name(species_key)]
   is_modded and species_text.append(f"({config.MODDED})")
   is_loaded_mod and species_text.append(f"({config.LOADED_MOD})")
@@ -302,6 +305,7 @@ def _show_reserve_description(window: sg.Window, values: dict, reserve_key: str)
     window["species_description"].update(visible=False)
     window["show_reserve"].update(visible=False)
     window["exploring"].update(visible=False)
+    window["exploring"].metadata = (-1, True)
     window["species_name"].update("")
     window["species_name"].metadata = ""
     window["modded_label"].update(visible=True)
@@ -692,6 +696,7 @@ def _list_mods(window: sg.Window) -> list[list[str]]:
       already_loaded = (BACKUP_DIR_PATH / item.name).exists()
       already_loaded_name = config.YES if already_loaded else "-"
       mods.append([config.get_population_name(item.name), already_loaded_name, item_path, item.name, already_loaded])
+  mods.sort(key=lambda x: int(re.search(r'_(\d+)$', x[3]).group(1)))  # sort by "x" in  "animal_population_x"
   return mods
 
 def _is_reserve_mod_loaded(reserve_key: str, window: sg.Window) -> bool:
@@ -898,12 +903,42 @@ def _update_mod_animal_counts(window: sg.Window, values: dict, species_counts: d
   if changing in (None, "new_male_value", "new_female_value"):
     window["gender_value"].update(value=0, range=(-male_pool, female_pool))
 
+def _sort_species_description(window, col):
+  species_description = window["species_description"].Values
+  adf_animals: list[adf.AdfAnimal] = window["species_description"].metadata
+  prev_col, reverse = window["exploring"].metadata
+  reverse = not reverse if prev_col == col else True
+  if col == 0:
+    logger.debug("Sorting by RESERVE")
+    species_description.sort(key=lambda x: x[0], reverse=reverse)
+    adf_animals.sort(key=lambda x: config.get_reserve_name(x.reserve_key), reverse=reverse)
+  if col in (1,3):
+    logger.debug("Sorting by WEIGHT")
+    species_description.sort(key=lambda x: x[3], reverse=reverse)
+    adf_animals.sort(key=lambda x: x.weight, reverse=reverse)
+  if col in (4,6):
+    logger.debug("Sorting by SCORE")
+    species_description.sort(key=lambda x: x[4], reverse=reverse)
+    adf_animals.sort(key=lambda x: x.score, reverse=reverse)
+  if col == 2:
+    logger.debug("Sorting by GENDER")
+    species_description.sort(key=lambda x: x[2], reverse=reverse)
+    adf_animals.sort(key=lambda x: x.gender, reverse=reverse)
+  if col == 5:
+    logger.debug("Sorting by FUR")
+    species_description.sort(key=lambda x: x[5], reverse=reverse)
+    adf_animals.sort(key=lambda x: config.get_fur_name(x.fur_key), reverse=reverse)
+  window["species_description"].update(species_description)
+  window["species_description"].metadata = adf_animals
+  window["exploring"].metadata = (col, reverse)
+  window.refresh()
+
 def _parse_animal_row(animal_description: list, species_key: str) -> AnimalDetails:
   animal_gender = animal_description[2]
   animal_weight = animal_description[3]
   animal_score = animal_description[4]
   animal_fur = animal_description[5] if animal_description[5] != "-" else None
-  animal_great_one = animal_description[-1] == config.YES
+  animal_great_one = animal_description[6] == config.GREATONE
   return AnimalDetails(species_key, animal_gender, animal_weight, animal_score, animal_fur, animal_great_one)
 
 def _parse_animal_details(values: dict, species_key: str) -> AnimalDetails:
@@ -928,8 +963,6 @@ def _update_animal_details(window: sg.Window, animal_details: AnimalDetails) -> 
     high_score = round(species_config["gender"][gender_key]["score_high"], 1)
     window["animal_gender"].update(animal_details.gender, disabled=False)
 
-    # safe_diamonds = config.get_safe_diamond_values(species_config)
-    # logger.info(safe_diamonds)
     diamond_low_weight = round(species_config["trophy"]["diamond"]["weight_low"], 1)
     diamond_low_score = round(species_config["trophy"]["diamond"]["score_low"], 1)
 
@@ -970,19 +1003,9 @@ def _show_animals(
   # _progress(50)
   if values["all_reserves"]:
     modded_text = f" ({config.MODDED})" if is_modded else ""
-    # _show_message(f"{config.LOADING_ANIMALS}{modded_text}: {config.get_species_name(species_key)} @ {loaded_reserve.reserve_name}  [{loaded_reserve.filename}]")
     _show_message(f"{config.LOADING_ANIMALS}{modded_text}: {config.get_species_name(species_key)} @ {config.LOOK_ALL_RESERVES}")
     species_description_full = populations.find_animals(species_key, modded=is_modded, good=values["good_ones"], top=is_top, progress_bar=window["progress"])
   else:
-    # try:
-    #   # modded_text = f" ({config.MODDED})" if is_modded else ""
-    #   # _show_message(f"{config.LOADING_ANIMALS}{moddesd_text}: {config.get_species_name(species_key)} @ {loaded_reserve.reserve_name}  [{loaded_reserve.filename}]")
-    #   if not loaded_reserve.modded == is_modded:
-    #     loaded_reserve = _load_reserve(window, loaded_reserve.reserve_key, is_modded=is_modded, show_progress=True)
-    #   _progress(75)
-    # except adf.FileNotFound as ex:
-    #   _show_error(ex, delay=True)
-    #   return
     species_description_full = populations.describe_animals(loaded_reserve.reserve_key, species_key, loaded_reserve.parsed_adf.adf, good=values["good_ones"], top=is_top, precision=4)
   _progress(90)
   species_description = [x[0:-1] for x in species_description_full]
@@ -1022,22 +1045,11 @@ def _parse_species_counts(window: sg.Window, values: dict, species_data: list = 
   counts["great_one"] = int(species_data[9])
   return counts
 
-def _parse_species_groups(species_groups: dict, species_key: str) -> tuple[dict, int, int]:
-  species_group_details = species_groups[species_key]
-  male_group_cnt = len(species_group_details["male"])
-  female_group_cnt = len(species_group_details["female"])
-  return species_group_details, male_group_cnt, female_group_cnt
-
 def _toggle_section_visible(window: sg.Window, section: str, visible: bool = None) -> bool:
   opened = visible if visible != None else not window[section].visible
   window[f"{section}_symbol"].update(f"{symbol_open if opened else symbol_closed}")
   window[section].update(visible=opened)
   return opened
-
-def _sort_reserve_description(window: sg.Window, column: int) -> None:
-  loaded_reserve: adf.LoadedReserve = window["reserve"].metadata
-  reserve_description = loaded_reserve.population_description
-  reserve_description.sort(column)
 
 
 def main_window(my_window: sg.Window = None) -> sg.Window:
@@ -1064,8 +1076,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
       config.WEIGHT,
       config.SCORE,
       config.FUR,
-      config.DIAMOND,
-      config.GREATONE
+      config.TROPHY_RATING,
     ]
 
     layout = [
@@ -1118,7 +1129,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
               header_background_color="brown",
               visible=False,
               cols_justification=("l", "l", "c", "r", "r", "l", "c", "c"),
-              col_widths=[17,7,3,3,3,9,4,4],
+              col_widths=[17,7,3,3,3,9,8],
               auto_size_columns=False,
               expand_x=True,
               expand_y=True,
@@ -1249,7 +1260,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.Combo([],  p=((20,10),(5,5)), k="animal_fur", expand_x=True, disabled=True)],
                 [sg.Button(config.RESET, k="animal_reset", font=BUTTON_FONT, p=((15,0),(20,10))), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="details_update_animals", font=BUTTON_FONT, p=((10,15),(20,10)))],
               ], relief=sg.RELIEF_RAISED, p=(0,5), expand_y=True)
-            ]], k="exploring", vertical_alignment="top", p=((0,0),(0,0)), visible=False)
+            ]], k="exploring", vertical_alignment="top", p=((0,0),(0,0)), visible=False, metadata=False)
           ],
         ], vertical_alignment="top")
       ],
@@ -1287,9 +1298,9 @@ def main() -> None:
             continue
           _show_reserve_description(window, values, window["reserve"].metadata.reserve_key)
         elif isinstance(event, tuple):
+          row, col = event[2]
           loaded_reserve: adf.LoadedReserve = window["reserve"].metadata
           if event[0] == "reserve_description" and event[1] == "+CLICKED+" and loaded_reserve is not None:
-            (row, col) = event[2]
             if row != None and row >= 0:
               _animal_selected(window, values, row)
           elif event[0] == "mod_list" and event[1] == "+CLICKED+":
@@ -1304,11 +1315,13 @@ def main() -> None:
             if not (species_key := window["species_name"].metadata):
               _show_message(config.SELECT_AN_ANIMAL)
               continue
-            animal_row, _ = event[2]
-            if animal_row != None and animal_row >= 0:
-              animal_details = _parse_animal_row(window["species_description"].Values[animal_row], species_key)
-              _disable_animal_details(window, False)
-              _update_animal_details(window, animal_details)
+            if row != None:
+              if row == -1:
+                _sort_species_description(window, col)
+              if row >= 0:
+                animal_details = _parse_animal_row(window["species_description"].Values[row], species_key)
+                _disable_animal_details(window, False)
+                _update_animal_details(window, animal_details)
         elif event == "animal_great_one" or event == "animal_gender":
           if not (species_key := window["species_name"].metadata):
             _show_message(config.SELECT_AN_ANIMAL)
