@@ -13,6 +13,6 @@ if not defined VERSION (
 )
 
 REM Remove old archives and create versioned archive with 7-Zip
-del /q dist\apcgui.7z 2>nul
-del /q "dist\apcgui_%VERSION%.7z" 2>nul
-"C:\Program Files\7-Zip\7z.exe" a "dist\apcgui_%VERSION%.7z" "dist\apcgui"
+del /q "%CD%\dist\apcgui.7z" 2>nul
+del /q "%CD%\dist\apcgui_%VERSION%.7z" 2>nul
+"C:\Program Files\7-Zip\7z.exe" a "%CD%\dist\apcgui_%VERSION%.7z" "%CD%\dist\apcgui"

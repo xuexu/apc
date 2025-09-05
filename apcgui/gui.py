@@ -2,15 +2,17 @@ import os
 import re
 import shutil
 import subprocess
-import sys
 import textwrap
 import time
 import traceback
+import webbrowser
 from importlib.metadata import version
 from pathlib import Path
 from typing import Callable
 
 import FreeSimpleGUI as sg
+import requests
+from packaging.version import Version as package_version
 
 from apc import adf, config, populations, utils
 from apc.config import BACKUP_DIR_PATH, MOD_DIR_PATH, Strategy
@@ -67,6 +69,45 @@ class MainWindow:
 
   def __init__(self):
     self.window = self._create_window()
+
+def _check_for_update() -> None:
+  release_data = _get_latest_release()
+  if release_data:
+    latest_tag = release_data.get("tag_name", "").lstrip("v")
+    if package_version(latest_tag) > package_version(__version__):
+      _show_update_popup(release_data)
+
+def _get_latest_release() -> dict:
+  try:
+    resp = requests.get("https://api.github.com/repos/RyMaxim/apc/releases/latest", timeout=2)
+    resp.raise_for_status()
+    data = resp.json()
+    return data
+  except Exception as e:
+    logger.info(f"Check for update failed: {e}")
+  return {}
+
+def _show_update_popup(release_data: dict) -> None:
+  nexus_url = "https://www.nexusmods.com/thehuntercallofthewild/mods/440?tab=files"
+  github_url = release_data["html_url"]
+  layout = [
+    [sg.Text(f"A newer version is available!", text_color="yellow")],
+    [sg.Text(release_data["name"])],
+    [sg.Button("NexusMods", key="-NEXUSMODS-"), sg.Button("GitHub", key="-GITHUB-")],
+  ]
+
+  window = sg.Window("Update Available", layout, icon=logo.value, modal=True)
+  while True:
+    event, _ = window.read()
+    if event in (sg.WINDOW_CLOSED, "Close"):
+      break
+    elif event == "-NEXUSMODS-":
+      webbrowser.open(nexus_url)
+      break
+    elif event == "-GITHUB-":
+      webbrowser.open(github_url)
+      break
+  window.close()
 
 def _progress(value: float) -> None:
   global window
@@ -927,7 +968,7 @@ def _sort_species_description(window, col):
   if col == 5:
     logger.debug("Sorting by FUR")
     species_description.sort(key=lambda x: x[5], reverse=reverse)
-    adf_animals.sort(key=lambda x: config.get_fur_name(x.fur_key), reverse=reverse)
+    adf_animals.sort(key=lambda x: x.fur_name, reverse=reverse)
   window["species_description"].update(species_description)
   window["species_description"].metadata = adf_animals
   window["exploring"].metadata = (col, reverse)
@@ -1272,7 +1313,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
       ]
     ]
 
-    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1300, 800))
+    window = sg.Window(config.APC, layout, resizable=True, font=DEFAULT_FONT, icon=logo.value, size=(1300, 800), finalize=True)
 
     if my_window is not None:
       my_window.close()
@@ -1283,6 +1324,7 @@ def main() -> None:
   global window
   window = main_window()
   loaded_reserve = None
+  _check_for_update()
 
   while True:
       event, values = window.read()
@@ -1344,7 +1386,7 @@ def main() -> None:
         elif event == "set_save":
           provided_path = sg.popup_get_folder(f"{config.SELECT_FOLDER}:", title=config.SAVES_PATH_TITLE, icon=logo.value, font=DEFAULT_FONT)
           if provided_path:
-            config.save_path(provided_path)
+            config.write_save_path(provided_path)
             window["save_path"].update(provided_path)
             _show_message(config.PATH_SAVED)
         elif event == "show_animals":

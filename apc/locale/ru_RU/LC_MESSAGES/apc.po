@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-29 16:55-0400\n"
+"POT-Creation-Date: 2025-09-05 14:31-0400\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Спаун"
 msgid "Fur"
 msgstr "Мех"
 
-#: apc/config.py:73 apc/config.py:434 apc/config/fur_names.json:522
+#: apc/config.py:73 apc/config.py:439 apc/config/fur_names.json:522
 msgid "Unknown"
 msgstr "Неизвестный"
 
@@ -102,7 +102,7 @@ msgstr "Золотистый"
 msgid "Diamond"
 msgstr "Бриллиант"
 
-#: apc/config.py:85 apc/config.py:454
+#: apc/config.py:85 apc/config.py:459
 msgid "Great One"
 msgstr "Великий"
 
@@ -587,51 +587,51 @@ msgstr "Обновленные животные в нескольких резе
 msgid "to load the modded files for each reserve:"
 msgstr "Чтобы загрузить модные файлы для каждого резерва:"
 
-#: apc/config.py:436
+#: apc/config.py:441
 msgid "Trivial"
 msgstr "Тривиальный"
 
-#: apc/config.py:438
+#: apc/config.py:443
 msgid "Minor"
 msgstr "Незначительный"
 
-#: apc/config.py:440
+#: apc/config.py:445
 msgid "Very Easy"
 msgstr "Очень лёгкий"
 
-#: apc/config.py:442
+#: apc/config.py:447
 msgid "Easy"
 msgstr "Лёгкий"
 
-#: apc/config.py:444
+#: apc/config.py:449
 msgid "Medium"
 msgstr "Средний"
 
-#: apc/config.py:446
+#: apc/config.py:451
 msgid "Hard"
 msgstr "Высокий"
 
-#: apc/config.py:448
+#: apc/config.py:453
 msgid "Very Hard"
 msgstr "Очень высокий"
 
-#: apc/config.py:450
+#: apc/config.py:455
 msgid "Mythical"
 msgstr "Мифический"
 
-#: apc/config.py:452
+#: apc/config.py:457
 msgid "Legendary"
 msgstr "Легендарный"
 
-#: apc/config.py:501
+#: apc/config.py:509
 msgid "animal_name"
 msgstr "имя_животного"
 
-#: apc/config.py:505
+#: apc/config.py:513
 msgid "fur_name"
 msgstr "Мех"
 
-#: apc/config.py:570 apc/config.py:695
+#: apc/config.py:578 apc/config.py:703
 msgid "reserve_name"
 msgstr "Заказник"
 
@@ -1849,122 +1849,5 @@ msgid "Salzwiesen Park"
 msgstr "Парк Зальцвизен"
 
 #: apc/config/reserve_details.json:285
-msgid "Alberta Hunting Preserve"
-msgstr "Альберта Охотничий заповедник"
-
-#~ msgid "We All Party"
-#~ msgstr "Веселье для всех"
-
-#~ msgid "Fur Party"
-#~ msgstr "Меховое веселье"
-
-#~ msgid "view modded version"
-#~ msgstr "просмотреть измененную версию"
-
-#~ msgid "name"
-#~ msgstr "имя"
-
-#~ msgid "Eu Bison"
-#~ msgstr "Европейский Бизон"
-
-#~ msgid "Eu Hare"
-#~ msgstr "Европейский заяц"
-
-#~ msgid "Eu Rabbit"
-#~ msgstr "Европейский кролик"
-
-#~ msgid "Green Wing Teal"
-#~ msgstr "Зеленокрылый чирок"
-
-#~ msgid "Jackrabbit"
-#~ msgstr "Белохвостый заяц"
-
-#~ msgid "Northern Bobwhite Quail"
-#~ msgstr "Виргинская куропатка"
-
-#~ msgid "Pheasant"
-#~ msgstr "Ожерелевый фазан"
-
-#~ msgid "Prong Horn"
-#~ msgstr "Вилорог"
-
-#~ msgid "Raccoon"
-#~ msgstr "Енот-полоскун"
-
-#~ msgid "Rockymountain Elk"
-#~ msgstr "Вапити"
-
-#~ msgid "Sidestriped Jackal"
-#~ msgstr "Полосатый шакал"
-
-#~ msgid "Southeastern Ibex"
-#~ msgstr "Юго-Восточный г. козел"
-
-#~ msgid "Wild Turkey"
-#~ msgstr "Восточная дикая индейка"
-
-#~ msgid "Eastern Kangaroo"
-#~ msgstr "Восточный кенгуру"
-
-#~ msgid "Sambar Deer"
-#~ msgstr "Олень-самбар"
-
-#~ msgid "Gray"
-#~ msgstr "Серый"
-
-#~ msgid "Gray Brown"
-#~ msgstr "Серо-коричневый"
-
-#~ msgid "Light Gray"
-#~ msgstr "Светло-серый"
-
-#~ msgid "Two Tones"
-#~ msgstr "Двухцветный"
-
-#~ msgid "Fabled Speckled"
-#~ msgstr "Лег. пятнистый"
-
-#~ msgid "Piebald Blnd"
-#~ msgstr "Русый разношёрстный"
-
-#~ msgid "Dark Spotted"
-#~ msgstr "Темный Пятнистый"
-
-#~ msgid "Fabled Painted"
-#~ msgstr "Сказочный Раскрашенный"
-
-#~ msgid "Pseudo Melanistic White 1"
-#~ msgstr "Псевдомеланистический белый 1"
-
-#~ msgid "Pseudo Melanistic 1"
-#~ msgstr "Псевдо-меланистический 1"
-
-#~ msgid "Pseudo Melanistic 2"
-#~ msgstr "Псевдо-меланистический 2"
-
-#~ msgid "Pseudo Melanistic White 2"
-#~ msgstr "Псевдо-меланистический белый 2"
-
-#~ msgid "Fabled Gray"
-#~ msgstr "Легендарный серый"
-
-#~ msgid "Fabled Scar"
-#~ msgstr "Легендарный Шрам"
-
-#~ msgid "Can't add animals"
-#~ msgstr "Не могу добавить животных"
-
-#~ msgid "The reserve has a limit of 50,000 animals"
-#~ msgstr "Заповедник имеет предел 50 000 животных"
-
-#~ msgid "WHite Brown 2"
-#~ msgstr "Белый коричневый 2"
-
-#~ msgid "Caribou"
-#~ msgstr "Карибу"
-
-#~ msgid "Bald Leucistic"
-#~ msgstr "Лысый лейцистический"
-
-#~ msgid "Light Brown 3"
-#~ msgstr "Светло -коричневый 3"
+msgid "Askiy Ridge Hunting Preserve"
+msgstr "Охотниковой заповедник Askiy Ridge"

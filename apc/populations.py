@@ -119,7 +119,7 @@ def describe_animal_group(reserve_key: str, species_key: str, animals: list[AdfV
         config.MALE if adf_animal.gender == "male" else config.FEMALE,
         round(adf_animal.weight, precision),
         round(adf_animal.score, precision),
-        fur_seed.get_fur_name_for_seed(adf_animal.visual_seed, species_key, adf_animal.gender, great_one=is_great_one),
+        adf_animal.fur_name,
         adf_animal.trophy,
         adf_animal
       ])

@@ -334,34 +334,39 @@ def update_language(locale: str) -> None:
   translate = t.gettext
   setup_translations()
 
-def _find_saves_path() -> str:
-    steam_saves = Path().home() / "Documents/Avalanche Studios/COTW/Saves"
-    steam_onedrive = Path().home() / "OneDrive/Documents/Avalanche Studios/COTW/Saves"
-    epic_saves = Path().home() / "Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
-    epic_onedrive = Path().home() / "OneDrive/Documents/Avalanche Studios/Epic Games Store/COTW/Saves"
+def _find_saves_path() -> Path:
+    home_dir = Path.home()
+    roots = [
+      home_dir / "Documents" / "Avalanche Studios",
+      home_dir / "OneDrive" / "Documents" / "Avalanche Studios",
+    ]
 
-    base_saves = None
-    if steam_saves.exists():
-      base_saves = steam_saves
-    elif epic_saves.exists():
-      base_saves = epic_saves
-    elif steam_onedrive.exists():
-      base_saves = steam_onedrive
-    elif epic_onedrive.exists():
-      base_saves = epic_onedrive
+    # Steam uses no subfolder → handle as empty string
+    store_dirs = ["", "Epic Games Store", "Microsoft Store"]
+    candidates = []
+    for root in roots:
+      for store in store_dirs:
+        if store:
+          candidates.append(root / store / "COTW" / "Saves")
+        else:
+          candidates.append(root / "COTW" / "Saves")
 
-    save_folder = None
-    if base_saves:
-        folders = os.listdir(base_saves)
-        all_numbers = re.compile(r"\d+")
-        for folder in folders:
-            if all_numbers.match(folder):
-                save_folder = folder
-                break
-    if save_folder:
-       return base_saves / save_folder
-    else:
+    base_saves = next((p for p in candidates if p.exists()), None)
+    if not base_saves:
+      logger.info("Unable to locate save directory")
       return None
+
+    try:  # Find a numeric profile directory inside base_saves
+      profile_dir = next(
+        (p for p in base_saves.iterdir() if p.is_dir() and p.name.isdigit()),
+        None,
+      )
+    except FileNotFoundError:
+      logger.info("Unable to locate save directory")
+      return None
+    logger.info("Found save directory: %s", profile_dir)
+    return profile_dir
+
 
 APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
 EXPORTS_PATH = APP_DIR_PATH / "exports"
@@ -486,10 +491,14 @@ def load_config(config_path: Path) -> int:
 
 def get_save_path() -> Path:
   if SAVE_PATH.exists():
-    return Path(SAVE_PATH.read_text())
+    loaded_save_path = Path(SAVE_PATH.read_text())
+    if loaded_save_path.exists():
+      return loaded_save_path
+    else:
+      logger.warning("Unable to load from save path %s", loaded_save_path)
   return DEFAULT_SAVE_PATH
 
-def save_path(save_path_location: str) -> None:
+def write_save_path(save_path_location: str) -> None:
   SAVE_PATH.write_text(save_path_location)
 
 def get_reserve_species_renames(reserve_key: str) -> dict:

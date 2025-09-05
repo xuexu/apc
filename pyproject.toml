@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "apc-revived"
-version = "2.0.2"
+version = "2.0.3"
 description = "GUI tool to modify attributes of animals across all reserves in theHunter: Call of the Wild (COTW)"
 authors = [{ name = "Ryan Maxim" }]
 readme = "README.md"
@@ -16,6 +16,7 @@ dependencies = [
   "FreeSimpleGUI==5.*",
   "numpy==2.0.2",
   "pybabel-json-md==0.1.0",
+  "requests==2.*",
   "rich==14.*",
 ]
 

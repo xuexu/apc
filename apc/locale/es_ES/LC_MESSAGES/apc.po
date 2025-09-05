@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-29 16:55-0400\n"
+"POT-Creation-Date: 2025-09-05 14:31-0400\n"
 "PO-Revision-Date: 2023-04-02 23:55-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es_MX <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Semilla Visual"
 msgid "Fur"
 msgstr "El Pelaje"
 
-#: apc/config.py:73 apc/config.py:434 apc/config/fur_names.json:522
+#: apc/config.py:73 apc/config.py:439 apc/config/fur_names.json:522
 msgid "Unknown"
 msgstr "Desconocido"
 
@@ -102,7 +102,7 @@ msgstr "Oro"
 msgid "Diamond"
 msgstr "Diamante"
 
-#: apc/config.py:85 apc/config.py:454
+#: apc/config.py:85 apc/config.py:459
 msgid "Great One"
 msgstr "El Mejor"
 
@@ -588,51 +588,51 @@ msgstr "Animales actualizados en múltiples reservas. Usar"
 msgid "to load the modded files for each reserve:"
 msgstr "Para cargar los archivos modificados para cada reserva:"
 
-#: apc/config.py:436
+#: apc/config.py:441
 msgid "Trivial"
 msgstr "Trivial"
 
-#: apc/config.py:438
+#: apc/config.py:443
 msgid "Minor"
 msgstr "Menor"
 
-#: apc/config.py:440
+#: apc/config.py:445
 msgid "Very Easy"
 msgstr "Bien Facil"
 
-#: apc/config.py:442
+#: apc/config.py:447
 msgid "Easy"
 msgstr "Facil"
 
-#: apc/config.py:444
+#: apc/config.py:449
 msgid "Medium"
 msgstr "Medio"
 
-#: apc/config.py:446
+#: apc/config.py:451
 msgid "Hard"
 msgstr "Duro"
 
-#: apc/config.py:448
+#: apc/config.py:453
 msgid "Very Hard"
 msgstr "Muy Duro"
 
-#: apc/config.py:450
+#: apc/config.py:455
 msgid "Mythical"
 msgstr "Mitico"
 
-#: apc/config.py:452
+#: apc/config.py:457
 msgid "Legendary"
 msgstr "Legendario"
 
-#: apc/config.py:501
+#: apc/config.py:509
 msgid "animal_name"
 msgstr "nombre_animal"
 
-#: apc/config.py:505
+#: apc/config.py:513
 msgid "fur_name"
 msgstr "nombre_de_pelaje"
 
-#: apc/config.py:570 apc/config.py:695
+#: apc/config.py:578 apc/config.py:703
 msgid "reserve_name"
 msgstr "nombre_de_la_reserva"
 
@@ -1850,122 +1850,5 @@ msgid "Salzwiesen Park"
 msgstr "Parque Salzwiesen"
 
 #: apc/config/reserve_details.json:285
-msgid "Alberta Hunting Preserve"
-msgstr "Reserva de caza de Alberta"
-
-#~ msgid "We All Party"
-#~ msgstr "Todos De Fiesta"
-
-#~ msgid "Fur Party"
-#~ msgstr "Fiesta De Pieles"
-
-#~ msgid "view modded version"
-#~ msgstr "ver version modificada"
-
-#~ msgid "name"
-#~ msgstr "nombre"
-
-#~ msgid "Eu Bison"
-#~ msgstr "Bisonte Europeo"
-
-#~ msgid "Eu Hare"
-#~ msgstr "Liebre europea"
-
-#~ msgid "Eu Rabbit"
-#~ msgstr "Liebre Europea"
-
-#~ msgid "Green Wing Teal"
-#~ msgstr "Pato De Ala Verde"
-
-#~ msgid "Jackrabbit"
-#~ msgstr "Liebre"
-
-#~ msgid "Northern Bobwhite Quail"
-#~ msgstr "Codorniz Bobwhite Del Norte"
-
-#~ msgid "Pheasant"
-#~ msgstr "Faisan"
-
-#~ msgid "Prong Horn"
-#~ msgstr "Berrendo"
-
-#~ msgid "Raccoon"
-#~ msgstr "Mapache"
-
-#~ msgid "Rockymountain Elk"
-#~ msgstr "Alce De Montana Rocosa"
-
-#~ msgid "Sidestriped Jackal"
-#~ msgstr "Chacal Rayado"
-
-#~ msgid "Southeastern Ibex"
-#~ msgstr "Ibice Suroriental"
-
-#~ msgid "Wild Turkey"
-#~ msgstr "Pavo Salvaje"
-
-#~ msgid "Eastern Kangaroo"
-#~ msgstr "Canguro oriental"
-
-#~ msgid "Sambar Deer"
-#~ msgstr "Ciervo sambar"
-
-#~ msgid "Gray"
-#~ msgstr "Gris"
-
-#~ msgid "Gray Brown"
-#~ msgstr "Gris marrón"
-
-#~ msgid "Light Gray"
-#~ msgstr "Gris claro"
-
-#~ msgid "Two Tones"
-#~ msgstr "Dos tonos"
-
-#~ msgid "Fabled Speckled"
-#~ msgstr "Moteado legendario"
-
-#~ msgid "Piebald Blnd"
-#~ msgstr "Piebald Blnd"
-
-#~ msgid "Dark Spotted"
-#~ msgstr "Manchado oscuro"
-
-#~ msgid "Fabled Painted"
-#~ msgstr "Fabuloso pintado"
-
-#~ msgid "Pseudo Melanistic White 1"
-#~ msgstr "Blanco pseudomelánico 1"
-
-#~ msgid "Pseudo Melanistic 1"
-#~ msgstr "Pseudo Melanístico 1"
-
-#~ msgid "Pseudo Melanistic 2"
-#~ msgstr "Pseudo Melanístico 2"
-
-#~ msgid "Pseudo Melanistic White 2"
-#~ msgstr "Blanco pseudomelánico 2"
-
-#~ msgid "Fabled Gray"
-#~ msgstr "Gris legendario"
-
-#~ msgid "Fabled Scar"
-#~ msgstr "Cicatriz legendaria"
-
-#~ msgid "Can't add animals"
-#~ msgstr "No se puede agregar animales"
-
-#~ msgid "The reserve has a limit of 50,000 animals"
-#~ msgstr "La reserva tiene un límite de 50,000 animales"
-
-#~ msgid "WHite Brown 2"
-#~ msgstr "Marrón blanco 2"
-
-#~ msgid "Caribou"
-#~ msgstr "Caribu"
-
-#~ msgid "Bald Leucistic"
-#~ msgstr "Leucístico calvo"
-
-#~ msgid "Light Brown 3"
-#~ msgstr "Marrón claro 3"
+msgid "Askiy Ridge Hunting Preserve"
+msgstr "Askiy Ridge Hunting Preserve"

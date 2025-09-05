@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-29 16:55-0400\n"
+"POT-Creation-Date: 2025-09-05 14:31-0400\n"
 "PO-Revision-Date: 2023-04-17 17:13+0800\n"
 "Last-Translator: \n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr "编号"
 msgid "Fur"
 msgstr "毛皮"
 
-#: apc/config.py:73 apc/config.py:434 apc/config/fur_names.json:522
+#: apc/config.py:73 apc/config.py:439 apc/config/fur_names.json:522
 msgid "Unknown"
 msgstr "未知"
 
@@ -103,7 +103,7 @@ msgstr "金色"
 msgid "Diamond"
 msgstr "钻石"
 
-#: apc/config.py:85 apc/config.py:454
+#: apc/config.py:85 apc/config.py:459
 msgid "Great One"
 msgstr "奇珍异兽"
 
@@ -583,51 +583,51 @@ msgstr "在多个储备金上更新动物。使用"
 msgid "to load the modded files for each reserve:"
 msgstr "为每个储备金加载改装文件："
 
-#: apc/config.py:436
+#: apc/config.py:441
 msgid "Trivial"
 msgstr "微不足道"
 
-#: apc/config.py:438
+#: apc/config.py:443
 msgid "Minor"
 msgstr "小菜一碟"
 
-#: apc/config.py:440
+#: apc/config.py:445
 msgid "Very Easy"
 msgstr "非常简单"
 
-#: apc/config.py:442
+#: apc/config.py:447
 msgid "Easy"
 msgstr "简单"
 
-#: apc/config.py:444
+#: apc/config.py:449
 msgid "Medium"
 msgstr "中等"
 
-#: apc/config.py:446
+#: apc/config.py:451
 msgid "Hard"
 msgstr "困难"
 
-#: apc/config.py:448
+#: apc/config.py:453
 msgid "Very Hard"
 msgstr "非常困难"
 
-#: apc/config.py:450
+#: apc/config.py:455
 msgid "Mythical"
 msgstr "神秘"
 
-#: apc/config.py:452
+#: apc/config.py:457
 msgid "Legendary"
 msgstr "传说"
 
-#: apc/config.py:501
+#: apc/config.py:509
 msgid "animal_name"
 msgstr "动物名称"
 
-#: apc/config.py:505
+#: apc/config.py:513
 msgid "fur_name"
 msgstr "毛皮颜色"
 
-#: apc/config.py:570 apc/config.py:695
+#: apc/config.py:578 apc/config.py:703
 msgid "reserve_name"
 msgstr "狩猎区名称"
 
@@ -1845,122 +1845,5 @@ msgid "Salzwiesen Park"
 msgstr "萨尔茨维森公园"
 
 #: apc/config/reserve_details.json:285
-msgid "Alberta Hunting Preserve"
-msgstr "艾伯塔省狩猎保护区"
-
-#~ msgid "We All Party"
-#~ msgstr "一键生成"
-
-#~ msgid "Fur Party"
-#~ msgstr "毛皮全生成"
-
-#~ msgid "view modded version"
-#~ msgstr "查看转换好的文件"
-
-#~ msgid "name"
-#~ msgstr "名称"
-
-#~ msgid "Eu Bison"
-#~ msgstr "欧洲野牛"
-
-#~ msgid "Eu Hare"
-#~ msgstr "欧洲薮兔"
-
-#~ msgid "Eu Rabbit"
-#~ msgstr "欧洲野兔"
-
-#~ msgid "Green Wing Teal"
-#~ msgstr "美洲小水鸭"
-
-#~ msgid "Jackrabbit"
-#~ msgstr "白尾兔"
-
-#~ msgid "Northern Bobwhite Quail"
-#~ msgstr "山齿鹑"
-
-#~ msgid "Pheasant"
-#~ msgstr "环颈稚鸡"
-
-#~ msgid "Prong Horn"
-#~ msgstr "叉角羚"
-
-#~ msgid "Raccoon"
-#~ msgstr "北美淀熊"
-
-#~ msgid "Rockymountain Elk"
-#~ msgstr "落基山麋鹿"
-
-#~ msgid "Sidestriped Jackal"
-#~ msgstr "侧纹胡狼"
-
-#~ msgid "Southeastern Ibex"
-#~ msgstr "西班牙东南部山羊"
-
-#~ msgid "Wild Turkey"
-#~ msgstr "太平原火鸡"
-
-#~ msgid "Eastern Kangaroo"
-#~ msgstr "东部袋鼠"
-
-#~ msgid "Sambar Deer"
-#~ msgstr "水鹿"
-
-#~ msgid "Gray"
-#~ msgstr "灰色"
-
-#~ msgid "Gray Brown"
-#~ msgstr "灰棕色"
-
-#~ msgid "Light Gray"
-#~ msgstr "浅灰色"
-
-#~ msgid "Two Tones"
-#~ msgstr "双色调"
-
-#~ msgid "Fabled Speckled"
-#~ msgstr "珍惜斑点色"
-
-#~ msgid "Piebald Blnd"
-#~ msgstr "斑点金色"
-
-#~ msgid "Dark Spotted"
-#~ msgstr "暗斑"
-
-#~ msgid "Fabled Painted"
-#~ msgstr "传说中的彩绘"
-
-#~ msgid "Pseudo Melanistic White 1"
-#~ msgstr "伪黑色素白 1"
-
-#~ msgid "Pseudo Melanistic 1"
-#~ msgstr "伪黑色素 1"
-
-#~ msgid "Pseudo Melanistic 2"
-#~ msgstr "伪黑色素 2"
-
-#~ msgid "Pseudo Melanistic White 2"
-#~ msgstr "伪黑色素白 2"
-
-#~ msgid "Fabled Gray"
-#~ msgstr "传说中的灰色"
-
-#~ msgid "Fabled Scar"
-#~ msgstr "传说之痕"
-
-#~ msgid "Can't add animals"
-#~ msgstr "无法添加动物"
-
-#~ msgid "The reserve has a limit of 50,000 animals"
-#~ msgstr "储备有50,000只动物的限制"
-
-#~ msgid "WHite Brown 2"
-#~ msgstr "白棕色2"
-
-#~ msgid "Caribou"
-#~ msgstr "北美驯鹿"
-
-#~ msgid "Bald Leucistic"
-#~ msgstr "秃头白化"
-
-#~ msgid "Light Brown 3"
-#~ msgstr "浅棕色3"
+msgid "Askiy Ridge Hunting Preserve"
+msgstr "Askiy Ridge狩猎保护区"
