@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "apc-revived"
-version = "2.0.3"
+version = "2.1.0"
 description = "GUI tool to modify attributes of animals across all reserves in theHunter: Call of the Wild (COTW)"
 authors = [{ name = "Ryan Maxim" }]
 readme = "README.md"

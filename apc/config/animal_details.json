@@ -641,8 +641,8 @@
         },
         "score_low": 53.972,
         "score_high": 213.049,
-        "weight_low": 70.0,
-        "weight_high": 160.0
+        "weight_low": 58.0,
+        "weight_high": 143.0
       },
       "female": {
         "fur_total_probability": 100000,
@@ -659,56 +659,56 @@
         },
         "score_low": 52.462,
         "score_high": 87.066,
-        "weight_low": 50.0,
-        "weight_high": 100.0
+        "weight_low": 34.0,
+        "weight_high": 91.0
       }
     },
     "level": [
       [
-        50.0,
-        74.799
+        34.0,
+        62.53
       ],
       [
-        74.8,
-        99.999
+        62.54,
+        86.32
       ],
       [
-        100.0,
-        130.899
+        86.33,
+        115.50
       ],
       [
-        130.9,
-        151.999
+        115.51,
+        135.43
       ],
       [
-        152.0,
-        160.0
+        135.44,
+        143.0
       ]
     ],
     "trophy": {
       "bronze": {
         "score_low": 52.462,
         "score_high": 84.578,
-        "weight_low": 50.0,
-        "weight_high": 71.999
+        "weight_low": 34.0,
+        "weight_high": 55.799
       },
       "silver": {
         "score_low": 84.579,
         "score_high": 148.813,
-        "weight_low": 72.0,
-        "weight_high": 115.999
+        "weight_low": 55.8,
+        "weight_high": 99.399
       },
       "gold": {
         "score_low": 148.814,
         "score_high": 196.989,
-        "weight_low": 116.0,
-        "weight_high": 148.999
+        "weight_low": 99.4,
+        "weight_high": 132.099
       },
       "diamond": {
         "score_low": 196.99,
         "score_high": 213.049,
-        "weight_low": 149.0,
-        "weight_high": 160.0
+        "weight_low": 132.1,
+        "weight_high": 143.0
       }
     },
     "truracs": true
@@ -1943,6 +1943,96 @@
         "weight_high": 27.0
       }
     }
+  },
+  "desert_bighorn_sheep": {
+    "ammo_class": 5,
+    "gender": {
+      "male": {
+        "fur_total_probability": 99950,
+        "furs": {
+          "light_brown": 12500,
+          "erythristic": 50,
+          "leucistic": 100,
+          "light_grey": 29000,
+          "piebald": 100,
+          "brown": 29000,
+          "piebald_2": 100,
+          "melanistic": 50,
+          "albino": 50,
+          "grey": 29000
+        },
+        "score_low": 53.972,
+        "score_high": 213.049,
+        "weight_low": 52.0,
+        "weight_high": 127.0
+      },
+      "female": {
+        "fur_total_probability": 70850,
+        "furs": {
+          "light_brown": 12500,
+          "leucistic": 100,
+          "piebald": 100,
+          "brown": 29000,
+          "melanistic": 50,
+          "albino": 50,
+          "mosaic": 50,
+          "grey": 29000
+        },
+        "score_low": 52.462,
+        "score_high": 87.066,
+        "weight_low": 34.0,
+        "weight_high": 85.0
+      }
+    },
+    "level": [
+      [
+        34.0,
+        56.0
+      ],
+      [
+        56.01,
+        77.0
+      ],
+      [
+        77.01,
+        102.76
+      ],
+      [
+        102.77,
+        120.34
+      ],
+      [
+        120.35,
+        127.0
+      ]
+    ],
+    "trophy": {
+      "bronze": {
+        "score_low": 52.462,
+        "score_high": 84.578,
+        "weight_low": 34.0,
+        "weight_high": 52.599
+      },
+      "silver": {
+        "score_low": 84.579,
+        "score_high": 148.813,
+        "weight_low": 52.6,
+        "weight_high": 89.799
+      },
+      "gold": {
+        "score_low": 148.814,
+        "score_high": 196.989,
+        "weight_low": 89.8,
+        "weight_high": 117.699
+      },
+      "diamond": {
+        "score_low": 196.99,
+        "score_high": 213.049,
+        "weight_low": 117.7,
+        "weight_high": 127.0
+      }
+    },
+    "truracs": true
   },
   "dusky_grouse": {
     "ammo_class": 1,
@@ -3555,14 +3645,14 @@
         "fur_total_probability": 100001,
         "furs": {
           "grey": 49850,
-          "acromelanistic": 25,
           "red_brown": 67,
           "melanistic": 25,
           "melanisticcharcoal": 25,
           "albino": 25,
           "eggwhite": 67,
           "dark_grey": 67,
-          "brown": 49850
+          "brown": 49850,
+          "acromelanistic": 25
         },
         "score_low": 33.0,
         "score_high": 40.0,
@@ -3573,19 +3663,37 @@
         "fur_total_probability": 100001,
         "furs": {
           "grey": 49850,
-          "acromelanistic": 25,
           "red_brown": 67,
           "melanistic": 25,
           "melanisticcharcoal": 25,
           "albino": 25,
           "eggwhite": 67,
           "dark_grey": 67,
-          "brown": 49850
+          "brown": 49850,
+          "acromelanistic": 25
         },
         "score_low": 30.0,
         "score_high": 35.0,
         "weight_low": 30.0,
         "weight_high": 60.0
+      },
+      "great_one_male": {
+        "fur_total_probability": 225,
+        "furs": {
+          "frostbite": 25,
+          "vanguard": 25,
+          "gravehide": 25,
+          "dawnbreak": 25,
+          "scarborne": 25,
+          "hollow": 25,
+          "battlethorn": 25,
+          "twinsoul": 25,
+          "razorwind": 25
+        },
+        "score_low": 40.0,
+        "score_high": 42.0,
+        "weight_low": 80.0,
+        "weight_high": 90.0
       }
     },
     "level": [
@@ -5092,15 +5200,17 @@
     "ammo_class": 8,
     "gender": {
       "male": {
-        "fur_total_probability": 74926,
+        "fur_total_probability": 50150,
         "furs": {
-          "albino": 38,
-          "tan": 24900,
-          "light_brown": 24900,
+          "albino": 33,
+          "mosaic": 100,
+          "tan": 16617,
+          "light_brown": 16617,
           "nz_moose_mocha": 0,
-          "brown": 24900,
-          "piebald": 150,
-          "melanistic": 38
+          "brown": 16617,
+          "acromelanistic": 33,
+          "piebald": 100,
+          "melanistic": 33
         },
         "score_low": 32.296,
         "score_high": 301.959,
@@ -5108,14 +5218,15 @@
         "weight_high": 620.0
       },
       "female": {
-        "fur_total_probability": 74926,
+        "fur_total_probability": 50050,
         "furs": {
-          "brown": 24900,
-          "albino": 38,
-          "dark_brown": 24900,
-          "tan": 24900,
-          "piebald": 150,
-          "melanistic": 38
+          "brown": 16617,
+          "albino": 33,
+          "dark_brown": 16617,
+          "tan": 16617,
+          "acromelanistic": 33,
+          "piebald": 100,
+          "melanistic": 33
         },
         "score_low": 0.0,
         "score_high": 0.0,
@@ -5123,14 +5234,14 @@
         "weight_high": 440.0
       },
       "great_one_male": {
-        "fur_total_probability": 75000,
+        "fur_total_probability": 150,
         "furs": {
-          "great_one_moose_f": 12500,
-          "great_one_moose_e": 12500,
-          "great_one_moose_c": 12500,
-          "great_one_moose_d": 12500,
-          "great_one_moose_a": 12500,
-          "great_one_moose_b": 12500
+          "great_one_moose_f": 25,
+          "great_one_moose_e": 25,
+          "great_one_moose_c": 25,
+          "great_one_moose_d": 25,
+          "great_one_moose_a": 25,
+          "great_one_moose_b": 25
         },
         "score_low": 181.082,
         "score_high": 295.059,
@@ -5393,8 +5504,8 @@
       "great_one_male": {
         "fur_total_probability": 150,
         "furs": {
-          "great_one_muledeer_corkscrew": 25,
           "great_one_muledeer_deadtree": 25,
+          "great_one_muledeer_corkscrew": 25,
           "great_one_muledeer_cobweb": 25,
           "great_one_muledeer_rosethorns": 25,
           "great_one_muledeer_velvetstripes": 25,

@@ -11,6 +11,9 @@
   "albino_boss": {
     "fur_name": "Albino - Boss"
   },
+  "battlethorn": {
+    "fur_name": "Fabled Battlethorn"
+  },
   "beige": {
     "fur_name": "Beige"
   },
@@ -116,6 +119,9 @@
   "dark_red_brown": {
     "fur_name": "Dark Red Brown"
   },
+  "dawnbreak": {
+    "fur_name": "Fabled Dawnbreak"
+  },
   "dilute": {
     "fur_name": "Dilute"
   },
@@ -143,6 +149,9 @@
   "fantasma": {
     "fur_name": "Fantasma"
   },
+  "frostbite": {
+    "fur_name": "Fabled Frostbite"
+  },
   "ghost": {
     "fur_name": "Ghost"
   },
@@ -154,6 +163,9 @@
   },
   "gold": {
     "fur_name": "Gold"
+  },
+  "gravehide": {
+    "fur_name": "Fabled Gravehide"
   },
   "gray_brown": {
     "fur_name": "Grey Brown"
@@ -311,6 +323,9 @@
   "grey_2": {
     "fur_name": "Grey 2"
   },
+  "hollow": {
+    "fur_name": "Fabled Hollow"
+  },
   "honeytones": {
     "fur_name": "Honeytones"
   },
@@ -398,6 +413,9 @@
   "molting_2": {
     "fur_name": "Molting 2"
   },
+  "mosaic": {
+    "fur_name": "Mosaic"
+  },
   "mottled": {
     "fur_name": "Mottled"
   },
@@ -461,6 +479,9 @@
   "pseudo_melanistic_white_2": {
     "fur_name": "Pseudo-Melanistic White 2"
   },
+  "razorwind": {
+    "fur_name": "Fabled Razorwind"
+  },
   "red": {
     "fur_name": "Red"
   },
@@ -475,6 +496,9 @@
   },
   "sand": {
     "fur_name": "Sand"
+  },
+  "scarborne": {
+    "fur_name": "Fabled Scarborne"
   },
   "slate_grey": {
     "fur_name": "Slate Grey"
@@ -518,8 +542,14 @@
   "tone": {
     "fur_name": "Two Tone"
   },
+  "twinsoul": {
+    "fur_name": "Fabled Twinsoul"
+  },
   "unknown": {
     "fur_name": "Unknown"
+  },
+  "vanguard": {
+    "fur_name": "Fabled Vanguard"
   },
   "white": {
     "fur_name": "White"
