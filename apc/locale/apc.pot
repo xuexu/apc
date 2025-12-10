@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-10 00:43-0500\n"
+"POT-Creation-Date: 2025-12-10 04:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1987,6 +1987,6 @@ msgid "Askiy Ridge Hunting Preserve"
 msgstr ""
 
 #: apc/config/reserve_details.json:310
-msgid "Tórr nan Sithean"
+msgid "Tórr nan Sìthean Hunting Reserve"
 msgstr ""
 

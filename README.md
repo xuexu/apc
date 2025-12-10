@@ -40,8 +40,8 @@ Modded population files can be found in a `mods` folder in the same directory yo
    ```
 1. Build and package the application. The `apcgui_X.Y.Z.7z` file will be placed in `\dist`
    ```
-   hatch run build
-   hatch run pack
+   hatch run build:build
+   hatch run build:pack
    ```
 
 ## Updating Translation Data
@@ -52,6 +52,8 @@ To update the translation data:
    ```
    hatch run translate
    ```
+
+The translation files are located in `\apc\locale\<language>\apc.po`. The individual translations can be directly modified if desired. Once modifications are complete, recompile the `.po` files into `.mo` files with `hatch run translate`. Existing translations will not be overwritten by the script.
 
 ## Credits
 

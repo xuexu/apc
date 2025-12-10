@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-10 00:43-0500\n"
+"POT-Creation-Date: 2025-12-10 04:12-0500\n"
 "PO-Revision-Date: 2023-04-17 17:13+0800\n"
 "Last-Translator: \n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
@@ -637,7 +637,7 @@ msgstr "美洲短吻鳄"
 
 #: apc/config/animal_names.json:6
 msgid "American Mink"
-msgstr "美国水貂"
+msgstr "美洲水貂"
 
 #: apc/config/animal_names.json:9
 msgid "Antelope Jackrabbit"
@@ -765,7 +765,7 @@ msgstr "欧亚猞猁"
 
 #: apc/config/animal_names.json:102
 msgid "Eurasian Pine Marten"
-msgstr "欧亚松貂"
+msgstr "松貂"
 
 #: apc/config/animal_names.json:105
 msgid "Eurasian Teal"
@@ -777,7 +777,7 @@ msgstr "赤颈鸭"
 
 #: apc/config/animal_names.json:111
 msgid "Eurasian Woodcock"
-msgstr "欧亚山鹬"
+msgstr "丘鹬"
 
 #: apc/config/animal_names.json:114
 msgid "European Badger"
@@ -1989,5 +1989,5 @@ msgid "Askiy Ridge Hunting Preserve"
 msgstr "阿斯基岭狩猎保护区"
 
 #: apc/config/reserve_details.json:310
-msgid "Tórr nan Sithean"
-msgstr "托尔·南·西蒂安"
+msgid "Tórr nan Sìthean Hunting Reserve"
+msgstr "精灵之丘狩猎庄园"
