@@ -119,7 +119,10 @@ class AdfAnimal:
       self._parse_trophy()
       fur_key = fur_seed.get_fur_for_seed(self.visual_seed, self.species_key, self.gender, self.great_one)
       self.fur_key = fur_key if fur_key else "unknown"
-      self.fur_name = fur_seed.get_fur_name_for_seed(self.visual_seed, self.species_key, self.gender, great_one=self.great_one)
+      if fur_key:
+        self.fur_name = fur_seed.get_fur_name_for_seed(self.visual_seed, self.species_key, self.gender, great_one=self.great_one)
+      else:
+        self.fur_name = "unknown"
       self.offset = self.gender_offset  # gender is the first byte of the animal data
 
     def _parse_great_one(self) -> None:

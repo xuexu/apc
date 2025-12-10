@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "apc-revived"
-version = "2.1.0"
+version = "2.2.0"
 description = "GUI tool to modify attributes of animals across all reserves in theHunter: Call of the Wild (COTW)"
 authors = [{ name = "Ryan Maxim" }]
 readme = "README.md"
@@ -44,14 +44,19 @@ features = ["dev","translate"]
 
 [tool.hatch.envs.default.scripts]  # defaults for Windows
 apcgui = "python apcgui"
-build = 'cmd /c ".\\scripts\\apcgui.bat"'
-pack = 'cmd /c ".\\scripts\\apcgui_pack.bat"'
 translate = [
   'cmd /c ".\\scripts\\update.bat"',
   'cmd /c ".\\scripts\\compile.bat"',
 ]
 
-[tool.hatch.envs.default.overrides]
+[ tool.hatch.envs.build]
+python = "3.12"
+
+[tool.hatch.envs.build.scripts]  # defaults for Windows
+build = 'cmd /c ".\\scripts\\apcgui.bat"'
+pack = 'cmd /c ".\\scripts\\apcgui_pack.bat"'
+
+[tool.hatch.envs.build.overrides]
 platform.macos.scripts = [
   "build=sh ./scripts/build.sh",
   "pack=sh ./scripts/pack.sh",

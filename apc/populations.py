@@ -86,8 +86,13 @@ def describe_animals(reserve_key: str, species_key: str, reserve_adf: Adf, good 
   rows = []
 
   logger.debug(f"Processing {format_key(species_key)} animals...")
-  if (species_config := config.get_species(species_key)) is None:
-    return []  # First population in Te Awaroa is "_BLANK_GROUPS_ARRAY" due to an empty Groups array
+  species_config = config.get_species(species_key)
+  if (
+    species_config is None  # trying to parse an unknown animal - new map? use hacks2.parse_reserve_species()
+    or not groups  # some maps have placeholder blank groups for animals that were removed during development
+  ):
+    logger.info("No groups found for %s", species_key)
+    return []
   diamond_config = species_config["trophy"]["diamond"]
   diamond_weight = diamond_config["weight_low"]
   diamond_score = diamond_config["score_low"]
@@ -147,9 +152,13 @@ def describe_reserve(reserve_key: str, reserve_adf: Adf, include_species = True)
       male_groups = []
 
       species_key = config.RESERVES[reserve_key]["species"][population_i] if include_species else str(population_i)
-      if species_key == "_BLANK_GROUPS_ARRAY":
-        continue
       species_config = config.get_species(species_key)
+      if (
+        species_config is None  # trying to parse an unknown animal - new map? use hacks2.parse_reserve_species()
+        or not groups  # some maps have placeholder blank groups for animals that were removed during development
+      ):
+        logger.info("No groups found for %s", species_key)
+        continue
       diamond_weight = species_config["trophy"]["diamond"]["weight_low"]
       diamond_score = species_config["trophy"]["diamond"]["score_low"]
       species_max_level = len(species_config.get("level", []))

@@ -2,6 +2,9 @@
   "american_alligator": {
     "animal_name": "American Alligator"
   },
+  "american_mink": {
+    "animal_name": "American Mink"
+  },
   "antelope_jackrabbit": {
     "animal_name": "Antelope Jackrabbit"
   },
@@ -95,11 +98,20 @@
   "eurasian_lynx": {
     "animal_name": "Eurasian Lynx"
   },
+  "eurasian_pine_marten": {
+    "animal_name": "Eurasian Pine Marten"
+  },
   "eurasian_teal": {
     "animal_name": "Eurasian Teal"
   },
   "eurasian_wigeon": {
     "animal_name": "Eurasian Wigeon"
+  },
+  "eurasian_woodcock": {
+    "animal_name": "Eurasian Woodcock"
+  },
+  "european_badger": {
+    "animal_name": "European Badger"
   },
   "fallow_deer": {
     "animal_name": "Fallow Deer"
@@ -233,6 +245,9 @@
   "red_fox": {
     "animal_name": "Red Fox"
   },
+  "red_grouse": {
+    "animal_name": "Red Grouse"
+  },
   "reindeer": {
     "animal_name": "Reindeer"
   },
@@ -313,6 +328,9 @@
   },
   "wild_boar": {
     "animal_name": "Wild Boar"
+  },
+  "wild_haggis": {
+    "animal_name": "Wild Haggis"
   },
   "wild_hog": {
     "animal_name": "Wild Hog"

@@ -119,7 +119,7 @@
       "black_bear",
       "mule_deer",
       "rockymountain_elk",
-      "_BLANK_GROUPS_ARRAY",
+      "blacktail_deer",
       "plains_bison"
     ]
   },
@@ -127,7 +127,7 @@
     "reserve_name": "Te Awaroa National Park",
     "index": 10,
     "species": [
-      "_BLANK_GROUPS_ARRAY",
+      "moose",
       "red_deer",
       "eu_rabbit",
       "feral_pig",
@@ -304,6 +304,30 @@
       "dusky_grouse",
       "whitetail_deer",
       "north_american_beaver"
+    ]
+  },
+  "scotland": {
+    "reserve_name": "Tórr nan Sithean",
+    "index": 20,
+    "species": [
+      "eurasian_wigeon",
+      "eurasian_woodcock",
+      "fallow_deer",
+      "red_deer",
+      "mountain_hare",
+      "black_grouse",
+      "wild_boar",
+      "wild_haggis",
+      "red_fox",
+      "eurasian_pine_marten",
+      "western_capercaillie",
+      "american_mink",
+      "roe_deer",
+      "european_badger",
+      "sika_deer",
+      "feral_goat",
+      "pheasant",
+      "red_grouse"
     ]
   }
 }

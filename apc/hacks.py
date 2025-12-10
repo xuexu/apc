@@ -8,7 +8,7 @@ from apc.adf import ParsedAdfFile
 from typing import List
 
 def extract_animal_names(path: Path) -> dict:
-  data = json.load(path.open())
+  data = config.load_json(path)
   names = {}
   for animal in data.keys():
     names[animal] = { "animal_name": config.format_key(animal) }
@@ -17,7 +17,7 @@ def extract_animal_names(path: Path) -> dict:
   }
   
 def extract_reserve_names(path: Path) -> dict:
-  data = json.load(path.open())
+  data = config.load_json(path)
   names = {}
   for reserve in data.keys():
     names[reserve] = { "reserve_name": data[reserve]["name"] }
@@ -26,7 +26,7 @@ def extract_reserve_names(path: Path) -> dict:
   }  
 
 def extract_furs_names(path: Path) -> dict:
-  data = json.load(path.open())
+  data = config.load_json(path)
   fur_names = {}
   for animal in list(data.keys()):
     for _gender, furs in data[animal]["diamonds"]["furs"].items():
@@ -44,15 +44,15 @@ def extract_furs_names(path: Path) -> dict:
   }
 
 def bad_scores(path: Path) -> None:
-  data = json.load(path.open())
+  data = config.load_json(path)
   for animal_key in data.keys():
     animal = data[animal_key]
     if animal["diamonds"]["score_low"] > animal["diamonds"]["score_high"]:
       print(animal_key, animal)
 
 def merge_furs() -> None:
-  scan = json.load(Path("scans/furs.json").open())
-  details = json.load(Path("apc/config/animal_details.json").open())
+  scan = config.load_json(Path("scans/furs.json"))
+  details = config.load_json(Path("apc/config/animal_details.json"))
   for animal_name, furs in scan.items():
     existing_animal = details[animal_name]
     if existing_animal:
@@ -77,8 +77,8 @@ def analyze_reserve(path: Path) -> None:
   print(json.dumps(group_weight, indent=2))
 
 def compare_fur_cnt() -> None:
-  details = json.load(Path("apc/config/animal_details.json").open())
-  global_furs = json.load(Path("scans/global_furs.json").open())
+  details = config.load_json(Path("apc/config/animal_details.json"))
+  global_furs = config.load_json(Path("scans/global_furs.json"))
   for animal_name, detail in details.items():
     if animal_name == "eg_kangaroo":
       animal_name = "eastern_grey_kangaroo"
@@ -444,13 +444,6 @@ def click_reserve(reserve_name: str) -> None:
   pyautogui.moveTo(exit_x, duration=action_duration)
   click()
 
-def load_json(file: Path) -> dict:
-  try:
-    data = json.load(file.open())
-  except:
-    data = {}
-  return data
-
 def save_json(file: Path, data: dict) -> None:
   file.write_text(json.dumps(data, indent=2))
 
@@ -458,8 +451,8 @@ def seed_animals(reserve_key: str) -> None:
   print()
   print(config.get_reserve_name(reserve_key))
   reserve_species = config.get_reserve(reserve_key)["species"]
-  all_furs = load_json(FURS_PATH)
-  all_levels = load_json(LEVELS_PATH)
+  all_furs = config.load_json(FURS_PATH)
+  all_levels = config.load_json(LEVELS_PATH)
   for species in reserve_species:
     aps_species = map_aps(reserve_key, species)
     print()
@@ -584,8 +577,8 @@ def seed_animals3(reserve_key: str) -> None:
 
 def merge_animal_details() -> None:
   animal_details = config.ANIMALS
-  furs = load_json(FURS_PATH)
-  levels = load_json(LEVELS_PATH)
+  furs = config.load_json(FURS_PATH)
+  levels = config.load_json(LEVELS_PATH)
   for animal in furs.keys():
     if animal not in animal_details:
       animal_details[animal] = {
@@ -647,8 +640,8 @@ def convert_fur_float_to_int(furs: dict) -> dict:
   return furs    
 
 def merge_furs_into_animals() -> None:
-  animals = json.load(Path("apc/config/animal_details.json").open())
-  furs = load_json(FURS_PATH)
+  animals = config.load_json(Path("apc/config/animal_details.json"))
+  furs = config.load_json(FURS_PATH)
   
   for animal_name, animal in animals.items():
     animal_furs = convert_fur_float_to_int(furs[animal_name])
@@ -656,7 +649,7 @@ def merge_furs_into_animals() -> None:
   Path("apc/config/animal_details.json").write_text(json.dumps(animals, indent=2))
 
 def fix_furs() -> None:
-  animals = json.load(Path("apc/config/animal_details.json").open())
+  animals = config.load_json(Path("apc/config/animal_details.json"))
   for _, animal in animals.items():
     if isinstance(list(animal["diamonds"]["furs"]["male"].values())[0], float):
       animal["diamonds"]["furs"] = convert_fur_float_to_int(animal["diamonds"]["furs"])

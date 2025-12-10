@@ -11,6 +11,12 @@
   "albino_boss": {
     "fur_name": "Albino - Boss"
   },
+  "bald_calico": {
+    "fur_name": "Bald Calico"
+  },
+  "bald_spotted": {
+    "fur_name": "Bald Spotted"
+  },
   "battlethorn": {
     "fur_name": "Fabled Battlethorn"
   },
@@ -65,6 +71,9 @@
   "brown_2": {
     "fur_name": "Brown 2"
   },
+  "brown_3": {
+    "fur_name": "Brown 3"
+  },
   "brown_hybrid": {
     "fur_name": "Brown Hybrid"
   },
@@ -91,6 +100,12 @@
   },
   "cream": {
     "fur_name": "Cream"
+  },
+  "crested_blond": {
+    "fur_name": "Crested Blond"
+  },
+  "crested_brown": {
+    "fur_name": "Crested Brown"
   },
   "crowned": {
     "fur_name": "Crowned"
@@ -146,11 +161,20 @@
   "erythristic_golden": {
     "fur_name": "Erythristic Golden"
   },
+  "erythristic_red": {
+    "fur_name": "Erythristic Red"
+  },
   "fantasma": {
     "fur_name": "Fantasma"
   },
   "frostbite": {
     "fur_name": "Fabled Frostbite"
+  },
+  "furry_charred_cinnamon": {
+    "fur_name": "Furry Charred Cinnamon"
+  },
+  "furry_tawny": {
+    "fur_name": "Furry Tawny"
   },
   "ghost": {
     "fur_name": "Ghost"
@@ -479,6 +503,9 @@
   "pseudo_melanistic_white_2": {
     "fur_name": "Pseudo-Melanistic White 2"
   },
+  "purplegrey": {
+    "fur_name": "Purple Grey"
+  },
   "razorwind": {
     "fur_name": "Fabled Razorwind"
   },
@@ -499,6 +526,9 @@
   },
   "scarborne": {
     "fur_name": "Fabled Scarborne"
+  },
+  "silver": {
+    "fur_name": "Silver"
   },
   "slate_grey": {
     "fur_name": "Slate Grey"
@@ -545,11 +575,29 @@
   "twinsoul": {
     "fur_name": "Fabled Twinsoul"
   },
-  "unknown": {
+    "unknown": {
     "fur_name": "Unknown"
   },
   "vanguard": {
     "fur_name": "Fabled Vanguard"
+  },
+  "variation_trophy_bald_spotted": {
+    "fur_name": "Bald Spotted"
+  },
+  "variation_trophy_baldcalico": {
+    "fur_name": "Bald Calico"
+  },
+  "variation_trophy_crested_blond": {
+    "fur_name": "Crested Blond"
+  },
+  "variation_trophy_crested_brown": {
+    "fur_name": "Crested Brown"
+  },
+  "variation_trophy_furry_charred_cinnamon": {
+    "fur_name": "Furry Charred Cinnamon"
+  },
+  "variation_trophy_furry_tawny": {
+    "fur_name": "Furry Tawny"
   },
   "white": {
     "fur_name": "White"
@@ -565,6 +613,33 @@
   },
   "white_stripeless": {
     "fur_name": "White Stripeless"
+  },
+  "wild_boar_great_one_0": {
+    "fur_name": "Fabled Ash"
+  },
+  "wild_boar_great_one_1": {
+    "fur_name": "Fabled Stipple"
+  },
+  "wild_boar_great_one_2": {
+    "fur_name": "Fabled Smolder"
+  },
+  "wild_boar_great_one_3": {
+    "fur_name": "Fabled Cinder"
+  },
+  "wild_boar_great_one_4": {
+    "fur_name": "Fabled Stitch"
+  },
+  "wild_boar_great_one_5": {
+    "fur_name": "Fabled Scorch"
+  },
+  "wild_boar_great_one_6": {
+    "fur_name": "Fabled Butterscotch"
+  },
+  "wild_boar_great_one_7": {
+    "fur_name": "Fabled Chalk"
+  },
+  "wild_boar_great_one_8": {
+    "fur_name": "Fabled Brindle"
   },
   "winter": {
     "fur_name": "Winter"

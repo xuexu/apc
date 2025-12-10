@@ -34,7 +34,15 @@ def get_fur_for_seed(seed: int, species_key: str, gender: str, great_one: bool =
     """
     if great_one:
         gender = f"great_one_{gender}"
-    gender_config = config.get_species(species_key)["gender"][gender]
+    species_config = config.get_species(species_key)
+    if not species_config:
+        # logger.warning("Unable to get species data for %s", species_key)
+        return None
+    gender_config = species_config.get("gender", {}).get(gender, {})
+    if not gender_config:
+        # logger.warning("Unable to read gender data for %s - %s", species_key, gender)
+        return None
+
     fl_probability = seed_to_probability(seed)
     if math.isnan(fl_probability) or math.isinf(fl_probability):
         # logger.debug(f"Cannot calculate probability for seed {seed} :: {gender} {species_key} >> fl_prob: {fl_probability}")

@@ -23,8 +23,9 @@ ANIMAL_NAMES_FILE = Path(config.CONFIG_PATH / "animal_names.json")
 FUR_NAMES_FILE = Path(config.CONFIG_PATH / "fur_names.json")
 
 class RtpcAnimal:
-  __slots__ = ("name", "full_name", "ammo_class", "truracs", "great_one", "scoring_data", "fur_data", "fur_details")
+  __slots__ = ("species_id", "name", "full_name", "ammo_class", "truracs", "great_one", "scoring_data", "fur_data", "fur_details")
 
+  species_id: int
   name: str
   full_name: str
   ammo_class: int
@@ -36,6 +37,7 @@ class RtpcAnimal:
 
   def __init__(self, animal_node: RtpcNode) -> None:
     prop_data = RtpcAnimal._parse_prop_table(animal_node)
+    self.species_id = prop_data["species_id"]
     self.name = prop_data["name"]
     try:
       self.full_name = prop_data["full_name"]
@@ -51,6 +53,7 @@ class RtpcAnimal:
   @staticmethod
   def _parse_prop_table(node: RtpcNode) -> dict:
     prop_hashes = {
+      431526284: "species_id",        # 0x19b8918c - animal
       343126393:  "_class",           # "_class" 0x1473b179
       1986754702: "full_name",        # 0x766b788e - animal
       3541743236: "name",             # "name" 0xd31ab684
@@ -106,7 +109,7 @@ class RtpcAnimal:
     if scoring_table is None:
       return
     for scoring_node in scoring_table.child_table:
-      prop_data = self._parse_prop_table(scoring_node)
+      prop_data = RtpcAnimal._parse_prop_table(scoring_node)
       if prop_data.get("_class") == "SAnimalTypeScoringDistributionSettings":
         gender = "male" if prop_data["gender"] == 0 else "female"
         if prop_data["great_one"] == 1:
@@ -124,7 +127,7 @@ class RtpcAnimal:
     if fur_table is None:
       return
     for fur_node in fur_table.child_table:
-      prop_data = self._parse_prop_table(fur_node)
+      prop_data = RtpcAnimal._parse_prop_table(fur_node)
       if prop_data.get("_class") == "SAnimalTypeVisualVariation":
         if prop_data["great_one"] == 1:
           self.great_one = True
@@ -134,6 +137,50 @@ class RtpcAnimal:
           logger.error(f"ANIMAL: {self.name}   FUR: {prop_data['name']}   VARIATION: {prop_data['variation']}")
         if prop_data["variation"] != f"variation_{prop_data["index"]}":
           logger.error(f"ANIMAL: {self.name}   FUR: {prop_data['name']}   INDEX {prop_data['index']} NOT EQUAL VARIATION {prop_data['variation']}")
+
+class RtpcReserve:
+  __slots__ = ("reserve_id", "name", "full_name", "species_ids", "species_details")
+
+  reserve_id: int
+  name: str
+  full_name: str
+  species_ids: list[int]
+  species_details: dict
+
+  def __init__(self, reserve_id: int, rtpc_data: RtpcNode) -> None:
+    prop_data = RtpcAnimal._parse_prop_table(rtpc_data)
+    self.reserve_id = reserve_id
+    self.name = prop_data["name"]
+    self.species_ids = self._parse_species_ids(rtpc_data)
+
+  def to_dict(self):
+    return {slot: getattr(self, slot) for slot in self.__slots__}
+
+  def _get_table(self, rtpc_data: RtpcNode, table_name: str) -> RtpcNode:
+    table_hashes = {
+      498704821: "species",         # 0x1db9a1b5
+      1021486167: "cold_effect",    # 0x3ce2a457
+      2133761006: "textures",       # 0x7f2e9bee
+      2487179630: "need_zones",     # 0x943f596e
+      2749031136: "???",            # 0xa3dae2e0
+      3050727908: "deployables",    # 0xb5d669e4
+      3560954187: "dust_effect",    # 0xf0ae4365
+      4037952357: "bitmaps",        # 0xfbdb5d56
+    }
+    for table in rtpc_data.child_table:
+      if table_name == table_hashes.get(table.name_hash):
+        return table
+    return None
+
+  def _parse_species_ids(self, rtpc_data: RtpcNode):
+    species_ids = []
+    species_data = self._get_table(rtpc_data, "species")
+    if not species_data:
+      raise ValueError("Unable to parse species table from resetve %s", self.reserve_id)
+    for species_table in species_data.child_table:
+      prop_data = RtpcAnimal._parse_prop_table(species_table)
+      species_ids.append(prop_data["species_id"])
+    return species_ids
 
 def open_rtpc(filename: Path) -> RtpcNode:
   with filename.open("rb") as f:
@@ -175,6 +222,7 @@ def format_animals(animal_list: list[RtpcAnimal]) -> dict:
   formatted_animals = {}
   for animal in animal_list:
     formatted_data = {
+      "species_id": animal.species_id,
       "ammo_class": animal.ammo_class,
       "gender": defaultdict(dict),
     }
@@ -259,7 +307,7 @@ def format_fur_keys(merged_furs: dict, animal_name: str):
             if variant.isdigit() and variant != "1":
               fur["key"] = fur["key"] + "_" + variant
             if not variant.isdigit():
-              logger.warning(f"Strange variant name: '{variant}'")
+              logger.error(f"Strange variant name: '{variant}'")
               continue
             logger.info(f"Parsed variant {variant} for {animal_name} :: {gender} :: '{fur['key']}' :: Index {fur['index']}")
           else:
@@ -272,9 +320,9 @@ def get_fur_variant(fur: dict, animal_name: str, gender: str) -> str:
         return variant
       if (variant := texture_name.split("_")[-1]) == fur["key"]:
         return "1"
-    gender = gender.removeprefix("great_one_")
-    if f"{gender}_modelc" in fur:
-      model_name = fur[f"{gender}_modelc"].split("/")[-1].removesuffix(".modelc")
+    short_gender = gender.removeprefix("great_one_")
+    if f"{short_gender}_modelc" in fur:
+      model_name = fur[f"{short_gender}_modelc"].split("/")[-1].removesuffix(".modelc")
       if variant := get_trailing_digit(model_name):
         return variant
       if (variant := model_name.split("_")[-1]).endswith(fur["key"].replace("_","")):  # pseudo_melanistic_white > pseudomelanisticwhite
@@ -303,8 +351,14 @@ def get_trailing_digit(s):
     return None
 
 def map_fur_key(fur: dict, animal_name: str, gender: str) -> str:
+  # Wild Boar Great Ones have variant names that end in `_GO_x`
+  if animal_name == "wild_boar" and gender.startswith("great_one_"):
+    variant = get_trailing_digit(fur["variation_name"])
+    return f"wild_boar_great_one_{variant}"
+
   # I hate doing any manual mapping but it's impossible to catch every edge-case in so here we are
   # Match on animal_name and "index" value (sane as b'variation_xx' value)
+
   fur_map = {
     "eastern_grey_kangaroo": {
       0: "grey",
@@ -316,7 +370,7 @@ def map_fur_key(fur: dict, animal_name: str, gender: str) -> str:
     "fallow_deer": {
       0: "piebald_2",
       1: "dark",
-      2: "spottec",
+      2: "spotted",
       10: "dark_2",
       12: "spotted_2",
       18: "piebald",
@@ -352,10 +406,6 @@ def map_fur_key(fur: dict, animal_name: str, gender: str) -> str:
     "springbok": {
       1: "black_brown_2",
     },
-    "wild_boar": {
-      8: "light_brown",
-      5: "light_brown_2",
-    },
     "wild_yak": {
       8: "albino_2",
     },
@@ -378,13 +428,6 @@ def format_scoring_data(animal: RtpcAnimal) -> dict:
     }
   return formatted_data
 
-def load_json(file: Path) -> dict:
-  try:
-    data = json.load(file.open())
-  except:
-    data = {}
-  return data
-
 def save_json(file: Path, data: dict) -> None:
   file.write_text(json.dumps(data, indent=2, cls=RtpcJSONEncoder))
 
@@ -398,7 +441,7 @@ def seed_all_reserves() -> None:
   logger.info("[green]All reserves seeded![/green]")
 
 def update_global_animal_data() -> None:
-  animal_details = load_json(ANIMAL_DETAILS_FILE)
+  animal_details = config.load_json(ANIMAL_DETAILS_FILE)
   logger.info(f"Loaded {len(animal_details)} animals from `animal_details.json`")
   rtpc_animals = get_global_animals()
   logger.info(f"Parsed {len(rtpc_animals)} animals from `global_animal_types.blo`")
@@ -411,8 +454,8 @@ def update_global_animal_data() -> None:
   update_fur_names()
 
 def update_animal_names() -> dict:
-  animal_names = load_json(ANIMAL_NAMES_FILE)
-  animal_details = load_json(ANIMAL_DETAILS_FILE)
+  animal_names = config.load_json(ANIMAL_NAMES_FILE)
+  animal_details = config.load_json(ANIMAL_DETAILS_FILE)
   for animal in animal_details.keys():
     if animal not in animal_names:
       animal_names[animal] = { "animal_name": utils.format_key(animal) }
@@ -420,8 +463,8 @@ def update_animal_names() -> dict:
   save_json(ANIMAL_NAMES_FILE, animal_names)
 
 def update_fur_names() -> dict:
-  fur_names = load_json(FUR_NAMES_FILE)
-  animal_details = load_json(ANIMAL_DETAILS_FILE)
+  fur_names = config.load_json(FUR_NAMES_FILE)
+  animal_details = config.load_json(ANIMAL_DETAILS_FILE)
   for animal, animal_data in animal_details.items():
     for gender, gender_data in animal_data["gender"].items():
       for fur in gender_data["furs"].keys():
@@ -441,21 +484,22 @@ def merge_animal_details(old_animal_details: dict, new_animal_details: dict) -> 
     for key in ["ammo_class", "animal_name", "gender", "level", "trophy", "truracs"]:
       if new_animal_details[name].get(key):
         old_animal_details[name][key] = new_animal_details[name][key]
+    # always overwrite with new gender and species_id data
     old_animal_details[name]["gender"] = new_animal_details[name]["gender"]
+    old_animal_details[name]["species_id"] = new_animal_details[name]["species_id"]
     old_animal_details[name] = dict(sorted(old_animal_details[name].items()))
 
 def seed_reserve_animal_details(reserve_key: str, skip_update_fur: bool = False, skip_levels: bool = False) -> None:
   if not skip_update_fur:
     update_global_animal_data()
   logger.info(f"Seeding reserve '{reserve_key}': {config.get_reserve_name(reserve_key)} [animal_population_{config.get_population_reserve_key}]")
-  animal_details = load_json(ANIMAL_DETAILS_FILE)
+  animal_details = config.load_json(ANIMAL_DETAILS_FILE)
   reserve_species = config.get_reserve(reserve_key)["species"]
   for species_key in reserve_species: # slice like [2:5]
-    if species_key == "_BLANK_GROUPS_ARRAY":
-      continue
     species_config = animal_details.get(species_key)
     if not species_config:
-      raise ValueError(f"Unable to find data for speecies {species_key} on reserve {reserve_key}")
+      continue
+      # raise ValueError(f"Unable to find data for speecies {species_key} on reserve {reserve_key}")
     if "level" not in species_config and not skip_levels:
       seeded_species_data = seed_species(reserve_key, species_key, species_config)
       species_config["level"] = trim_trailing_ranges(seeded_species_data["level"])
@@ -770,6 +814,7 @@ def analyze_reserve(path: Path) -> None:
     reserve_index = int(match.group(1))
   else:
     raise ValueError(f"Unable to parse reserve index: {path}")
+  reserve_species = parse_reserve_species(reserve_index)
   (reserve_key, reserve_details) = next(((key, details) for key, details in config.RESERVES.items() if details["index"] == reserve_index), ("unknown", {}))
   known_species = reserve_details.get("species", [])
   pops = populations._get_populations(adf.load_adf(path, txt=True).adf)
@@ -798,6 +843,20 @@ def analyze_reserve(path: Path) -> None:
       "high_weight": high_weight,
     }
   print(json.dumps(groups_data, indent=2))
+
+def parse_reserve_species(reserve_index):
+  animal_details = config.load_json(ANIMAL_DETAILS_FILE)
+  try:
+    reserve_data = open_rtpc(config.CONFIG_PATH / f"reserve_{reserve_index}.bin")
+  except:
+    logger.critical("Unable to locate 'reserve_%d.bin'  in path %s", reserve_index, config.CONFIG_PATH)
+    return []
+  reserve = RtpcReserve(reserve_index, reserve_data)
+  print(reserve.species_ids)
+  id_to_name = {data["species_id"]: species_key for species_key, data in animal_details.items()}
+  reserve_species = [id_to_name.get(species_id, species_id) for species_id in reserve.species_ids]
+  print(reserve_species)
+  return reserve_species
 
 def export_reserve_animals_stats(reserve_key: str, species_key: str = None) -> csv:
   loaded_reserve = LoadedReserve(reserve_key, parse=True)
@@ -1036,6 +1095,7 @@ def map_aps(reserve_name: str, species_key: str) -> str:
 
 if __name__ == "__main__":
   update_global_animal_data()
-  # analyze_reserve(config.get_save_path() / "animal_population_19")
+  parse_reserve_species(20)
+  # analyze_reserve(config.get_save_path() / "animal_population_20")
   # seed_reserve_animal_details("alberta", skip_update_fur=True, skip_levels=False)
   # seed_all_reserves()

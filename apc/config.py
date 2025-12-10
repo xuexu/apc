@@ -367,6 +367,10 @@ def _find_saves_path() -> Path:
     logger.info("Found save directory: %s", profile_dir)
     return profile_dir
 
+def load_json(file: Path) -> dict:
+  with open(file, "r", encoding="utf-8") as f:
+    data = json.load(f)
+  return data
 
 APP_DIR_PATH = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
 EXPORTS_PATH = APP_DIR_PATH / "exports"
@@ -381,10 +385,10 @@ BACKUP_DIR_PATH = Path().cwd() / "backups"
 BACKUP_DIR_PATH.mkdir(exist_ok=True, parents=True)
 HIGH_NUMBER = 100000
 
-ANIMAL_NAMES = json.load((CONFIG_PATH / "animal_names.json").open())
-FUR_NAMES = json.load((CONFIG_PATH / "fur_names.json").open())
-RESERVES = json.load((CONFIG_PATH / "reserve_details.json").open())
-ANIMALS = json.load((CONFIG_PATH / "animal_details.json").open())
+ANIMAL_NAMES = load_json(CONFIG_PATH / "animal_names.json")
+FUR_NAMES = load_json(CONFIG_PATH / "fur_names.json")
+RESERVES = load_json(CONFIG_PATH / "reserve_details.json")
+ANIMALS = load_json(CONFIG_PATH / "animal_details.json")
 GLOBAL_ANIMAL_TYPES = CONFIG_PATH / "global_animal_types.blo"
 
 # TODO: diamonds that can be both genders need different weight / score values
@@ -407,6 +411,7 @@ class Reserve(str, Enum):
    sundarpatan = "sundarpatan"
    salzwiesen = "salzwiesen"
    alberta = "alberta"
+   scotland = "scotland"
 
 class Strategy(str, Enum):
    great_one_all = "great-one-all"
@@ -598,8 +603,6 @@ def get_reserve_species(reserve_key: str) -> list:
   return get_reserve(reserve_key)["species"]
 
 def get_species(species_key: str) -> dict:
-  # Te AWaroa has an empty list of animals for its first population
-  # We represent this with "_BLANK_GROUPS_ARRAY" in `reserve_details.json`
   return ANIMALS.get(species_key, None)
 
 def get_diamond_gender(species_key: str) -> str:
