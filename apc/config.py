@@ -145,6 +145,8 @@ def setup_translations() -> None:
   RESET = translate("Reset")
   global UPDATE_ANIMALS
   UPDATE_ANIMALS = translate("Update Animals")
+  global DO_NOT_ENFORCE_LIMITS
+  DO_NOT_ENFORCE_LIMITS = translate("Do not enforce limits")
   global JUST_FURS
   JUST_FURS = translate("Just the Furs")
   global ONE_OF_EACH_FUR
@@ -679,7 +681,7 @@ def generate_weight_and_score(gender_data, percentile: float = None, fuzz: bool 
     weight_high = gender_data.get("weight_high")
     score_low = gender_data.get("score_low")
     score_high = gender_data.get("score_high")
-    if not percentile:
+    if percentile is None:
       percentile = random.uniform(0.01,1)
     weight_variation = random.uniform(-0.01, 0.01) * (weight_high - weight_low) if fuzz else 0
     weight = weight_low + percentile * (weight_high - weight_low) + weight_variation

@@ -1009,6 +1009,12 @@ def click_reserve(reserve_name: str, no_exit: bool = False) -> None:
     pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
     pyautogui.moveTo(reserve_coords(line), duration=action_duration)
     click()
+  if reserve_name == "peru":
+    line = 8.25
+    pyautogui.moveTo(scrollbar_middle)
+    pyautogui.dragTo(scrollbar_bottom, duration=action_duration)
+    pyautogui.moveTo(reserve_coords(line), duration=action_duration)
+    click()
 
   pyautogui.moveTo(pop_file)
   doubleClick()
@@ -1078,9 +1084,12 @@ def map_aps(reserve_name: str, species_key: str) -> str:
     "saltwater_crocodile": "sw_crocodile",
     "siberian_musk_deer": "musk_deer",
     "sidestriped_jackal": "s-striped_jackal",
+    "south_american_tapir": "sa_tapir",
     "southeastern_ibex": "ses_ibex",
     "tundra_bean_goose": "t.bean_goose",
+    "vicuna": "vicuÃ±a",
     "western_capercaillie": "w.capercaillie",
+    "western_mountain_coati": "wm_coati",
     "wild_turkey": "turkey",
     "woodland_caribou": "caribou",
   }
@@ -1094,7 +1103,7 @@ def map_aps(reserve_name: str, species_key: str) -> str:
 if __name__ == "__main__":
   update_global_animal_data()
   # parse_reserve_species(21)
-  analyze_reserve(config.get_save_path() / "animal_population_21")
+  # analyze_reserve(config.get_save_path() / "animal_population_21")
   # Run APS and select "/apc/mods" folder before you can seed animals
-  # seed_reserve_animal_details("scotland", skip_update_fur=True, skip_levels=False)
+  # seed_reserve_animal_details("peru", skip_update_fur=False, skip_levels=False)
   # seed_all_reserves()

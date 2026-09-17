@@ -153,11 +153,11 @@ class AdfAnimal:
         self.trophy = config.UNKNOWN
         return
       trophy_config = species_config.get("trophy", {})
-      for level in ["bronze", "silver", "gold", "diamond"]:
+      for level in ["diamond", "gold", "silver", "bronze"]:
         data = trophy_config.get(level)
-        if data and data["score_low"] <= self.score <= data["score_high"]:
-            self.trophy = getattr(config, level.upper())
-            return
+        if data and self.score >= data["score_low"]:
+          self.trophy = getattr(config, level.upper())
+          return
       self.trophy = config.NONE
 
     def __repr__(self) -> str:

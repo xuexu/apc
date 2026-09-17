@@ -39,7 +39,7 @@ symbol_closed = "►"
 symbol_open = "▼"
 
 class AnimalDetails:
-  def __init__(self, species_key: str, gender: str, weight: float, score: float, fur: str, great_one: bool) -> None:
+  def __init__(self, species_key: str, gender: str, weight: float, score: float, fur: str, great_one: bool, fur_key: str = None) -> None:
     self.species_key = species_key
     self.gender = gender
     self.gender_key = "male" if gender == config.MALE else "female"
@@ -48,6 +48,7 @@ class AnimalDetails:
     self.great_one = great_one
     self.great_one_gender = config.get_great_one_gender(species_key)
     self.fur_name = fur if fur != "" else None
+    self.fur_key = fur_key
     self._get_fur_key()
     self.diamond_gender = config.get_diamond_gender(species_key)
     self.can_be_diamond = self.gender_key == self.diamond_gender or self.diamond_gender == "both"
@@ -55,8 +56,17 @@ class AnimalDetails:
   def _get_fur_key(self):
     species_furs = config.get_species_fur_names(self.species_key, self.gender_key, self.great_one)
     logger.debug([f"{i} :: {name} >> {key}" for i, (name, key) in enumerate(zip(species_furs["names"], species_furs["keys"]))])
+    if self.fur_key:
+      if self.fur_key not in species_furs["keys"]:
+        self.fur_key = None
+        self.fur_name = None
+        return
+      fur_index = species_furs["keys"].index(self.fur_key)
+      self.fur_name = species_furs["names"][fur_index]
+      return
     if self.fur_name not in species_furs["names"]:
       self.fur_key = None
+      self.fur_name = None
       return
     fur_index = species_furs["names"].index(self.fur_name)
     self.fur_key = species_furs["keys"][fur_index]
@@ -250,6 +260,7 @@ def _disable_animal_details(window: sg.Window, disabled: bool) -> None:
   window["animal_great_one"].update(disabled=disabled)
   window["animal_gender"].update(disabled=disabled)
   window["animal_fur"].update(disabled=disabled)
+  window["animal_do_not_enforce_limits"].update(disabled=disabled)
   window["details_update_animals"].update(disabled=disabled)
 
 def _disable_great_one_parties(window: sg.Window, reserve_key: str) -> None:
@@ -571,10 +582,19 @@ def _mod_reserve_animals(window: sg.Window, values: dict, reserve_key: str, spec
   if (loaded_reserve := _load_reserve(window, reserve_key, is_modded=is_modded, show_progress=False)):
     for adf_animal in adf_animals:
       try:
-        weight = animal_details.weight if values["animal_weight_checkbox"] else adf_animal.weight
-        score = animal_details.score if values["animal_score_checkbox"] else adf_animal.score
-        fur = animal_details.fur_key if values["animal_fur_checkbox"] else adf_animal.visual_seed
-        populations.mod_animal(loaded_reserve, adf_animal, animal_details.great_one, animal_details.gender_key, weight, score, fur)
+        weight, score, visual_seed = populations.prepare_animal_update(
+          adf_animal,
+          animal_details.gender_key,
+          animal_details.great_one,
+          animal_details.weight,
+          animal_details.score,
+          animal_details.fur_key,
+          values["animal_weight_checkbox"],
+          values["animal_score_checkbox"],
+          values["animal_fur_checkbox"],
+          enforce_limits=not values["animal_do_not_enforce_limits"],
+        )
+        populations.mod_animal(loaded_reserve, adf_animal, animal_details.great_one, animal_details.gender_key, weight, score, visual_seed)
       except Exception as ex:
         _show_error(ex)
       count += 1
@@ -889,6 +909,8 @@ def _clear_animal_details(window: sg.Window) -> None:
   window["animal_score_info"].update("")
   window["animal_fur"].update(values=[])
   window["animal_fur_checkbox"].update(True)
+  window["animal_do_not_enforce_limits"].update(False, disabled=True)
+  window["details_update_animals"].metadata = None
 
 def _update_mod_animal_counts(window: sg.Window, values: dict, species_counts: dict, changing: str = None) -> None:
   species_key = window["species_name"].metadata
@@ -991,13 +1013,13 @@ def _sort_species_description(window, col):
   window["exploring"].metadata = (col, reverse)
   window.refresh()
 
-def _parse_animal_row(animal_description: list, species_key: str) -> AnimalDetails:
+def _parse_animal_row(animal_description: list, species_key: str, animal: adf.AdfAnimal) -> AnimalDetails:
   animal_gender = animal_description[2]
   animal_weight = animal_description[3]
   animal_score = animal_description[4]
   animal_fur = animal_description[5] if animal_description[5] != "-" else None
   animal_great_one = animal_description[6] == config.GREATONE
-  return AnimalDetails(species_key, animal_gender, animal_weight, animal_score, animal_fur, animal_great_one)
+  return AnimalDetails(species_key, animal_gender, animal_weight, animal_score, animal_fur, animal_great_one, animal.fur_key)
 
 def _parse_animal_details(values: dict, species_key: str) -> AnimalDetails:
   return AnimalDetails(species_key, values["animal_gender"], values["animal_weight"], values["animal_score"], values["animal_fur"], values["animal_great_one"] == config.YES)
@@ -1317,6 +1339,7 @@ def main_window(my_window: sg.Window = None) -> sg.Window:
                 [sg.Checkbox("", default=True, k="animal_fur_checkbox", p=((10,0),(10,0))), sg.T(f"{config.FUR}:", p=((0,0),(10,0))), sg.T(f"({config.RANDOM_FUR})", p=((0,0),(10,0)), font=MEDIUM_FONT, text_color="orange")],
                 [sg.Combo([],  p=((20,10),(5,5)), k="animal_fur", expand_x=True, disabled=True)],
                 [sg.Button(config.RESET, k="animal_reset", font=BUTTON_FONT, p=((15,0),(20,10))), sg.Button(config.UPDATE_ANIMALS, expand_x=True, disabled=True, k="details_update_animals", font=BUTTON_FONT, p=((10,15),(20,10)))],
+                [sg.Checkbox(config.DO_NOT_ENFORCE_LIMITS, default=False, k="animal_do_not_enforce_limits", disabled=True, p=((15,15),(0,10)))],
               ], relief=sg.RELIEF_RAISED, p=(0,5), expand_y=True)
             ]], k="exploring", vertical_alignment="top", p=((0,0),(0,0)), visible=False, metadata=False)
           ],
@@ -1378,7 +1401,9 @@ def main() -> None:
               if row == -1:
                 _sort_species_description(window, col)
               if row >= 0:
-                animal_details = _parse_animal_row(window["species_description"].Values[row], species_key)
+                animal = window["species_description"].metadata[row]
+                animal_details = _parse_animal_row(window["species_description"].Values[row], species_key, animal)
+                window["details_update_animals"].metadata = animal
                 _disable_animal_details(window, False)
                 _update_animal_details(window, animal_details)
         elif event == "animal_great_one" or event == "animal_gender":
@@ -1396,9 +1421,24 @@ def main() -> None:
               window["animal_gender"].update(value= values["animal_gender"])
               print(values["animal_gender"])
               window.refresh()
-          animal_details = _parse_animal_details(values, species_key)
-          animal_details.fur_name = None
-          animal_details.fur_key = None
+          source_animal = window["details_update_animals"].metadata
+          if source_animal:
+            great_one = values["animal_great_one"] == config.YES
+            gender = "male" if values["animal_gender"] == config.MALE else "female"
+            matching_fur = populations.get_matching_fur_key(species_key, source_animal.fur_key, gender, great_one)
+            animal_details = AnimalDetails(
+              species_key,
+              values["animal_gender"],
+              source_animal.weight,
+              source_animal.score,
+              None,
+              great_one,
+              matching_fur,
+            )
+          else:
+            animal_details = _parse_animal_details(values, species_key)
+            animal_details.fur_name = None
+            animal_details.fur_key = None
           _update_animal_details(window, animal_details)
         elif event == "set_save":
           provided_path = sg.popup_get_folder(f"{config.SELECT_FOLDER}:", title=config.SAVES_PATH_TITLE, icon=logo.value, font=DEFAULT_FONT)
@@ -1514,7 +1554,11 @@ def main() -> None:
           selected_animal_rows = window["species_description"].SelectedRows
           species_key = window["species_name"].metadata
           if len(selected_animal_rows) > 0:
-            animal_details = _parse_animal_row(window["species_description"].Values[selected_animal_rows[0]], species_key)
+            row = selected_animal_rows[0]
+            animal = window["species_description"].metadata[row]
+            animal_details = _parse_animal_row(window["species_description"].Values[row], species_key, animal)
+            window["details_update_animals"].metadata = animal
+            window["animal_do_not_enforce_limits"].update(False)
             _update_animal_details(window, animal_details)
         elif event == "load_modded":
           if loaded_reserve := window["reserve"].metadata:

@@ -110,6 +110,9 @@
   "cinnamon": {
     "fur_name": "Cinnamon"
   },
+  "cirrus": {
+    "fur_name": "Fabled Cirrus"
+  },
   "cream": {
     "fur_name": "Cream"
   },
@@ -167,6 +170,9 @@
   "eclipse": {
     "fur_name": "Eclipse"
   },
+  "eclipse_go": {
+    "fur_name": "Fabled Eclipse"
+  },
   "eggwhite": {
     "fur_name": "Eggwhite"
   },
@@ -213,7 +219,7 @@
     "fur_name": "Gingersplit"
   },
   "glassesmarkings": {
-    "fur_name": "Glasses markings"
+    "fur_name": "Glasses Markings"
   },
   "gold": {
     "fur_name": "Gold"
@@ -459,10 +465,10 @@
     "fur_name": "Melanistic Charcoal"
   },
   "messymarkings": {
-    "fur_name": "Messy markings"
+    "fur_name": "Messy Markings"
   },
   "minimalisticmarkings": {
-    "fur_name": "Minimalistic markings"
+    "fur_name": "Minimalistic Markings"
   },
   "mixed": {
     "fur_name": "Mixed"
@@ -486,7 +492,7 @@
     "fur_name": "Mottled 2"
   },
   "nomarkings": {
-    "fur_name": "No markings"
+    "fur_name": "No Markings"
   },
   "nz_moose_mocha": {
     "fur_name": "Mocha"
@@ -496,6 +502,9 @@
   },
   "ogro": {
     "fur_name": "Ogro"
+  },
+  "oldscar": {
+    "fur_name": "Old Scar"
   },
   "olive": {
     "fur_name": "Olive"
@@ -590,6 +599,9 @@
   "rosewash": {
     "fur_name": "Fabled Rosewash"
   },
+  "saffronglow": {
+    "fur_name": "Fabled Saffronglow"
+  },
   "sand": {
     "fur_name": "Sand"
   },
@@ -628,6 +640,12 @@
   },
   "standard": {
     "fur_name": "Standard"
+  },
+  "starthistle": {
+    "fur_name": "Fabled Starthistle"
+  },
+  "stormcloak": {
+    "fur_name": "Fabled Stormcloak"
   },
   "straw": {
     "fur_name": "Straw"
@@ -723,7 +741,7 @@
     "fur_name": "Winter"
   },
   "xmarkings": {
-    "fur_name": "X markings"
+    "fur_name": "X Markings"
   },
   "yellow": {
     "fur_name": "Yellow"

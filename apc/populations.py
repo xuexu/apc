@@ -240,6 +240,103 @@ def _get_eligible_groups(groups: list[AdfValue], minimum_animals: int = 1) -> li
   logger.debug(f"Found {len(eligible_groups)} eligible groups")
   return eligible_groups
 
+def _get_animal_config(species_config: dict, gender: str, great_one: bool) -> dict:
+  gender_key = f"great_one_{gender}" if great_one else gender
+  return species_config["gender"][gender_key]
+
+def _clamp(value: float, low: float, high: float) -> float:
+  return max(low, min(high, value))
+
+def _attribute_percentile(value: float, data: dict, attribute: str) -> float:
+  low = data[f"{attribute}_low"]
+  high = data[f"{attribute}_high"]
+  if high <= low:
+    return 0.5
+  return _clamp((value - low) / (high - low), 0.0, 1.0)
+
+def _fur_base_key(fur_key: str) -> str:
+  base, separator, variant = fur_key.rpartition("_")
+  return base if separator and variant.isdigit() else fur_key
+
+def get_matching_fur_key(species_key: str, source_fur: str | None, gender: str, great_one: bool) -> str | None:
+  """Find the exact fur or closest numbered variant available to the target type."""
+  if not source_fur or source_fur == "unknown":
+    return None
+  target_furs = config.get_species_furs(species_key, gender, great_one)
+  if source_fur in target_furs:
+    return source_fur
+
+  source_base = _fur_base_key(source_fur)
+  return next((fur_key for fur_key in target_furs if _fur_base_key(fur_key) == source_base), None)
+
+def _preserve_fur_seed(animal: AdfAnimal, gender: str, great_one: bool) -> int:
+  """Keep the current fur when possible after a gender or Great One change."""
+  source_fur = animal.fur_key
+  if source_fur == "unknown":
+    return animal.visual_seed
+  try:
+    target_fur = fur_seed.get_fur_for_seed(animal.visual_seed, animal.species_key, gender, great_one)
+  except ValueError:
+    return animal.visual_seed
+  if target_fur == source_fur:
+    return animal.visual_seed
+
+  if matching_fur := get_matching_fur_key(animal.species_key, source_fur, gender, great_one):
+    return fur_seed.find_fur_seed(animal.species_key, gender, great_one, matching_fur)
+  return animal.visual_seed
+
+def prepare_animal_update(
+  animal: AdfAnimal,
+  gender: str,
+  great_one: bool,
+  selected_weight: float,
+  selected_score: float,
+  selected_fur: str | None,
+  update_weight: bool,
+  update_score: bool,
+  update_fur: bool,
+  enforce_limits: bool,
+) -> tuple[float, float, int]:
+  """Build valid values for an Explore edit while preserving unchecked attributes."""
+  if not enforce_limits:
+    weight = selected_weight if update_weight else animal.weight
+    score = selected_score if update_score else animal.score
+    visual_seed = fur_seed.find_fur_seed(animal.species_key, gender, great_one, selected_fur) if update_fur else animal.visual_seed
+    return weight, score, visual_seed
+
+  species_config = config.get_species(animal.species_key)
+  source_config = _get_animal_config(species_config, animal.gender, animal.great_one)
+  target_config = _get_animal_config(species_config, gender, great_one)
+  changed_type = animal.gender != gender or animal.great_one != great_one
+
+  if not changed_type:
+    weight = selected_weight if update_weight else animal.weight
+    score = selected_score if update_score else animal.score
+    weight = _clamp(weight, target_config["weight_low"], target_config["weight_high"])
+    score = _clamp(score, target_config["score_low"], target_config["score_high"])
+  elif update_weight and update_score:
+    weight = _clamp(selected_weight, target_config["weight_low"], target_config["weight_high"])
+    score = _clamp(selected_score, target_config["score_low"], target_config["score_high"])
+  elif not update_weight and not update_score:
+    percentile = _attribute_percentile(animal.weight, source_config, "weight")
+    source_score_is_empty = source_config["score_low"] == 0 and source_config["score_high"] == 0
+    weight, score = config.generate_weight_and_score(target_config, percentile=percentile, fuzz=source_score_is_empty)
+  elif update_score:
+    score = _clamp(selected_score, target_config["score_low"], target_config["score_high"])
+    percentile = _attribute_percentile(score, target_config, "score")
+    weight, _ = config.generate_weight_and_score(target_config, percentile=percentile)
+  else:
+    weight = _clamp(selected_weight, target_config["weight_low"], target_config["weight_high"])
+    percentile = _attribute_percentile(weight, target_config, "weight")
+    _, score = config.generate_weight_and_score(target_config, percentile=percentile)
+
+  visual_seed = (
+    fur_seed.find_fur_seed(animal.species_key, gender, great_one, selected_fur)
+    if update_fur
+    else _preserve_fur_seed(animal, gender, great_one) if changed_type else animal.visual_seed
+  )
+  return weight, score, visual_seed
+
 def _update_animal(data: bytearray, animal: AdfAnimal, great_one: bool, gender: str, weight: float, score: float, visual_seed: int) -> None:
   update_uint(data, animal.gender_offset, 1 if gender == "male" else 2)
   update_float(data, animal.weight_offset, weight)
